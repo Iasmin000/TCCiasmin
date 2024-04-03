@@ -9,16 +9,9 @@ body {
   .b {
     font-style: italic;
   }
-  .column {
+  .a {
+    float: right;
+  }
+  .p{
     float: left;
-    width: 50%;
-    padding: 20px;
   }
-  
-  
-  .row: {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
