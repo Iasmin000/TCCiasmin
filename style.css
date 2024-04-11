@@ -1,14 +1,26 @@
 body {
-    margin: 0;
-  }
-  .header {
-    background-color:#ffccdd;
-    padding: 20px;
-    text-align: center;
-  }
-  .b {
-    font-style: italic;
-  }
-  
- 
-  
+  margin: 0;
+}
+.header {
+  background-color:#e9a5a5;
+  padding: 20px;
+  text-align: center;
+}
+.b {
+  font-style: italic;
+}
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #8f2e2e;
+  color: #faf4f4;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: right; 
+}
