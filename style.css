@@ -50,10 +50,9 @@ text-align: right;
   transition: background-color 0.3s;
 }
 .menu ul li a:hover {
-  background-color: #333;
+  background-color: #ffffff;
 }
 .header {
 background-color:#ffccdd;
-color:#63062d
 padding: 20px;
 text-align: center;
