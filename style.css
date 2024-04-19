@@ -1,13 +1,7 @@
-body {
-  margin: 0;
-}
 .header {
-  background-color:#ffccdd;
+  background-color:#ffe3f3;
   padding: 20px;
   text-align: center;
-}
-.b {
-  font-style: italic;
 }
 button {
 padding: 10px 20px;
@@ -24,36 +18,36 @@ padding: 20px;
 box-sizing: border-box;
 text-align: right; 
 }
-.menu {
-  text-align: center;
-}
-
-.menu ul {
-  list-style: none;
-  padding: 0;
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
+  padding: 0;
+  background-image: url('https://i.postimg.cc/DzWFWz4S/d678430120ce89e367db5291f6eb8863.jpg');
+  background-size: cover; /* Redimensionar a imagem para cobrir todo o elemento */
+  background-repeat: no-repeat; /* Evitar que a imagem se repita */
+  background-position: center; /* Centralizar a imagem */
+  /* Se desejar, você também pode adicionar outros estilos ao body, como cor de texto */
+  color: #000000; /* Cor do texto */
 }
-.menu ul li {
-  display: inline-block;
-  margin-right: 20px; /* Espaçamento entre os itens do menu */
+h1,  p{
+  text-align:center ;
+}
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Duas colunas com largura igual */
+  grid-gap: 20px; /* Espaçamento entre as imagens */
 }
 
-.menu ul li:last-child {
-  margin-right: 0; /* Remove o espaçamento do último item */
+.image {
+  display: flex;
+  align-items: center; /* Alinhar a imagem e a descrição verticalmente */
 }
-.menu ul li a {
-  text-decoration: none;
-  color: #63062d;
-  font-size: 18px;
-  padding: 10px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+
+.image img {
+  max-width: 300px; /* Largura máxima das imagens */
+  height: auto; /* Altura automática para manter a proporção */
+  margin-right: 10px; /* Espaçamento entre a imagem e a descrição */
 }
-.menu ul li a:hover {
-  background-color: #ffffff;
-}
-.header {
-background-color:#ffccdd;
-padding: 20px;
-text-align: center;
+.image-description {
+  font-size: 14px;
 }
