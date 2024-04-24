@@ -3,21 +3,6 @@
   padding: 20px;
   text-align: center;
 }
-button {
-padding: 10px 20px;
-font-size: 16px;
-background-color: #f3b1cd;
-color: #f8f8f8;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-}
-.container {
-width: 100%;
-padding: 20px;
-box-sizing: border-box;
-text-align: right; 
-}
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -28,9 +13,6 @@ body {
   background-position: center; /* Centralizar a imagem */
   /* Se desejar, você também pode adicionar outros estilos ao body, como cor de texto */
   color: #000000; /* Cor do texto */
-}
-p{
-  text-align: justify;
 }
 .image-grid {
   display: grid;
@@ -51,7 +33,7 @@ p{
 
 .image-description {
   font-size: 14px;
-   text-align: justify;
+   
 }
 
 /* Media Query para ajustar o layout em telas menores */
@@ -65,4 +47,7 @@ p{
   .image-grid {
       grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
   }
+}
+.conteudo{
+  margin-left: 2%;
 }
