@@ -23,31 +23,40 @@ body {
   margin: 0;
   padding: 0;
   background-image: url('https://i.postimg.cc/DzWFWz4S/d678430120ce89e367db5291f6eb8863.jpg');
-  background-size: cover; /* Redimensionar a imagem para cobrir todo o elemento */
-  background-repeat: no-repeat; /* Evitar que a imagem se repita */
-  background-position: center; /* Centralizar a imagem */
-  /* Se desejar, você também pode adicionar outros estilos ao body, como cor de texto */
-  color: #000000; /* Cor do texto */
-}
-h1,  p{
-  text-align:center ;
-}
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  color: #000000; 
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Duas colunas com largura igual */
-  grid-gap: 20px; /* Espaçamento entre as imagens */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  grid-gap: 20px; 
 }
 
 .image {
   display: flex;
-  align-items: center; /* Alinhar a imagem e a descrição verticalmente */
+  align-items: center; 
 }
 
 .image img {
-  max-width: 300px; /* Largura máxima das imagens */
-  height: auto; /* Altura automática para manter a proporção */
-  margin-right: 10px; /* Espaçamento entre a imagem e a descrição */
+  max-width: 100%; 
+  height: auto; 
+  margin-right: 10px; 
 }
+
 .image-description {
   font-size: 14px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .image-grid {
+      grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .image-grid {
+      grid-template-columns: 1fr; 
+  }
 }
