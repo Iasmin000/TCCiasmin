@@ -29,6 +29,9 @@ body {
   /* Se desejar, você também pode adicionar outros estilos ao body, como cor de texto */
   color: #000000; /* Cor do texto */
 }
+p{
+  text-align: justify;
+}
 .image-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
