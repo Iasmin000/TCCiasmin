@@ -38,7 +38,7 @@ body {
   align-items: center; 
 }
 .image img {
-  max-width: 100%; 
+  max-width: 70%; 
   height: auto; 
   margin-right: 10px; 
 }
