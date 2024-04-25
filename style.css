@@ -33,21 +33,34 @@ body {
 
 .image-description {
   font-size: 14px;
+  text-align: justify;
    
 }
-
-/* Media Query para ajustar o layout em telas menores */
 @media screen and (max-width: 768px) {
   .image-grid {
-      grid-template-columns: repeat(2, 1fr); /* Duas colunas em telas menores */
+      grid-template-columns: repeat(3, 1fr); 
   }
 }
 
 @media screen and (max-width: 480px) {
   .image-grid {
-      grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+      grid-template-columns: 1fr; 
   }
 }
 .conteudo{
   margin-left: 2%;
+}
+p{
+  text-align: justify;
+}
+nav {
+  background-color: hsl(323, 74%, 82%);
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+}
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px;
 }
