@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasia</title>
+    <style>
+        .header {
+ 
+  padding: 20px;
+  text-align: center;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('https://i.postimg.cc/MT7n1G9m/fundo-do-site.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center; 
+  color: #000000; 
+}
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  grid-gap: 20px; 
+}
+
+.image {
+  display: flex;
+  align-items: center; 
+}
+
+.image img {
+  max-width: 50%; 
+  height: auto; 
+  margin-right: 10px; 
+}
+
+.image-description {
+  font-size: 14px;
+   
+}
+@media screen and (max-width: 768px) {
+  .image-grid {
+      grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .image-grid {
+      grid-template-columns: 1fr; 
+  }
+}
+.conteudo{
+  margin-left: 2%;
+}
+p{
+  text-align: justify;
+}
+nav {
+  background-color:#cf83e6;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+}
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px;
+}
+    </style>
+</head>
+<body>
+    <main></main>
+    <div class="header">
+        <h1>Fantasia</h1>
+      </div> 
+      <nav>
+          <a href="index.html">Home</a>
+          <a href="fantasia.html">Fantasia</a>
+          <a href="#romance">Romance</a> 
+          <a href="#poesia">Poesia</a> 
+      </nav>
+      <div class="conteudo">
+        <p>Aqui temos alguns livros de fantasia, dentro desse gênero podemos ver elementos sobrenaturais, extraordinários ou surreais.</p> 
+        <div class="image-grid">
+            <div class="image">
+                <img src="#" alt="Imagem 1">
+                <div class="image-description">Jude tinha 7 anos quando seus pais foram assassinados e foi forçada a viver no Reino das Fadas. Dez anos depois, tudo o que ela quer é ser como eles – lindos e imortais – e realmente pertencer ao Reino das Fadas, apesar de sua mortalidade. Mas muitos do povo das Fadas desprezam os humanos.</div>
+            </div>
+            <div class="image">
+                <img src="#" alt="Imagem 2">
+                <div class="image-description">
+                    Freddy Riley está presa em um ciclo de términos e recomeços com Laura Dean, uma garota popular e atraente, mas também insensível e cruel. Freddy se sente perdida enquanto seus amigos não entendem sua persistência em voltar para Laura. Seu coração está se partindo lentamente e sua autoestima está em frangalhos. No entanto, uma consulta com uma vidente misteriosa oferece a Freddy um conselho que pode mudar sua história para sempre.
+                </div>
+            </div>
+            <div class="image">
+                <img src="#" alt="Imagem 3">
+                <div class="image-description">Percy Jackson, de doze anos, enfrenta a iminente expulsão de seu internato devido aos problemas constantes. Quando um valentão ameaça seu melhor amigo e seu professor se transforma em um monstro, Percy se vê obrigado a reagir. No entanto, ninguém acredita nele, nem mesmo ele mesmo. Tudo muda quando ele é perseguido pelo Minotauro até um acampamento de verão, onde descobre que criaturas míticas saíram das páginas dos livros de mitologia grega para sua vida real. Os deuses do Monte Olimpo estão vivos no século 21, e Percy se vê no centro de uma trama quando o raio mestre de Zeus é roubado, tornando-o o principal suspeito.</div>
+            </div>
+        </div><br>
+    </main>
+</body>
+</html>
