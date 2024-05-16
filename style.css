@@ -13,11 +13,6 @@ body {
   background-position: center; 
   color: #000000; 
 }
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 2%
-}
 .image-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
@@ -28,19 +23,22 @@ body {
   display: flex;
   align-items: center; 
 }
+
 .image img {
   max-width: 50%; 
   height: auto; 
-  margin-right: 10px;
-  flex: 1 0 25%; /* 25% width for each column */
-  margin: 10px;
-  text-align: center;
-} 
+  margin-right: 10px; 
+}
 
 .image-description {
   font-size: 14px;
+   
 }
-
+@media screen and (max-width: 1024px) {
+  .image-grid {
+      grid-template-columns: repeat(4, 1fr); 
+  }
+}
 @media screen and (max-width: 768px) {
   .image-grid {
       grid-template-columns: repeat(2, 1fr); 
@@ -51,12 +49,14 @@ body {
       grid-template-columns: 1fr; 
   }
 }
-
+.conteudo{
+  margin-left: 2%;
+}
 p{
   text-align: justify;
 }
 nav {
-  background-color: hsl(323, 55%, 37%);
+  background-color: hsl(323, 74%, 82%);
   color: #ffffff;
   padding: 10px;
   text-align: center;
