@@ -31,11 +31,7 @@ body {
 .image-description {
   font-size: 14px;
 }
-@media screen and (max-width: 1024px) {
-  .image-grid {
-      grid-template-columns: repeat(3, 1fr); 
-  }
-}
+
 @media screen and (max-width: 768px) {
   .image-grid {
       grid-template-columns: repeat(2, 1fr); 
