@@ -30,17 +30,25 @@ body {
   display: flex;
   align-items: center; 
 }
+
 .image img {
   max-width: 50%; 
   height: auto; 
   margin-right: 10px; 
 }
+
 .image-description {
   font-size: 14px;
+   
+}
+@media screen and (max-width: 1024px) {
+  .image-grid {
+      grid-template-columns: repeat(4, 1fr); 
+  }
 }
 @media screen and (max-width: 768px) {
   .image-grid {
-      grid-template-columns: repeat(3, 1fr); 
+      grid-template-columns: repeat(2, 1fr); 
   }
 }
 @media screen and (max-width: 480px) {
@@ -95,7 +103,12 @@ nav a {
                             <img src="https://i.postimg.cc/v82HGhkx/chorar-de-alegria.jpg" alt="Imagem 3">
                             <div class="image-description">Chorar de alegria explora as muitas nuances dos complexos relacionamentos humanos e do que significa ser mulher no cenário atual. Com as poéticas ilustrações de Brunna Mancuso, este livro é uma mensagem de esperança – a esperança de que, se a vida nos der motivos pra chorar, que seja de alegria.</div>
                         </div>
+                        <div class="image">
+                          <img src="https://i.postimg.cc/kX8rLymm/voz-da-sereia-volta.jpg" alt="Imagem 3">
+                          <div class="image-description">A sereia é conhecida por seu canto misterioso capaz de atrair marinheiros curiosos para a sua morte. No entanto, por trás desses mitos equivocados estão contos de escapismo e cura que Lovelace tece ao longo desta poderosa coletânea de poemas.</div>
+                      </div>
                     </div><br>
+
                     <div class="image-grid">
                         <div class="image">
                             <img src="https://i.postimg.cc/cLHHQj3m/a-prinsesa-salva-a-si-mesma-nesse-livro.jpg" alt="Imagem 1">
@@ -109,8 +122,12 @@ nav a {
                         </div>
                         </div>
                         <div class="image">
-                            <img src="https://i.postimg.cc/kX8rLymm/voz-da-sereia-volta.jpg" alt="Imagem 3">
-                            <div class="image-description">A sereia é conhecida por seu canto misterioso capaz de atrair marinheiros curiosos para a sua morte. No entanto, por trás desses mitos equivocados estão contos de escapismo e cura que Lovelace tece ao longo desta poderosa coletânea de poemas.</div>
+                            <img src="https://i.postimg.cc/xdysGSd4/o-que-o-sol-faz-com-as-flores.jpg" alt="Imagem 3">
+                            <div class="image-description">expatriação e o amadurecimento até encontrar um lar dentro de você. Organizado em cinco partes e ilustrado por Rupi Kaur, o livro percorre uma extraordinária jornada dividida em murchar, cair, enraizar, crescer, florescer. uma celebração do amor em todas as suas formas.</div>
+                        </div>
+                        <div class="image">
+                            <img src="https://i.postimg.cc/s2R6Z23W/meu-corpo-minha-casa.jpg" alt="Imagem 3">
+                            <div class="image-description">os poemas dessa coletânea, ilustrada pela autora, inspiram uma conversa interna em cada uma, em cada um, lembrando que precisamos nos preencher de amor, de aceitação e de confiança em nossas relações familiares e de comunidade. e, sempre, que precisamos estar de braços abertos para as mudanças em nossas vidas.</div>
                         </div>
                     </div><br>
                 </div>                     

@@ -30,17 +30,25 @@ body {
   display: flex;
   align-items: center; 
 }
+
 .image img {
   max-width: 50%; 
   height: auto; 
   margin-right: 10px; 
 }
+
 .image-description {
   font-size: 14px;
+   
+}
+@media screen and (max-width: 1024px) {
+  .image-grid {
+      grid-template-columns: repeat(4, 1fr); 
+  }
 }
 @media screen and (max-width: 768px) {
   .image-grid {
-      grid-template-columns: repeat(3, 1fr); 
+      grid-template-columns: repeat(2, 1fr); 
   }
 }
 @media screen and (max-width: 480px) {
@@ -79,7 +87,8 @@ nav a {
               </nav>
               <div class="conteudo">
                 <p>Um romance pode ter um conteúdo fictício ou mesclado com a realidade. Sendo nesse caso nada mais é do que um caso de amor entre pessoas.</p> 
-                    <div class="image-grid">
+                    
+                <div class="image-grid">
                         <div class="image">
                             <img src="https://i.postimg.cc/DyNRHT1M/a-princesa-adormecida.jpg" alt="Imagem 1">
                             <div class="image-description">
@@ -95,14 +104,19 @@ nav a {
                             <img src="https://i.postimg.cc/hGLwXQ6k/Amor-e-gelado.jpg" alt="Imagem 3">
                             <div class="image-description">Depois da morte da mãe, Lina fica com a missão de realizar um último pedido: ir até a Itália para conhecer o pai. Do dia para a noite, ela se vê na famosa paisagem da Toscana, apesar de tudo  o que Lina mais quer é ir embora correndo dali. Mas as coisas começam a mudar quando ela recebe um antigo diário da mãe e no meio de um turbilhão de emoções, Lina ainda conhece Ren e Thomas, dois meninos lindos que vão mexer ainda mais com seu coração.</div>
                         </div>
-                    </div><br>
-
-                    <div class="image-grid">
-                      <div class="image">
+                        <div class="image">
                           <img src="https://i.postimg.cc/SQTPYh1x/um-farsa-de-amor-na-espanha.jpg" alt="Imagem 1">
                           <div class="image-description">
                             Catalina Martín é uma jovem espanhola que trabalha como engenheira em Nova York. Com o casamento da irmã se aproximando, ela precisa desesperadamente de um acompanhante, porque não quer encarar sozinha toda a família e, principalmente, o irmão do noivo, que é ninguém menos do que seu ex</div>
                       </div>
+                    </div><br>
+
+                    <div class="image-grid">
+                      <div class="image">
+                        <img src="https://i.postimg.cc/brs39ZVN/luzes-do-norte.jpg" alt="Imagem 1">
+                        <div class="image-description">
+                          Dimitria Coromandel, uma caçadora talentosa, torna-se a provedora de sua família após a morte dos pais. Sua vida muda quando é contratada para proteger Aurora, da rica família Van Vintermer. Enquanto acompanha Aurora, Dimitria se vê dividida entre seu trabalho, sentimentos crescentes por ela e ajudar seu irmão a conquistar o coração de Aurora, tudo isso enquanto enfrenta o desafio de caçar um assassino de crianças na região.</div>
+                    </div>
                       <div class="image">
                         <div class="image">
                           <img src="https://i.postimg.cc/8P70h0xB/todo-esse-tempo.jpg" alt="Imagem 3">
@@ -114,43 +128,36 @@ nav a {
                           <div class="image-description">Emma Blair casou-se com seu namorado do colegial, Jesse, aos vinte anos, construindo uma vida cheia de aventuras ao redor do mundo. Uma tragédia separa o casal, mas anos depois, Emma encontra amor novamente com seu amigo de infância, Sam. Quando eles ficam noivos, Jesse, dado como morto, reaparece. Agora, Emma enfrenta um dilema entre seu marido ressurgido e seu noivo atual, enquanto busca entender seus próprios desejos e proteger quem ama.
                           </div>
                       </div>
-
-                  </div><br>
-                  <div class="image-grid">
-                    <div class="image">
-                        <img src="https://i.postimg.cc/brs39ZVN/luzes-do-norte.jpg" alt="Imagem 1">
-                        <div class="image-description">
-                          Dimitria Coromandel, uma caçadora talentosa, torna-se a provedora de sua família após a morte dos pais. Sua vida muda quando é contratada para proteger Aurora, da rica família Van Vintermer. Enquanto acompanha Aurora, Dimitria se vê dividida entre seu trabalho, sentimentos crescentes por ela e ajudar seu irmão a conquistar o coração de Aurora, tudo isso enquanto enfrenta o desafio de caçar um assassino de crianças na região.</div>
-                    </div>
-                    <div class="image">
                       <div class="image">
-                        <img src="https://i.postimg.cc/1X2MCyb0/princesas-das-aguas.jpg" alt="Imagem 3">
-                        <div class="image-description">Arielle Botrel é uma nadadora famosa, prestes a viver o maior desafio de sua vida: participar das Olimpíadas pela primeira vez. Porém, ao contrário do que todos pensam, ela não possui tudo que deseja. Por ser a filha caçula de uma grande família, a garota é muito protegida e, apesar das medalhas e dos troféus, sonha com uma vida diferente, onde possa ser livre. Até que um dia um acidente faz tudo mudar. Arielle é apresentada a um mundo diferente... </div>
-                    </div>
-                    </div>
+                        <div class="image">
+                          <img src="https://i.postimg.cc/1X2MCyb0/princesas-das-aguas.jpg" alt="Imagem 3">
+                          <div class="image-description">Arielle Botrel é uma nadadora famosa, prestes a viver o maior desafio de sua vida: participar das Olimpíadas pela primeira vez. Porém, ao contrário do que todos pensam, ela não possui tudo que deseja. Por ser a filha caçula de uma grande família, a garota é muito protegida e, apesar das medalhas e dos troféus, sonha com uma vida diferente, onde possa ser livre. Até que um dia um acidente faz tudo mudar. Arielle é apresentada a um mundo diferente... </div>
+                      </div>
+                      </div>
+                  </div><br>
+
+                  <div class="image-grid">
                     <div class="image">
                         <img src="https://i.postimg.cc/rpMjYnZH/o-amor-n-o-e-obvio.jpg" alt="Imagem 3">
                         <div class="image-description"> Iris, é uma adolescente, viciada na novela "Amor em Atos" e assistindo a todos os dias com , Dona Símia, que se tornou sua segunda melhor amiga. Isso causando ciúmes em Poliana, sua primeira melhor amiga, que está preocupada com a falta de interesse de Íris em  festa de formatura. Mas a situação muda quando Cadu Sena, fica solteiro. Íris decide investigar a razão pela qual a namorada de Cadu o deixou por uma garota chamada ÉdraNorr. Durante sua investigação, Íris se encanta por Édra, revelando que o amor pode ser mais complexo do que ela imaginava.</div>
                     </div>
-                </div><br>
-                <div class="image-grid">
                     <div class="image">
-                        <img src="https://i.postimg.cc/9QSTy4Pf/50af41fceb1b167b29ee968cd3c2721c.jpg" alt="Imagem 1">
-                        <div class="image-description">
-                        Stella Grant, uma adolescente com fibrose cística, segue uma rotina rigorosa para controlar sua condição. Seu objetivo principal é garantir a felicidade de seus pais e obter um transplante de pulmão. No entanto, para ser considerada para o transplante, ela deve evitar infecções, mantendo uma distância de dois metros de outros pacientes com a mesma doença. Então ela conhece Will que anseia por liberdade, e juntos irão viver um amor impossível
-                        </div>
-                    </div>
+                      <img src="https://i.postimg.cc/9QSTy4Pf/50af41fceb1b167b29ee968cd3c2721c.jpg" alt="Imagem 1">
+                      <div class="image-description">
+                      Stella Grant, uma adolescente com fibrose cística, segue uma rotina rigorosa para controlar sua condição. Seu objetivo principal é garantir a felicidade de seus pais e obter um transplante de pulmão. No entanto, para ser considerada para o transplante, ela deve evitar infecções, mantendo uma distância de dois metros de outros pacientes com a mesma doença. Então ela conhece Will que anseia por liberdade, e juntos irão viver um amor impossível
+                      </div>
+                  </div>
+                  <div class="image">
                     <div class="image">
-                      <div class="image">
-                        <img src="https://i.postimg.cc/cJn3hsTB/imperfeitos.jpg" alt="Imagem 3">
-                        <div class="image-description">Olive, uma mulher que se sente azarada em todos os aspectos da vida, tem sua sorte mudada quando sua alergia a frutos do mar a protege de uma intoxicação alimentar em um casamento. Juntamente com Ethan, o irmão do noivo e inimigo mortal devido a um passado conturbado, eles acabam compartilhando uma lua-de-mel no Havaí. Enquanto tentam evitar um ao outro, uma pequena mentira cresce, levando-os a compartilhar a mesma suíte. Com diálogos perspicazes e belos cenários, "Imperfeitos" é uma história envolvente que mescla humor, sarcasmo e um romance improvável. </div>
-                    </div>
-                    </div>
-                    <div class="image">
-                        <img src="https://i.postimg.cc/tTGxmLMQ/duff.jpg" alt="Imagem 3">
-                        <div class="image-description"> Bianca Piper é a DUFF - a Designated Ugly Fat Friend - em seu grupo de amigas, aquela que não se destaca. Quando Wesley Rush, o pegador da escola, sugere que ser amigável com a DUFF o ajudaria com suas amigas, Bianca começa a questionar sua posição. Enquanto lida com problemas familiares. Com o tempo, Bianca e Wesley descobrem que as aparências podem enganar, e Bianca amadurece ao enfrentar seus problemas e questionar os rótulos impostos pela sociedade.</div>
-                    </div>
-                </div><br>
+                      <img src="https://i.postimg.cc/cJn3hsTB/imperfeitos.jpg" alt="Imagem 3">
+                      <div class="image-description">Olive, uma mulher que se sente azarada em todos os aspectos da vida, tem sua sorte mudada quando sua alergia a frutos do mar a protege de uma intoxicação alimentar em um casamento. Juntamente com Ethan, o irmão do noivo e inimigo mortal devido a um passado conturbado, eles acabam compartilhando uma lua-de-mel no Havaí. Enquanto tentam evitar um ao outro, uma pequena mentira cresce, levando-os a compartilhar a mesma suíte. Com diálogos perspicazes e belos cenários, "Imperfeitos" é uma história envolvente que mescla humor, sarcasmo e um romance improvável. </div>
+                  </div>
+                  </div>
+                  <div class="image">
+                      <img src="https://i.postimg.cc/tTGxmLMQ/duff.jpg" alt="Imagem 3">
+                      <div class="image-description"> Bianca Piper é a DUFF - a Designated Ugly Fat Friend - em seu grupo de amigas, aquela que não se destaca. Quando Wesley Rush, o pegador da escola, sugere que ser amigável com a DUFF o ajudaria com suas amigas, Bianca começa a questionar sua posição. Enquanto lida com problemas familiares. Com o tempo, Bianca e Wesley descobrem que as aparências podem enganar, e Bianca amadurece ao enfrentar seus problemas e questionar os rótulos impostos pela sociedade.</div>
+                  </div>
+                  </div><br>
 
                 <div class="image-grid">
                   <div class="image">
@@ -170,14 +177,20 @@ nav a {
                       <div class="image-description"> Leon, enfrentando problemas financeiros, decide alugar seu apartamento em horários específicos para conseguir dinheiro rápido. Ele compartilha o espaço com Tiffy, uma mulher que trabalha durante o dia e precisa de um lugar para morar. Eles nunca se encontraram pessoalmente, mas fecham um contrato de seis meses. Para se comunicarem, deixam mensagens em Post-its pela casa. No entanto, desafios surgem quando problemas do passado, relações complicadas e empregos exigentes entram em jogo.
                       </div>
                   </div>
+                  <div class="image">
+                    <div class="image">
+                      <img src="https://i.postimg.cc/K8FC308p/54b57a1995b25a79a887b2abd53c3b7e.jpg" alt="Imagem 1">
+                      <div class="image-description">Os Sete Maridos de Evelyn Hugo é um livro de ficção histórica, escrito por Taylor Jenkins Reid e publicado pela Atria Books em 2017. O romance conta a história da estrela fictícia da ‘Antiga Hollywood’, Evelyn Hugo, que, aos 79 anos, dá uma última entrevista a uma jornalista desconhecida, Monique Grant.</div>
+                  </div>
+                  </div>
               </div><br>
+
               <div class="image-grid">
                 <div class="image">
                   <div class="image">
-                    <img src="https://i.postimg.cc/K8FC308p/54b57a1995b25a79a887b2abd53c3b7e.jpg" alt="Imagem 1">
-                    <div class="image-description">Os Sete Maridos de Evelyn Hugo é um livro de ficção histórica, escrito por Taylor Jenkins Reid e publicado pela Atria Books em 2017. O romance conta a história da estrela fictícia da ‘Antiga Hollywood’, Evelyn Hugo, que, aos 79 anos, dá uma última entrevista a uma jornalista desconhecida, Monique Grant.</div>
+                    <img src="https://i.postimg.cc/nLYVfMdc/2704eaa6da63c5ed4dd2707c8a228960.jpg" alt="Imagem 3">
+                    <div class="image-description">Felipe e Caio desde crianças sempre viveram juntos, até que ao chegarem na adolescência, a amizade entre os dois foi enfraquecida. Só que tudo está prestes a mudar, quando as férias do meio do ano de Felipe iniciam e ele recebe a surpresa de que seu vizinho do 57, o Caio, irá passar 15 dias na sua casa.</div>
                 </div>
-                    
                 </div>
                 <div class="image">
                   <div class="image">
@@ -186,9 +199,13 @@ nav a {
                 </div>
                 </div>
                 <div class="image">
+                  <img src="https://i.postimg.cc/9XNmh6BT/divinos-rivais.jpg" alt="Imagem 3">
+                  <div class="image-description"> Iris Winnow é uma jornalista de 18 anos que sonha em conquistar a vaga de colunista no jornal em que trabalha, a Gazeta de Oath. Em meio a uma guerra entre poderosos deuses ela luta para ajudar sua mãe, que sofre para superar um vício, e para encontrar o irmão, que está desaparecido em meio às trincheiras da guerra.</div>
+              </div>
+
+                <div class="image">
                     <img src="https://i.postimg.cc/pTRR1HKF/um-ver-o-inesquesivel.jpg" alt="Imagem 3">
                     <div class="image-description"> Larissa sempre teve olhos apenas para Chase Harding e ele finalmente começou a prestar atenção nela. E não foi obrigado nem nada. Mas o momento não poderia ser mais inoportuno, porque agora ela não consegue tirar da cabeça os dias de verão um tanto quanto confusos, românticos e estranhamente perfeitos que viveu com uma garota chamada Jasmine. As coisas ficam ainda mais esquisitas quando Lara descobre que Jasmine se transferiu para sua escola e percebe que a garota parece disposta a esquecer tudo o que aconteceu entre elas.
-                      
                     </div>
                 </div>
               </div>
