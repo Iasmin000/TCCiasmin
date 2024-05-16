@@ -1,48 +1,53 @@
 .header {
+  background-color:#ffe3f3;
   padding: 20px;
   text-align: center;
-  background-color: #ffe3f3;
 }
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-image: url('https://i.postimg.cc/DzWFWz4S/d678430120ce89e367db5291f6eb8863.jpg');
-  background-size: cover; 
-  background-repeat: no-repeat;
-  background-position: center; 
-  color: #000000; 
+  background-size: cover; /* Redimensionar a imagem para cobrir todo o elemento */
+  background-repeat: no-repeat; /* Evitar que a imagem se repita */
+  background-position: center; /* Centralizar a imagem */
+  /* Se desejar, você também pode adicionar outros estilos ao body, como cor de texto */
+  color: #000000; /* Cor do texto */
+}
+table, th, td {
+  border: 1px solid black;
+  
 }
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-  grid-gap: 20px; 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
+  grid-gap: 20px; /* Espaçamento entre as imagens */
 }
 
 .image {
   display: flex;
-  align-items: center; 
+  align-items: center; /* Alinhar a imagem e a descrição verticalmente */
 }
+
 .image img {
-  max-width: 50%; 
-  height: auto; 
-  margin-right: 10px; 
+  max-width: 50%; /* Largura máxima das imagens */
+  height: auto; /* Altura automática para manter a proporção */
+  margin-right: 15px; /* Espaçamento entre a imagem e a descrição */
 }
+
 .image-description {
   font-size: 14px;
-}
-@media screen and (max-width: 768px) {
+   
+}@media screen and (max-width: 1024px) {
   .image-grid {
-      grid-template-columns: repeat(2, 1fr); 
-      grid-template-columns: repeat(3, 1fr); 
+      grid-template-columns: repeat(4, 1fr); 
   }
 }
 
 @media screen and (max-width: 480px) {
   .image-grid {
       grid-template-columns: 1fr; 
-      grid-template-columns: 1fr;
-}
+  }
 }
 .conteudo{
   margin-left: 2%;
