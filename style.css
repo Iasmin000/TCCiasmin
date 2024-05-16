@@ -33,7 +33,7 @@ body {
 }
 @media screen and (max-width: 1024px) {
   .image-grid {
-      grid-template-columns: repeat(4, 1fr); 
+      grid-template-columns: repeat(3, 1fr); 
   }
 }
 @media screen and (max-width: 768px) {
