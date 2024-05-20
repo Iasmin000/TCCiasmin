@@ -5,82 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fantasia</title>
     <style>
+@media screen and (min-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 480px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+}
 .header {
-            padding: 20px;
-            text-align: center;
-            background-color: #ffe3f3;
-        }
+  background-color: #ffe3f3;
+  padding: 20px;
+  text-align: center;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('https://i.postimg.cc/DzWFWz4S/d678430120ce89e367db5291f6eb8863.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #000000;
+}
+.table,
+th,
+td {
+  border: 1px solid black;
+}
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+.image {
+  display: flex;
+  align-items: center;
+}
+.image img {
+  max-width: 50%;
+  height: auto;
+  margin-right: 15px;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('https://i.postimg.cc/DzWFWz4S/d678430120ce89e367db5291f6eb8863.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            color: #000000;
-        }
-
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            grid-gap: 20px;
-        }
-
-        .image {
-            display: flex;
-            align-items: center;
-        }
-
-        .image img {
-            max-width: 50%; 
-            height: auto;
-            margin-right: 10px;
-        }
-
-        .image-description {
-            font-size: 14px;
-        }
-
-        @media screen and (max-width: 1024px) {
-            .image-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            .image-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .image-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .conteudo {
-            margin-left: 2%;
-        }
-
-        p {
-            text-align: justify;
-        }
-
-        nav {
-            background-color: hsl(323, 74%, 82%);
-            color: #ffffff;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            padding: 10px;
-        }
+.image-description {
+  font-size: 14px;
+}
+.conteudo {
+  margin-left: 2%;
+}
+p {
+  text-align: justify;
+}
+nav {
+  background-color: hsl(323, 74%, 82%);
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+}
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px;
+}
     </style>
 </head>
 <body>
