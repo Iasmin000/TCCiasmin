@@ -5,35 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poesia</title>
     <style>
-@media screen and (min-width: 768px) {
-  .image-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100px; /* Altura da imagem */
 }
-@media screen and (max-width: 480px) {
-  .image-grid {
-    grid-template-columns: 1fr;
-  }
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.header {
-  background-color: #ffe3f3;
-  padding: 20px;
+.banner .texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 253, 253);
+  font-size: 24px;
+  font-weight: bold;
   text-align: center;
 }
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url('https://i.postimg.cc/DzWFWz4S/d678430120ce89e367db5291f6eb8863.jpg');
+  background-image: url('https://i.postimg.cc/MTK35Csm/fbce153816e3495e92f5d41c54df451f.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   color: #000000;
-}
-.table,
-th,
-td {
-  border: 1px solid black;
 }
 .image-grid {
   display: grid;
@@ -48,19 +48,24 @@ td {
   max-width: 50%;
   height: auto;
   margin-right: 15px;
+  transition: transform 0.4s ease; /* Adicionando transição de transformação */
 }
 
+.image:hover img {
+  transform: scale(1.1); /* Aumenta a escala ao passar o mouse */
+}
 .image-description {
   font-size: 14px;
 }
 .conteudo {
-  margin-left: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 p {
   text-align: justify;
 }
 nav {
-  background-color: hsl(323, 74%, 82%);
+  background-color: hsl(342, 89%, 75%);
   color: #ffffff;
   padding: 10px;
   text-align: center;
@@ -70,13 +75,23 @@ nav a {
   text-decoration: none;
   padding: 10px;
 }
+.elemento {
+  transition: background-color 0.3s ease;
+}
+
+.elemento:hover {
+  background-color: rgb(255, 234, 248);
+}
  </style>
 </head>
     <body>
         <main>
-            <div class="header">
-                <h1>Poesia</h1>
-              </div> 
+          <div class="banner">
+            <img src="https://i.postimg.cc/xT08RtYT/49d2cd7a75c32dae4333fe8f15977729.jpg" alt="Imagem do Banner">
+            <div class="texto">
+                Poesia
+            </div>
+        </div> 
               <nav>
                   <a href="index.html">Home</a>
                   <a href="fantasia.html">Fantasia</a> 
@@ -127,6 +142,30 @@ nav a {
                             <div class="image-description">os poemas dessa coletânea, ilustrada pela autora, inspiram uma conversa interna em cada uma, em cada um, lembrando que precisamos nos preencher de amor, de aceitação e de confiança em nossas relações familiares e de comunidade. e, sempre, que precisamos estar de braços abertos para as mudanças em nossas vidas.</div>
                         </div>
                     </div><br>
+
+                    
+                    <div class="image-grid">
+                      <div class="image">
+                          <img src="https://i.postimg.cc/cLHHQj3m/a-prinsesa-salva-a-si-mesma-nesse-livro.jpg" alt="Imagem 1">
+                          <div class="image-description">
+                              Esta é uma obra sobre amor, perda, sofrimento, redenção, empoderamento e inspiração. Dividido em quatro partes ("A princesa", "A donzela", "A rainha" e "Você"), o livro combina o imaginário dos contos de fada à realidade feminina do século XXI com delicadeza, emoção e contundência.</div>
+                      </div>
+                      <div class="image">
+                        <div class="image">
+                          <img src="https://i.postimg.cc/tCGWNXRz/a-bruxa-nao-vai-para-a-fogueira.jpg" alt="Imagem 3">
+                          <div class="image-description">Aqueles que consideram bruxa um xingamento não poderiam estar mais enganados bruxas são mulheres capazes de incendiar o mundo ao seu redor. Resgatando essa imagem ancestral da figura feminina naturalmente poderosa, independente e, agora, indestrutível, Amanda Lovelace aprofunda a combinação de contundência e lirismo.</div>
+                      </div>
+                      </div>
+                      <div class="image">
+                          <img src="https://i.postimg.cc/xdysGSd4/o-que-o-sol-faz-com-as-flores.jpg" alt="Imagem 3">
+                          <div class="image-description">expatriação e o amadurecimento até encontrar um lar dentro de você. Organizado em cinco partes e ilustrado por Rupi Kaur, o livro percorre uma extraordinária jornada dividida em murchar, cair, enraizar, crescer, florescer. uma celebração do amor em todas as suas formas.</div>
+                      </div>
+                      <div class="image">
+                          <img src="https://i.postimg.cc/s2R6Z23W/meu-corpo-minha-casa.jpg" alt="Imagem 3">
+                          <div class="image-description">os poemas dessa coletânea, ilustrada pela autora, inspiram uma conversa interna em cada uma, em cada um, lembrando que precisamos nos preencher de amor, de aceitação e de confiança em nossas relações familiares e de comunidade. e, sempre, que precisamos estar de braços abertos para as mudanças em nossas vidas.</div>
+                      </div>
+                  </div><br>
+                  
                 </div>                     
             </main>
         </body>
