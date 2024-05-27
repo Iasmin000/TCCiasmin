@@ -1,13 +1,4 @@
-@media screen and (min-width: 768px) {
-  .image-grid {
-    grid-template-columns: repeat(3, 1fr); /* Alteração para três colunas */
-  }
-}
-@media screen and (max-width: 480px) {
-  .image-grid {
-    grid-template-columns: 1fr;
-  }
-}
+
 .banner {
   position: relative;
   width: 100%;
@@ -40,7 +31,7 @@ body {
 }
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, minmax(300px, 1fr)); /* Duas colunas */
   grid-gap: 20px;
 }
 .image {
