@@ -1,4 +1,13 @@
-
+@media screen and (min-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 480px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+}
 .banner {
   position: relative;
   width: 100%;
@@ -29,9 +38,14 @@ body {
   background-position: center;
   color: #000000;
 }
+.table,
+th,
+td {
+  border: 1px solid black;
+}
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 1fr)); /* Duas colunas */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
 }
 .image {
@@ -68,6 +82,36 @@ nav a {
   color: #ffffff;
   text-decoration: none;
   padding: 10px;
+}
+.container {
+  width: 300px;
+  margin: 20px;
+  margin-right: auto; /* Para alinhar à esquerda, mantendo uma margem à direita */
+  margin-left: 0; /* Zerar a margem à esquerda */
+}
+form {
+  width: 100%;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+input[type="submit"] {
+  background-color: hsl(323, 74%, 82%);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: hsl(323, 74%, 82%);
 }
 .elemento {
   transition: background-color 0.3s ease;
