@@ -29,7 +29,7 @@
   text-align: center;
 }
 body {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-image: url('https://i.postimg.cc/MTK35Csm/fbce153816e3495e92f5d41c54df451f.jpg');
@@ -37,11 +37,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   color: #000000;
-}
-.table,
-th,
-td {
-  border: 1px solid black;
 }
 .image-grid {
   display: grid;
@@ -63,12 +58,11 @@ td {
   transform: scale(1.1); /* Aumenta a escala ao passar o mouse */
 }
 .image-description {
-  font-style: italic;
-  font-style:  10px;
+  font-size: 14px;
 }
 .conteudo {
-  margin-left: 1%;
-  margin-right: 1%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 p {
   text-align: justify;
