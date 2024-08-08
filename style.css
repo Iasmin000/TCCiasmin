@@ -79,11 +79,33 @@ nav a {
   text-decoration: none;
   padding: 10px;
 }
-.error {
-  color: red;
-  display: none;
-  margin-top: 5px;
+.container {
+  width: 300px;
+  margin: 20px;
+  margin-right: auto; /* Para alinhar à esquerda, mantendo uma margem à direita */
+  margin-left: 0; /* Zerar a margem à esquerda */
 }
-.form-group {
-  margin-bottom: 15px;
+form {
+  width: 100%;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+input[type="submit"] {
+  background-color: hsl(323, 74%, 82%);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: hsl(323, 74%, 82%);
 }
