@@ -1,46 +1,44 @@
-const form = document.getElementById('contactForm');
-const nameInput = document.getElementById('name');
-const emailInput = document.getElementById('email');
-const messageInput = document.getElementById('message');
-const nameError = document.getElementById('nameError');
-const emailError = document.getElementById('emailError');
-const messageError = document.getElementById('messageError');
-const submitBtn = document.querySelector('.submit-btn');
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    // Previne o envio do formulário para validação
+    event.preventDefault();
+    
+    // Obtém os elementos do formulário e mensagens de erro
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const messageError = document.getElementById('messageError');
 
-function validateForm() {
-    let valid = true;
-name
+   
+    let isValid = true;
+
+  
     if (nameInput.value.trim() === '') {
-        nameError.textContent = 'O nome é obrigatório.';
-        valid = false;
+        nameError.style.display = 'block';
+        isValid = false;
     } else {
-        nameError.textContent = '';
+        nameError.style.display = 'none';
     }
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(emailInput.value.trim())) {
-        emailError.textContent = 'Email inválido.';
-        valid = false;
+    
+    if (!emailInput.checkValidity()) {
+        emailError.style.display = 'block';
+        isValid = false;
     } else {
-        emailError.textContent = '';
+        emailError.style.display = 'none';
     }
 
     if (messageInput.value.trim() === '') {
-        messageError.textContent = 'A mensagem é obrigatória.';
-        valid = false;
+        messageError.style.display = 'block';
+        isValid = false;
     } else {
-        messageError.textContent = '';
+        messageError.style.display = 'none';
     }
 
-    submitBtn.disabled = !valid;
-
-    return valid;
-}
-
-form.addEventListener('input', validateForm);
-
-form.addEventListener('submit', function(event) {
-    if (!validateForm()) {
-        event.preventDefault();
+    if (isValid) {
+        alert('Formulário enviado com sucesso!');
+       
+        document.getElementById('contactForm').reset();
     }
 });

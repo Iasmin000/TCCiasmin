@@ -96,26 +96,28 @@
                                 <div class="image-description">A sereia é conhecida por seu canto misterioso capaz de atrair marinheiros curiosos para a sua morte. No entanto, por trás desses mitos equivocados estão contos de escapismo e cura que Lovelace tece ao longo desta poderosa coletânea de poemas.</div>
                             </div> 
                          </div><br>
-                         <div class="form-container">
-                            <form id="contactForm">
-                                <div class="form-group">
-                                    <label for="name">Nome:</label>
-                                    <input type="text" id="name" name="name" required>
-                                    <div id="nameError" class="error"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email:</label>
-                                    <input type="email" id="email" name="email" required>
-                                    <div id="emailError" class="error"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="message">Mensagem:</label>
-                                    <textarea id="message" name="message" rows="4" required></textarea>
-                                    <div id="messageError" class="error"></div>
-                                </div>
-                                <button type="submit" class="submit-btn">Enviar</button>
-                            </form>
-                        </div>
+                         <h1>Formulário de Contato</h1>
+                         <form id="contactForm">
+                             <div class="form-group">
+                                 <label for="name">Nome:</label>
+                                 <input type="text" id="name" name="name" required>
+                                 <div id="nameError" class="error">Por favor, insira seu nome.</div>
+                             </div>
+                             
+                             <div class="form-group">
+                                 <label for="email">Email:</label>
+                                 <input type="email" id="email" name="email" required>
+                                 <div id="emailError" class="error">Por favor, insira um email válido.</div>
+                             </div>
+                             
+                             <div class="form-group">
+                                 <label for="message">Mensagem:</label>
+                                 <textarea id="message" name="message" rows="4" required></textarea>
+                                 <div id="messageError" class="error">Por favor, insira sua mensagem.</div>
+                             </div>
+                             
+                             <button type="submit">Enviar</button>
+                         </form>
                 </div> 
                 </main>
             </body>
