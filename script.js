@@ -9,8 +9,7 @@ const submitBtn = document.querySelector('.submit-btn');
 
 function validateForm() {
     let valid = true;
-
-    // Validate name
+name
     if (nameInput.value.trim() === '') {
         nameError.textContent = 'O nome é obrigatório.';
         valid = false;
@@ -18,7 +17,6 @@ function validateForm() {
         nameError.textContent = '';
     }
 
-    // Validate email
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(emailInput.value.trim())) {
         emailError.textContent = 'Email inválido.';
@@ -27,7 +25,6 @@ function validateForm() {
         emailError.textContent = '';
     }
 
-    // Validate message
     if (messageInput.value.trim() === '') {
         messageError.textContent = 'A mensagem é obrigatória.';
         valid = false;
@@ -35,7 +32,6 @@ function validateForm() {
         messageError.textContent = '';
     }
 
-    // Enable or disable the submit button
     submitBtn.disabled = !valid;
 
     return valid;
