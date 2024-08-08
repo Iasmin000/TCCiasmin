@@ -79,40 +79,39 @@ nav a {
   text-decoration: none;
   padding: 10px;
 }
-.container {
-  width: 300px;
+body {
+  font-family: Arial, sans-serif;
   margin: 20px;
-  margin-right: auto; /* Para alinhar à esquerda, mantendo uma margem à direita */
-  margin-left: 0; /* Zerar a margem à esquerda */
 }
-form {
-  width: 100%;
+.form-container {
+  max-width: 400px;
+  margin: auto;
 }
-label {
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
   display: block;
   margin-bottom: 5px;
 }
-input, textarea {
+.form-group input, 
+.form-group textarea {
   width: 100%;
   padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
   box-sizing: border-box;
 }
-input[type="submit"] {
-  background-color: hsl(323, 74%, 82%);
-  color: white;
+.error {
+  color: red;
+  font-size: 0.875em;
+  margin-top: 5px;
+}
+.submit-btn {
+  padding: 10px 15px;
   border: none;
+  background-color: #007BFF;
+  color: white;
   cursor: pointer;
 }
-input[type="submit"]:hover {
-  background-color: hsl(323, 74%, 82%);
-}
-.elemento {
-  transition: background-color 0.3s ease;
-}
-
-.elemento:hover {
-  background-color: rgb(255, 234, 248);
+.submit-btn:disabled {
+  background-color: #6c757d;
 }
