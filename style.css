@@ -84,13 +84,13 @@ nav a {
   margin: 0 auto;
   padding: 20px;
   border-radius: 10px;
-  background-color: #494949;
+  background-color: #f7b2da;
   }
   
   
   form h2 {
   margin-top: 0;
-  color: #ffffff; 
+  color: #000000; 
   text-align: center;
   }
   
@@ -103,7 +103,7 @@ nav a {
   label {
   display: block;
   margin-bottom: 5px;
-  color: #000000; 
+  color: #d659ad; 
   }
   
   
@@ -131,7 +131,7 @@ nav a {
   
   
   button {
-  background-color: #990000; 
+  background-color: #f378c0; 
   color: #fff;
   
   padding: 10px 20px;
@@ -143,5 +143,5 @@ nav a {
   }
   
   button:hover {
-  background-color: #31b0d5;
+  background-color: #eec9e3;
   }
