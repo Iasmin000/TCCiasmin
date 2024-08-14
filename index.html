@@ -96,22 +96,30 @@
                                 <div class="image-description">A sereia é conhecida por seu canto misterioso capaz de atrair marinheiros curiosos para a sua morte. No entanto, por trás desses mitos equivocados estão contos de escapismo e cura que Lovelace tece ao longo desta poderosa coletânea de poemas.</div>
                             </div> 
                          </div><br>
-                         <h6>Deixe aqui suas recomenções de histórias</h6>
-                         <form action="https://formspree.io/f/xrbzzgav"
-                         method="post">
-                             <label for="nome">Nome:</label>
-                             <input type="text" id="nome" name="nome" required>
-                        
-                             <label for="email">E-mail:</label>
-                             <input type="email" id="email" name="email" required>
-                     
-                             <label for="mensagem">Mensagem:</label>
-                             <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-                     
-                             <input type="submit" value="Enviar">
-                         </form>
+                         <div class="form-container">
+                            <form id="form">
+                                <h2>Deixe aqui suas recomenções de histórias</h2>
+                                <form action="https://formspree.io/f/xrbzzgav"
+                                    method="post">
+                                <div class="form-group">
+                                    <label for="nome">Nome:</label>
+                                    <input type="text" id="nome" name="nome" required>
+                                    <span id="nome-error" class="error-message"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">E-mail:</label>
+                                    <input type="email" id="email" name="email" required>
+                                    <span id="email-error" class="error-message"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sugestoes">Sugestões:</label>
+                                    <textarea id="sugestoes" name="sugestoes" rows="4" placeholder="Digite suas sugestões aqui..."></textarea>
+                                </div>
+                                <button type="submit">Enviar</button>
+                            </form>
+                        </div>
                          
-                     </div>
+                    </div>
                          
                 </div> 
                 </main>
