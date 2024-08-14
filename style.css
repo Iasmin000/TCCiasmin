@@ -103,7 +103,7 @@ nav a {
   label {
   display: block;
   margin-bottom: 5px;
-  color: #e2e2e2; 
+  color: #d659ad; 
   }
   
   
@@ -131,7 +131,7 @@ nav a {
   
   
   button {
-  background-color: #e2a2c8; 
+  background-color: #f378c0; 
   color: #fff;
   
   padding: 10px 20px;
@@ -143,5 +143,5 @@ nav a {
   }
   
   button:hover {
-  background-color: #eec9e3;
+  background-color: #f7eef5;
   }
