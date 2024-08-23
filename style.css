@@ -79,3 +79,21 @@ nav a {
   text-decoration: none;
   padding: 10px;
 }
+estrela {
+  font-size: 2rem;
+  color: rgb(168, 166, 166);;
+  position: relative;
+  display: inline-block;
+}
+.estrela.amarela {
+  color: rgb(255, 166, 0);;
+}
+.meia-estrela::after {
+  content: '\2605'; 
+  color: rgb(255, 166, 0);;
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+  width: 50%;
+
+}
