@@ -4,7 +4,51 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Iasmin</title>
-            <link rel="stylesheet" href="style.css"> 
+            <link rel="stylesheet" href="style.css">
+            <style>
+                .container {
+          width: 300px;
+          margin: 20px;
+          margin-right: auto; /* Para alinhar à esquerda, mantendo uma margem à direita */
+          margin-left: 0; /* Zerar a margem à esquerda */
+        }
+        form {
+          width: 100%;
+        }
+        label {
+          display: block;
+          margin-bottom: 5px;
+        }
+        input, textarea {
+          width: 100%;
+          padding: 8px;
+          margin-bottom: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          box-sizing: border-box;
+        }
+        input[type="submit"] {
+          background-color: hsl(323, 74%, 82%);
+          color: white;
+          border: none;
+          cursor: pointer;
+        }
+        input[type="submit"]:hover {
+          background-color: hsl(323, 74%, 82%);
+        }
+        .elemento {
+          transition: background-color 0.3s ease;
+        }
+        
+        .elemento:hover {
+          background-color: rgb(255, 234, 248);
+        }
+        
+                .error {
+                    color: red;
+                    display: none;
+                }
+            </style> 
         </head>
             <body>
                 <main>
@@ -96,31 +140,57 @@
                                 <div class="image-description">A sereia é conhecida por seu canto misterioso capaz de atrair marinheiros curiosos para a sua morte. No entanto, por trás desses mitos equivocados estão contos de escapismo e cura que Lovelace tece ao longo desta poderosa coletânea de poemas.</div>
                             </div> 
                          </div><br>
-                         <div class="form-container">
-                            <form id="form">
-                                <h2>Deixe aqui suas recomenções de histórias</h2>
-                                <form action="https://formspree.io/f/xrbzzgav"
-                                    method="post">
-                                <div class="form-group">
-                                    <label for="nome">Nome:</label>
-                                    <input type="text" id="nome" name="nome" required>
-                                    <span id="nome-error" class="error-message"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">E-mail:</label>
-                                    <input type="email" id="email" name="email" required>
-                                    <span id="email-error" class="error-message"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="sugestoes">Sugestões:</label>
-                                    <textarea id="sugestoes" name="sugestoes" rows="4" placeholder="Digite suas sugestões aqui..."></textarea>
-                                </div>
-                                <button type="submit">Enviar</button>
-                            </form>
+                         <div class="container">
+                            <p>Deixe aqui suas recomenções de histórias</p>
+                        <form id="myForm" action="https://formspree.io/f/xrbzzgav" method="post" novalidate>
+
+                            <label for="nome">Nome:</label><br>
+                            <input type="text" id="nome" name="nome"><br>
+                            <span id="nomeError" class="error">Nome deve ter pelo menos 3 letras.</span><br>
+                        
+                            <label for="email">E-mail:</label><br>
+                            <input type="email" id="email" name="email"><br>
+                            <span id="emailError" class="error">E-mail deve conter um @.</span><br>
+                        
+                            <label for="mensagem">Mensagem:</label><br>
+                            <input type="text" id="mensagem" name="mensagem"><br>
+                            <span id="mensagemError" class="error">Mensagem deve ter pelo menos 5 letras.</span><br>
+                        
+                            <input type="submit" value="Enviar">
+                        </form>
                         </div>
-                         
-                    </div>
-                         
+                        
+                        <script>
+                            document.getElementById('myForm').addEventListener('input', function() {
+                           
+                                const nome = document.getElementById('nome');
+                                const nomeError = document.getElementById('nomeError');
+                                if (nome.value.length < 3) {
+                                    nomeError.style.display = 'inline';
+                                } else {
+                                    nomeError.style.display = 'none';
+                                }
+                                
+                             
+                                const email = document.getElementById('email');
+                                const emailError = document.getElementById('emailError');
+                                if (!email.value.includes('@')) {
+                                    emailError.style.display = 'inline';
+                                } else {
+                                    emailError.style.display = 'none';
+                                }
+                                
+                                const mensagem = document.getElementById('mensagem');
+                                const mensagemError = document.getElementById('mensagemError');
+                                if (mensagem.value.length < 5) {
+                                    mensagemError.style.display = 'inline';
+                                } else {
+                                    mensagemError.style.display = 'none';
+                                }
+                            });
+                        </script>
+                    </body>
+                    </html>  
                 </div> 
                 </main>
             </body>
