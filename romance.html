@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Romance</title>
     <style>
+
 @media screen and (min-width: 768px) {
-  .image-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+    .image-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
-@media screen and (max-width: 480px) {
-  .image-grid {
-    grid-template-columns: 1fr;
-  }
+
+@media screen and (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: repeat(4, 1fr); /* Mantenha o mesmo layout em telas menores */
+    }
 }
 .banner {
   position: relative;
@@ -47,8 +49,8 @@ body {
 }
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr); /* Definindo a grade para 4 colunas fixas */
 }
 .image {
   display: flex;
@@ -69,8 +71,8 @@ body {
   text-align: justify
 }
 .conteudo {
-  margin-left: 1%;
-  margin-right: 1%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 p {
   text-align: justify;
@@ -235,4 +237,4 @@ nav a {
               </div>
         </main>
     </body>
-</html>   
+</html>  
