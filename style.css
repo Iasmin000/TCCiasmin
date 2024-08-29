@@ -38,28 +38,37 @@ body {
   background-position: center;
   color: #000000;
 }
+
 .image-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
+  
 }
 .image {
   display: flex;
   align-items: center;
+  border-radius: 15px;
+  
 }
 .image img {
   max-width: 50%;
   height: auto;
   margin-right: 15px;
   transition: transform 0.4s ease; /* Adicionando transição de transformação */
+  border-radius: 8px; /* Arredonda os cantos das imagens */
+
 }
+
+
 
 .image:hover img {
   transform: scale(1.1); /* Aumenta a escala ao passar o mouse */
 }
 .image-description {
   font-size: 14px;
-  text-align: justify
+  text-align: justify;
+  text-align: left ;
 }
 .conteudo {
   margin-left: 10%;
@@ -79,7 +88,8 @@ nav a {
   text-decoration: none;
   padding: 10px;
 }
-estrela {
+
+.estrela {
   font-size: 2rem;
   color: rgb(168, 166, 166);;
   position: relative;

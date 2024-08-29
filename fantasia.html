@@ -59,6 +59,7 @@ body {
   height: auto;
   margin-right: 15px;
   transition: transform 0.4s ease; /* Adicionando transição de transformação */
+  border-radius: 8px;
 }
 
 .image:hover img {
@@ -66,11 +67,12 @@ body {
 }
 .image-description {
   font-size: 14px;
-  text-align: justify
+  text-align: justify;
+  text-align: left;
 }
 .conteudo {
-  margin-left: 1%;
-  margin-right: 1%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 p {
   text-align: justify;
@@ -92,6 +94,24 @@ nav a {
 
 .elemento:hover {
   background-color: rgb(255, 234, 248);
+}
+.estrela {
+  font-size: 2rem;
+  color: rgb(168, 166, 166);;
+  position: relative;
+  display: inline-block;
+}
+.estrela.amarela {
+  color: rgb(255, 166, 0);;
+}
+.meia-estrela::after {
+  content: '\2605'; 
+  color: rgb(255, 166, 0);;
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+  width: 50%;
+
 }
     </style>
 </head>
@@ -115,9 +135,9 @@ nav a {
               <div class="elemento">
                   <div class="image">
                   <img src="https://i.postimg.cc/pLJqzw0z/caraval.jpg" alt="Imagem 1">
-                  <div class="image-description">
-                  Scarlett  finalmente recebe o convite para o Caraval, mas sua  chance é ameaçada pelo controle de seu pai e um casamento arranjado. Sua irmã, Donatella, se une a um marinheiro  para ajudá-la a chegar ao Caraval, mas Tella é sequestrada .E Agora, ela está envolvida em algo perigoso onde precisa encontrar sua irmã antes dos outros.</div>
-                  </div>
+                  <div class="image-description">Scarlett  finalmente recebe o convite para o Caraval, mas sua  chance é ameaçada pelo controle de seu pai e um casamento arranjado. Sua irmã, Donatella, se une a um marinheiro  para ajudá-la a chegar ao Caraval, mas Tella é sequestrada .E Agora, ela está envolvida em algo perigoso onde precisa encontrar sua irmã antes dos outros.</div>
+                  
+                </div>
               </div>
              
               <div class="elemento">
@@ -144,10 +164,10 @@ nav a {
                   </div>
                 </div>
 
-            </div><br>
+           
 
               
-                <div class="image-grid">
+              
                   <div class="elemento">
                   <div class="image">
                     <div class="image">
@@ -181,9 +201,9 @@ nav a {
                 </div>
               </div>
 
-              </div><br>
+            
 
-              <div class="image-grid">
+           
                   <div class="elemento">
                     <div class="image">
                       <img src="https://i.postimg.cc/xdp6BmNt/percy-jakson.jpg" alt="Imagem 3">
@@ -211,10 +231,10 @@ nav a {
                   <div class="image-description">Os Renegados são um grupo de prodígios – humanos com habilidades extraordinárias – que emergiram das ruínas de uma sociedade em colapso. Foram eles que estabeleceram a paz onde, antes, o caos reinava. Desde então, os Renegados se tornaram um símbolo de esperança e coragem para todos...</div>
                </div>
               </div>
-            </div><br>
+          
 
 
-          <div class="image-grid">
+          
 
            
             <div class="image">
@@ -237,9 +257,9 @@ nav a {
             <img src="https://i.postimg.cc/yNFYb8Xg/c4ee0ff740b880fafe19e7170f3c1a83.jpg" alt="Imagem 1">
             <div class="image-description">Criada na loja de antiguidades de seu querido pai, cercada por lendas de seres poderosos e imortais, Evangeline Raposa cresceu acreditando em histórias de amores verdadeiros e em finais felizes. Mas essas crenças se veem abaladas quando a jovem descobre que o amor de sua vida está prestes a se casar com outra pessoa.</div>
         </div>
-        </div><br>
+        
 
-        <div class="image-grid">
+        
      
           <div class="image">
             <img src="https://i.postimg.cc/qM6YSSR1/neverynight.jpg" alt="Imagem 1">

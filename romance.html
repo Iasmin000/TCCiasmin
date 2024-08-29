@@ -5,22 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Romance</title>
     <style>
-@media (max-width: 1200px) {
-    .container {
-        grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas menores */
-    }
+@media screen and (min-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
-
-@media (max-width: 800px) {
-    .container {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas ainda menores */
-    }
-}
-
-@media (max-width: 500px) {
-    .container {
-        grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
-    }
+@media screen and (max-width: 480px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
 }
 .banner {
   position: relative;
@@ -66,6 +59,7 @@ body {
   height: auto;
   margin-right: 15px;
   transition: transform 0.4s ease; /* Adicionando transição de transformação */
+  border-radius: 8px;
 }
 
 .image:hover img {
@@ -73,7 +67,9 @@ body {
 }
 .image-description {
   font-size: 14px;
-  text-align: justify
+  text-align: justify;
+  text-align: left;
+  
 }
 .conteudo {
   margin-left: 10%;
@@ -223,35 +219,35 @@ nav a {
                   </div>
       
 
-                <div class="image">
                   <div class="image">
-                    <img src="https://i.postimg.cc/nLYVfMdc/2704eaa6da63c5ed4dd2707c8a228960.jpg" alt="Imagem 3">
-                    <div class="image-description">Felipe e Caio desde crianças sempre viveram juntos, até que ao chegarem na adolescência, a amizade entre os dois foi enfraquecida. Só que tudo está prestes a mudar, quando as férias do meio do ano de Felipe iniciam e ele recebe a surpresa de que seu vizinho do 57, o Caio, irá passar 15 dias na sua casa.</div>
-                </div>
-                </div>
+                    <div class="image">
+                      <img src="https://i.postimg.cc/nLYVfMdc/2704eaa6da63c5ed4dd2707c8a228960.jpg" alt="Imagem 3">
+                      <div class="image-description">Felipe e Caio desde crianças sempre viveram juntos, até que ao chegarem na adolescência, a amizade entre os dois foi enfraquecida. Só que tudo está prestes a mudar, quando as férias do meio do ano de Felipe iniciam e ele recebe a surpresa de que seu vizinho do 57, o Caio, irá passar 15 dias na sua casa.</div>
+                  </div>
+                  </div>
 
-                <div class="image">
                   <div class="image">
-                    <img src="https://i.postimg.cc/sfnsKbxM/vermelho-branco-e-sangue-azul.jpg" alt="Imagem 3">
-                    <div class="image-description">A mãe de Alex é eleita presidenta dos EUA, e tudo muda quando sua família é convidada para o casamento real do príncipe britânico Philip. Alex se vê tendo que lidar com lidar Henry, a quem ele não suporta. Após um encontro desastroso, os dois são forçados a fingir uma amizade, no entanto, essa farsa pode se transforma em algo inesperado
-                    </div>
-                </div>
-                </div>
-                
-                <div class="image">
+                    <div class="image">
+                      <img src="https://i.postimg.cc/sfnsKbxM/vermelho-branco-e-sangue-azul.jpg" alt="Imagem 3">
+                      <div class="image-description">A mãe de Alex é eleita presidenta dos EUA, e tudo muda quando sua família é convidada para o casamento real do príncipe britânico Philip. Alex se vê tendo que lidar com lidar Henry, a quem ele não suporta. Após um encontro desastroso, os dois são forçados a fingir uma amizade, no entanto, essa farsa pode se transforma em algo inesperado
+                      </div>
+                  </div>
+                  </div>
+                  
                   <div class="image">
-                    <img src="https://i.postimg.cc/9XNmh6BT/divinos-rivais.jpg" alt="Imagem 3">
-                    <div class="image-description">Iris Winnow é uma jornalista de 18 anos que sonha em conquistar a vaga de colunista no jornal em que trabalha, a Gazeta de Oath. Em meio a uma guerra entre poderosos deuses ela luta para ajudar sua mãe, que sofre para superar um vício, e para encontrar o irmão, que está desaparecido em meio às trincheiras da guerra.
-                    </div>
-                </div>
-                </div>
+                    <div class="image">
+                      <img src="https://i.postimg.cc/9XNmh6BT/divinos-rivais.jpg" alt="Imagem 3">
+                      <div class="image-description">Iris Winnow é uma jornalista de 18 anos que sonha em conquistar a vaga de colunista no jornal em que trabalha, a Gazeta de Oath. Em meio a uma guerra entre poderosos deuses ela luta para ajudar sua mãe, que sofre para superar um vício, e para encontrar o irmão, que está desaparecido em meio às trincheiras da guerra.
+                      </div>
+                  </div>
+                  </div>
 
-                <div class="image">
                   <div class="image">
-                    <img src="https://i.postimg.cc/pTRR1HKF/um-ver-o-inesquesivel.jpg" alt="Imagem 3">
-                    <div class="image-description">Larissa sempre teve olhos apenas para Chase Harding e ele finalmente começou a prestar atenção nela, mas porque agora ela não consegue tirar da cabeça os dias de verão que viveu com uma garota chamada Jasmine. As coisas ficam ainda mais esquisitas quando Lara descobre que Jasmine se transferiu para sua escola e percebe que a garota parece disposta a esquecer tudo o que aconteceu entre elas.
-                    </div>
-                </div>
+                    <div class="image">
+                      <img src="https://i.postimg.cc/pTRR1HKF/um-ver-o-inesquesivel.jpg" alt="Imagem 3">
+                      <div class="image-description">Larissa sempre teve olhos apenas para Chase Harding e ele finalmente começou a prestar atenção nela, mas porque agora ela não consegue tirar da cabeça os dias de verão que viveu com uma garota chamada Jasmine. As coisas ficam ainda mais esquisitas quando Lara descobre que Jasmine se transferiu para sua escola e percebe que a garota parece disposta a esquecer tudo o que aconteceu entre elas.
+                      </div>
+                  </div>
                 </div>
                  
             </div>
