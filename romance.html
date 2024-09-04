@@ -46,28 +46,6 @@ body {
   color: #000000;
 }
 
-
-
-.slides {
-    display: flex;
-    width: 600%; /* 100% para cada imagem, 6 imagens */
-    height: 100%;
-    transition: transform 1s ease-in-out;
-}
-
-.slides img {
-    width: 100%;
-    height: 100%; /* Ajuste a altura conforme necessário */
-    object-fit: cover; /* Mantém a proporção da imagem e cobre a área */
-    display: block;
-}
-
-@keyframes slide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
-
 .image-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -135,7 +113,40 @@ nav a {
   left: 0;
   overflow: hidden;
   width: 50%;
+}
+.hidden {
+            display: none;
+        }
+        .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    padding: 0.7% 48%;
+    background-color: hsl(342, 89%, 75%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
 
+.button:hover {
+    background-color: hsl(342, 88%, 68%);
+    transform: scale(1.05);
+}
+
+.arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 10px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid white;
 }
  </style>
 </head>
@@ -335,7 +346,7 @@ nav a {
                 </div>
 
             
-
+                <div class="image hidden">
                   <div class="image">
                     <img src="https://i.postimg.cc/3RbZNKrM/Teto-para-dois.jpgg" alt="Imagem 3">
                     <div class="image-description"> Leon, enfrentando problemas financeiros, decide alugar seu apartamento em horários específicos para conseguir dinheiro rápido. Ele compartilha o espaço com Tiffy, uma mulher que trabalha durante o dia e precisa de um lugar para morar. Eles nunca se encontraram pessoalmente, mas fecham um contrato de seis meses.<br>
@@ -348,7 +359,9 @@ nav a {
                       </div> 
                     </div>
                 </div>
+              </div>
 
+              <div class="image hidden">
                   <div class="image">
                       <img src="https://i.postimg.cc/QM1B5fx6/a-mecanica-do-amor.jpg" alt="Imagem 1">
                       <div class="image-description">
@@ -362,7 +375,10 @@ nav a {
                         </div>
                       </div>
                   </div>
+                </div>  
 
+
+                <div class="image hidden">
                   <div class="image">
                     <div class="image">
                       <img src="https://i.postimg.cc/1X2MCyb0/princesas-das-aguas.jpg" alt="Imagem 3">
@@ -377,7 +393,9 @@ nav a {
                       </div>
                   </div>
                   </div>
+                </div>
 
+                <div class="image hidden">
                   <div class="image">
                     <div class="image">
                       <img src="https://i.postimg.cc/nLbrHqYq/uma-peincesa-em-toquio.jpg" alt="Imagem 3">
@@ -391,8 +409,10 @@ nav a {
                         </div>
                       </div>
                   </div>
-                  </div>
+                </div>
+              </div>
 
+              <div class="image hidden">
                   <div class="image">
                     <div class="image">
                       <img src="https://i.postimg.cc/pTRR1HKF/um-ver-o-inesquesivel.jpg" alt="Imagem 3">
@@ -407,9 +427,9 @@ nav a {
                       </div>
                   </div>
                 </div>
-
+              </div>
                 
-                  
+              <div class="image hidden">
                  <div class="image">
                             <img src="https://i.postimg.cc/Hk5m9yv2/taticas-do-amoir.jpg" alt="Imagem 1">
                             <div class="image-description">
@@ -423,8 +443,9 @@ nav a {
                               </div>
                             </div>
                         </div>
-      
+                   </div>
 
+                   <div class="image hidden">
                         <div class="image">
                           <img src="https://i.postimg.cc/tTGxmLMQ/duff.jpg" alt="Imagem 3">
                           <div class="image-description">Bianca Piper é a DUFF em seu grupo de amigas,é aquela que não se destaca. Quando Wesley Rush, o pegador da escola, sugere que ser amigável com a DUFF o ajudaria com suas amigas, Bianca começa a questionar sua posição. Enquanto lida com problemas familiares. Com o tempo, Bianca amadurece  e questionar os rótulos impostos pela sociedade.<br>
@@ -437,8 +458,8 @@ nav a {
                             </div>
                           </div>
                       </div>
-
-                
+                    </div>
+                  <div class="image hidden">
                       <div class="image">
                         <div class="image">
                           <img src="https://i.postimg.cc/9XNmh6BT/divinos-rivais.jpg" alt="Imagem 3">
@@ -452,8 +473,24 @@ nav a {
                             </div>
                           </div>
                       </div>
-                      </div>
+                    </div>
+                  </div>
+                  <button class="button" id="loadMore">
+                Mais <span class="arrow"></span>
+            </button>
             </div>
         </main>
+          <script>
+          document.getElementById('loadMore').addEventListener('click', function() {
+              const hiddenItems = document.querySelectorAll('.image.hidden');
+              hiddenItems.forEach(item => item.classList.remove('hidden'));
+              
+              // Verifica se ainda há itens ocultos
+              const remainingHiddenItems = document.querySelectorAll('.image.hidden');
+              if (remainingHiddenItems.length === 0) {
+                  this.style.display = 'none';
+              }
+          });
+        </script>
     </body>
 </html>   
