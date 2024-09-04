@@ -37,7 +37,7 @@ body {
   max-width: 1200px; /* Máxima largura do carrossel */
   margin:auto;
   overflow: hidden;
-  border-radius: 10px; /* Adiciona bordas arredondadas */
+  border-radius: 20px; /* Adiciona bordas arredondadas */
 }
 
 .carousel-inner {
