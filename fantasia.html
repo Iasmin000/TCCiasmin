@@ -111,7 +111,40 @@ nav a {
   left: 0;
   overflow: hidden;
   width: 50%;
+}
+.hidden {
+            display: none;
+        }
+        .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    padding: 0.8% 48%;
+    background-color: hsl(342, 89%, 75%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
 
+.button:hover {
+    background-color: hsl(342, 88%, 68%);
+    transform: scale(1.05);
+}
+
+.arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 10px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid white;
 }
     </style>
 </head>
@@ -129,10 +162,11 @@ nav a {
               <a href="poesia.html">Poesia</a> 
           </nav>
            <div class="conteudo">
+            
             <p>Aqui temos alguns livros de fantasia, dentro desse gênero podemos ver elementos sobrenaturais, extraordinários ou surreais.</p> 
-            <div class="image-grid">
-
-              <div class="elemento">
+            
+            <div class="image-grid" id="imageGrid">
+          
                   <div class="image">
                   <img src="https://i.postimg.cc/pLJqzw0z/caraval.jpg" alt="Imagem 1">
                   <div class="image-description">Scarlett  finalmente recebe o convite para o Caraval, mas sua  chance é ameaçada pelo controle de seu pai e um casamento arranjado. Sua irmã, Donatella, se une a um marinheiro  para ajudá-la a chegar ao Caraval, mas Tella é sequestrada .E Agora, ela está envolvida em algo perigoso onde precisa encontrar sua irmã antes dos outros.
@@ -143,77 +177,69 @@ nav a {
                       <span class="estrela amarela ">&#9733;</span>
                       <span class="estrela meia-estrela">&#9733;</span>
                   </div>
-                  </div>
-                  
                 </div>
               </div>
              
-              <div class="elemento">
-                    <div class="image">
-                      <div class="image">
+                       <div class="image">
                         <img src="https://i.postimg.cc/5N8kjjD2/o-encando-dos-corvos.jpg" alt="Imagem 3">
                         <div class="image-description"> Isobel cria retratos  para o povo das fadas. Esses seres imortais anseiam pelas habilidades que os humanos têm de produzir. Quando ela recebe o seu primeiro cliente da realeza  Rook, o príncipe do outono ― ela comete um erro sem pensar, Isobel pinta uma emoção humana no rosto dele, uma fraqueza que pode custar  o trono e  a vida do príncipe.<br>
+                          <div>
                           <span class="estrela amarela">&#9733;</span>
-                      <span class="estrela amarela">&#9733;</span>
-                      <span class="estrela amarela">&#9733;</span>
-                      <span class="estrela amarela ">&#9733;</span>
-                      <span class="estrela meia-estrela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela ">&#9733;</span>
+                          <span class="estrela meia-estrela">&#9733;</span>
                         </div>
                     </div>
-                    </div>
-              </div>
-
-                    <div class="elemento">
+                  </div>
+             
                       <div class="image">
-                          <img src="https://i.postimg.cc/mrZVwmqq/cinder.jpg" alt="Imagem 3">
-                          <div class="image-description">Cinder, é uma jovem ciborgue desvalorizada, destaca-se como mecânica devido às suas habilidades sobre-humanas. Quando o príncipe Kai a solicita para consertar um androide antes de um baile importante, sua vida muda drasticamente. No entanto, quando sua meia-irmã adoece  e Cinder é entregue para pesquisas sobre uma doença mortal.<br>
-                            <span class="estrela amarela">&#9733;</span>
-                      <span class="estrela amarela">&#9733;</span>
-                      <span class="estrela amarela">&#9733;</span>
-                      <span class="estrela amarela ">&#9733;</span>
-                      <span class="estrela meia-estrela">&#9733;</span>
+                        <img src="https://i.postimg.cc/mrZVwmqq/cinder.jpg" alt="Imagem 3">
+                        <div class="image-description">Cinder, é uma jovem ciborgue desvalorizada, destaca-se como mecânica devido às suas habilidades sobre-humanas. Quando o príncipe Kai a solicita para consertar um androide antes de um baile importante, sua vida muda drasticamente. No entanto, quando sua meia-irmã adoece  e Cinder é entregue para pesquisas sobre uma doença mortal.<br>
+                            <div>
+                              <span class="estrela amarela">&#9733;</span>
+                              <span class="estrela amarela">&#9733;</span>
+                              <span class="estrela amarela">&#9733;</span>
+                              <span class="estrela amarela ">&#9733;</span>
+                              <span class="estrela meia-estrela">&#9733;</span>
                           </div>
                       </div>
                   </div>
 
-                    <div class="elemento">
                     <div class="image">
                       <img src="https://i.postimg.cc/Jnt2hxCf/jogos-vorazes.jpg" alt="Imagem 1">
                       <div class="image-description">
                         Panem Constituída por uma suntuosa Capital cercada de 12 distritos periféricos. Como represália por um levante contra a capital, a cada ano os distritos são forçados a enviar um menino e uma menina entre 12 e 18 anos para participar dos Jogos Vorazes. As regras são simples - os 24 tributos, devem lutar entre si até só restar um sobrevivente.
-                        <span class="estrela amarela">&#9733;</span>
-                        <span class="estrela amarela">&#9733;</span>
-                        <span class="estrela amarela">&#9733;</span>
-                        <span class="estrela amarela ">&#9733;</span>
-                        <span class="estrela amarela">&#9733;</span>
+                        <div>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela ">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
                       </div>
                   </div>
                 </div>
 
-           
-
-              
-              
-                  <div class="elemento">
-                  <div class="image">
                     <div class="image">
                       <img src="https://i.postimg.cc/NjjrCZs1/principe-cruel.png" alt="Imagem 3">
-                        <div class="image-description">Jude tinha 7 anos quando seus pais foram assassinados e foi forçada a viver no Reino das Fadas. Dez anos depois, tudo o que ela quer é ser como eles – lindos e imortais – e realmente pertencer ao Reino das Fadas, apesar de sua mortalidade. Mas muitos do povo das Fadas desprezam os humanos.
+                      <div class="image-description">Jude tinha 7 anos quando seus pais foram assassinados e foi forçada a viver no Reino das Fadas. Dez anos depois, tudo o que ela quer é ser como eles – lindos e imortais – e realmente pertencer ao Reino das Fadas, apesar de sua mortalidade. Mas muitos do povo das Fadas desprezam os humanos.
+                        <div>
                           <span class="estrela amarela">&#9733;</span>
-                      <span class="estrela amarela">&#9733;</span>
-                      <span class="estrela amarela">&#9733;</span>
-                      <span class="estrela amarela ">&#9733;</span>
-                      <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela ">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
                         </div> 
+                    </div>
                   </div>
-                  </div>
-                </div>
+              
 
 
-                  <div class="elemento">
+                 
                   <div class="image">
                     <img src="https://i.postimg.cc/c1KrtFmB/ascens-o-das-trevas.jpg" alt="Imagem 3">
                     <div class="image-description">Will, um garoto de dezessete anos, está fugindo, perseguido pelos homens que mataram a sua mãe. Quando um ex-criado conta a ele que o seu destino é lutar ao lado dos Regentes, Will é apresentando a um mundo mágico, onde precisa treinar para estar à altura do papel crucial que terá na iminente guerra contra as Trevas.
+                      <div>
                       <span class="estrela amarela">&#9733;</span>
                       <span class="estrela amarela">&#9733;</span>
                       <span class="estrela amarela">&#9733;</span>
@@ -223,87 +249,88 @@ nav a {
                  </div>
                 </div>
 
-                 <div class="elemento">
+                
                   <div class="image">
                     <img src="https://i.postimg.cc/Sxytxjgw/4a8a120f0adc132f249427cc6d6a8c21.jpg" alt="Imagem 2">
                     <div class="image-description">Blue nunca consegue vê-los - até este ano, quando um garoto emerge da escuridão e fala diretamente com ela. Seu nome é Gansey, e ela logo descobre que ele é um estudante rico da Academia Aglionby, a escola particular da cidade. Mas Blue se impôs uma regra: ficar longe dos garotos da Aglionby.<br>
-                      <span class="estrela amarela">&#9733;</span>
-                      <span class="estrela amarela">&#9733;</span>
-                      <span class="estrela amarela">&#9733;</span>
-                      <span class="estrela amarela ">&#9733;</span>
-                      <span class="estrela meia-estrela">&#9733;</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="elemento">
-                 <div class="image">
-                  <div class="image">
-                    <img src="https://i.postimg.cc/7ZN6rdHw/assistente-do-vil-o.jpg" alt="Imagem 3">
-                    <div class="image-description">Evie Sage é uma jovem fofa e divertida que precisa desesperadamente de um emprego. Então, quando um esbarrão acidental com o Vilão mais famoso do reino encantado de Rennedawn resulta em uma oferta de emprego, é óbvio que ela aceita, mesmo que aquele não seja o emprego dos seus sonhos.<br>
-                      <span class="estrela amarela">&#9733;</span>
-                      <span class="estrela amarela">&#9733;</span>
-                      <span class="estrela amarela">&#9733;</span>
-                      <span class="estrela amarela ">&#9733;</span>
-                      <span class="estrela meia-estrela">&#9733;</span>
-
-                    </div>
-                </div>
-                </div>
-              </div>
-
-            
-
-           
-                  <div class="elemento">
-                    <div class="image">
-                      <img src="https://i.postimg.cc/xdp6BmNt/percy-jakson.jpg" alt="Imagem 3">
-                      <div class="image-description">Quando um valentão ameaça seu amigo e seu professor se transforma em um monstro, Percy se vê obrigado a reagir. No entanto, ninguém acredita nele. Tudo muda quando ele é perseguido por um Minotauro até um acampamento, onde descobre mais sobre si e que os deuses do monte olimpo estão vivos<br>
+                      <div>
                         <span class="estrela amarela">&#9733;</span>
                         <span class="estrela amarela">&#9733;</span>
                         <span class="estrela amarela">&#9733;</span>
                         <span class="estrela amarela ">&#9733;</span>
                         <span class="estrela meia-estrela">&#9733;</span>
-                      </div>
-                  </div>
-                </div>
-
-                <div class="elemento">
-                  <div class="image">
-                    <img src="https://i.postimg.cc/652jSxh4/lendarios.jpg" alt="Imagem 2">
-                    <div class="image-description">Bree Matthews, foge de seu passado doloroso ao ingressar em um programa acadêmico. Porém, sua vida muda drasticamente quando ela descobre os Lendários, uma ordem secreta destinada a caçar demônios. Com a ajuda de Nick, um ex-membro, Bree mergulha em um mundo de magia e segredos.<br>
-                      <span class="estrela amarela">&#9733;</span>
-                      <span class="estrela amarela">&#9733;</span>
-                      <span class="estrela amarela">&#9733;</span>
-                      <span class="estrela amarela ">&#9733;</span>
-                      <span class="estrela amarela">&#9733;</span>
                     </div>
                   </div>
                 </div>
 
-              <div class="elemento">
+                
+                  <div class="image">
+                    <img src="https://i.postimg.cc/7ZN6rdHw/assistente-do-vil-o.jpg" alt="Imagem 3">
+                    <div class="image-description">Evie Sage é uma jovem fofa e divertida que precisa desesperadamente de um emprego. Então, quando um esbarrão acidental com o Vilão mais famoso do reino encantado de Rennedawn resulta em uma oferta de emprego, é óbvio que ela aceita, mesmo que aquele não seja o emprego dos seus sonhos.<br>
+                      <div>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela ">&#9733;</span>
+                        <span class="estrela meia-estrela">&#9733;</span>
+                    </div>
+                  </div>
+                </div>
+             
+
+            
+
+           
+                    <div class="image">
+                      <img src="https://i.postimg.cc/xdp6BmNt/percy-jakson.jpg" alt="Imagem 3">
+                      <div class="image-description">Quando um valentão ameaça seu amigo e seu professor se transforma em um monstro, Percy se vê obrigado a reagir. No entanto, ninguém acredita nele. Tudo muda quando ele é perseguido por um Minotauro até um acampamento, onde descobre mais sobre si e que os deuses do monte olimpo estão vivos<br>
+                        <div>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela ">&#9733;</span>
+                          <span class="estrela meia-estrela">&#9733;</span>
+                      </div>
+                   </div>
+                 </div>
+
+                  <div class="image">
+                    <img src="https://i.postimg.cc/652jSxh4/lendarios.jpg" alt="Imagem 2">
+                    <div class="image-description">Bree Matthews, foge de seu passado doloroso ao ingressar em um programa acadêmico. Porém, sua vida muda drasticamente quando ela descobre os Lendários, uma ordem secreta destinada a caçar demônios. Com a ajuda de Nick, um ex-membro, Bree mergulha em um mundo de magia e segredos.<br>
+                      <div>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela ">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                    </div>
+                  </div>
+                 </div>
+
+            
                 <div class="image">
                   <img src="https://i.postimg.cc/MpDbPDbL/8678443b0d249362c6956d7a2c931dca.jpg" alt="Imagem 1">
                   <div class="image-description">Catherine, uma das garotas mais cobiçadas do País das Maravilhas e está sendo pressionada, para se casar com o Rei de Copas. No entanto, ela se apaixona por Jest, o bobo da corte, Em um mundo cheio de magia e loucura, ela luta para escolher seu próprio destino.<br>
-                    <span class="estrela amarela">&#9733;</span>
-                    <span class="estrela amarela">&#9733;</span>
-                    <span class="estrela amarela">&#9733;</span>
-                    <span class="estrela amarela ">&#9733;</span>
-                    <span class="estrela meia-estrela">&#9733;</span>
+                    <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela meia-estrela">&#9733;</span>
                   </div>
-              </div>
+                </div>
               </div>
 
-              <div class="elemento">
                 <div class="image">
                   <img src="https://i.postimg.cc/vBZXtJBB/renegados.jpg" alt="Imagem 3">
                   <div class="image-description">Os Renegados são um grupo de prodígios – humanos com habilidades extraordinárias – que emergiram das ruínas de uma sociedade em colapso. Foram eles que estabeleceram a paz onde, antes, o caos reinava. Desde então, os Renegados se tornaram um símbolo de esperança e coragem para todos...
-                    <span class="estrela amarela">&#9733;</span>
-                    <span class="estrela amarela">&#9733;</span>
-                    <span class="estrela amarela">&#9733;</span>
-                    <span class="estrela amarela ">&#9733;</span>
-                    <span class="estrela meia-estrela">&#9733;</span>
-                  </div>
+                    <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela meia-estrela">&#9733;</span>
+                    </div>
                </div>
               </div>
           
@@ -311,19 +338,21 @@ nav a {
 
           
 
-           
-            <div class="image">
-              <img src="https://i.postimg.cc/63Lvq6jm/f16e4bb781964a4e32bf50620ac2dc55.jpg" alt="Imagem 3">
-              <div class="image-description">Com apenas um toque, Juliette Ferrars é capaz de fazer um homem adulto se ajoelhar de dor e implorar por misericórdia. Um único toque de Juliette pode matar. Ninguém sabe por que a garota tem um poder tão impressionante, o qual ela acredita ser uma maldição, um fardo que uma pessoa sozinha seria incapaz de carregar.
-                <span class="estrela amarela">&#9733;</span>
-                <span class="estrela amarela">&#9733;</span>
-                <span class="estrela amarela">&#9733;</span>
-                <span class="estrela amarela ">&#9733;</span>
-                <span class="estrela meia-estrela">&#9733;</span>
+            <div class="image hidden">
+              <div class="image">
+                <img src="https://i.postimg.cc/63Lvq6jm/f16e4bb781964a4e32bf50620ac2dc55.jpg" alt="Imagem 3">
+                <div class="image-description">Com apenas um toque, Juliette Ferrars é capaz de fazer um homem adulto se ajoelhar de dor e implorar por misericórdia. Um único toque de Juliette pode matar. Ninguém sabe por que a garota tem um poder tão impressionante, o qual ela acredita ser uma maldição, um fardo que uma pessoa sozinha seria incapaz de carregar.
+                  <span class="estrela amarela">&#9733;</span>
+                  <span class="estrela amarela">&#9733;</span>
+                  <span class="estrela amarela">&#9733;</span>
+                  <span class="estrela amarela ">&#9733;</span>
+                  <span class="estrela meia-estrela">&#9733;</span>
+                </div>
               </div>
           </div>
+            
 
-          
+          <div class="image hidden">
             <div class="image">
               <img src="https://i.postimg.cc/kGBySW5h/lendario.jpg" alt="Imagem 1">
               <div class="image-description">Após sobreviver ao último Caraval, Donatella Dragna conseguiu se libertar da tirania do pai e salvar sua irmã Scarlett de um casamento arranjado.. Em um momento de desespero, a jovem fez um acordo secreto com um criminoso e, agora, deve a ele algo que ninguém jamais conseguiu: o verdadeiro nome do mestre que comanda o Caraval.<br> 
@@ -334,7 +363,9 @@ nav a {
                 <span class="estrela meia-estrela">&#9733;</span>
               </div>
           </div>
+        </div>
 
+          <div class="image hidden">
             <div class="image">
               <img src="https://i.postimg.cc/tgyBYZGF/trono-de-vidro.jpg" alt="Imagem 3">
               <div class="image-description">"Celaena é uma assassina habilidosa aprisionada aos 18 anos. Ela recebe uma proposta para competir em uma competição mortal em troca de liberdade. Enfrentando desafios e intrigas, e lutando  pela sobrevivência enquanto tenta desvendar uma ameaça maligna no castelo<br>
@@ -345,21 +376,23 @@ nav a {
                 <span class="estrela amarela">&#9733;</span>
               </div>
           </div>
-
-          <div class="image">
-            <img src="https://i.postimg.cc/yNFYb8Xg/c4ee0ff740b880fafe19e7170f3c1a83.jpg" alt="Imagem 1">
-            <div class="image-description">Criada na loja de antiguidades de seu querido pai, cercada por lendas de seres poderosos e imortais, Evangeline Raposa cresceu acreditando em histórias de amores verdadeiros e em finais felizes. Mas essas crenças se veem abaladas quando a jovem descobre que o amor de sua vida está prestes a se casar com outra pessoa.<br>
-              <span class="estrela amarela">&#9733;</span>
-              <span class="estrela amarela">&#9733;</span>
-              <span class="estrela amarela">&#9733;</span>
-              <span class="estrela amarela ">&#9733;</span>
-              <span class="estrela amarela">&#9733;</span>
-            </div>
         </div>
-        
+
+          <div class="image hidden">
+            <div class="image">
+              <img src="https://i.postimg.cc/yNFYb8Xg/c4ee0ff740b880fafe19e7170f3c1a83.jpg" alt="Imagem 1">
+              <div class="image-description">Criada na loja de antiguidades de seu querido pai, cercada por lendas de seres poderosos e imortais, Evangeline Raposa cresceu acreditando em histórias de amores verdadeiros e em finais felizes. Mas essas crenças se veem abaladas quando a jovem descobre que o amor de sua vida está prestes a se casar com outra pessoa.<br>
+                <span class="estrela amarela">&#9733;</span>
+                <span class="estrela amarela">&#9733;</span>
+                <span class="estrela amarela">&#9733;</span>
+                <span class="estrela amarela ">&#9733;</span>
+                <span class="estrela amarela">&#9733;</span>
+              </div>
+          </div>
+      </div>
 
         
-     
+        <div class="image hidden">
           <div class="image">
             <img src="https://i.postimg.cc/qM6YSSR1/neverynight.jpg" alt="Imagem 1">
             <div class="image-description">Mia Corvere, uma figura misteriosa,  que busca vingança após testemunhar a execução pública de seu pai e a prisão de sua família. Ela almeja se tornar uma serva da Igreja Vermelha, um grupo mortal de assassinos. Em sua  jornada não espaço para amor ou amizade.<br>
@@ -370,8 +403,9 @@ nav a {
               <span class="estrela meia-estrela">&#9733;</span>
             </div>
         </div>
+      </div>
 
-        
+        <div class="image hidden">
           <div class="image">
             <img src="https://i.postimg.cc/3wkbMymh/a-ca-adora-de-drag-es.jpg" alt="Imagem 1">
             <div class="image-description">Envolvida pelos contos, a pequena Asha acabou despertando Kozu, o mais feroz de todos os dragões, que queimou a cidade e matou milhares de pessoas ― um peso que a garota ainda carrega nas costas. Agora, aos dezessete anos, ela se tornou uma caçadora de dragões temida por todos.<br>
@@ -382,6 +416,9 @@ nav a {
               <span class="estrela meia-estrela">&#9733;</span>
             </div>
         </div>
+      </div>
+
+        <div class="image hidden">
           <div class="image">
             <img src="https://i.postimg.cc/3JgMWzTd/winter.jpg" alt="Imagem 3">
             <div class="image-description">Winter é a Branca de Neve relida, uma garota lidando com a insanidade e com a solidão e com a ameaça da madrasta invejosa. Jacin é o seu protetor, um guarda-costas determinado, um soldado obediente que está disposto a enfrentar a morte para que sua princesa fique à salvo.<br>
@@ -392,6 +429,9 @@ nav a {
               <span class="estrela meia-estrela">&#9733;</span>
             </div>
         </div>
+      </div>
+
+        <div class="image hidden">
         <div class="image">
             <img src="https://i.postimg.cc/Zq7s2bX3/a-rebelde-do-deserto.jpg" alt="Imagem 3">
             <div class="image-description">O destino do deserto repousa nas mãos de Amani Al’Hiza, uma garota habilidosa no tiro e em constante busca por liberdade. Em um mundo governado por mortais, o deserto de Miraji esconde mistérios e criaturas míticas, enquanto os humanos enfrentam dificuldades extremas, especialmente os pobres.
@@ -402,9 +442,25 @@ nav a {
               <span class="estrela meia-estrela">&#9733;</span>
             </div>
         </div>
-        </div><br>
+      </div>
+    </div>
 
-
-  </main>
-</body>
+    <button class="button" id="loadMore">
+      Mais <span class="arrow"></span>
+  </button>
+  </div>
+</main>
+     <script>
+          document.getElementById('loadMore').addEventListener('click', function() {
+            const hiddenItems = document.querySelectorAll('.image.hidden');
+            hiddenItems.forEach(item => item.classList.remove('hidden'));
+            
+            // Verifica se ainda há itens ocultos
+            const remainingHiddenItems = document.querySelectorAll('.image.hidden');
+            if (remainingHiddenItems.length === 0) {
+                this.style.display = 'none';
+            }
+          });
+     </script>
+   </body>
 </html>
