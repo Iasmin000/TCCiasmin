@@ -35,8 +35,7 @@ body {
   position: relative;
   width: 100%;
   max-width: 1200px; /* Máxima largura do carrossel */
-  margin-left: 15% ;
-  margin-right: 16%;
+  margin:auto;
   overflow: hidden;
   border-radius: 10px; /* Adiciona bordas arredondadas */
 }
