@@ -33,7 +33,7 @@ body {
 
 .carousel {
   position: relative;
-  width: 90%;
+  width: 100%;
   max-width: 1200px; /* Máxima largura do carrossel */
   margin:auto;
   overflow: hidden;
@@ -46,12 +46,12 @@ body {
 }
 
 .carousel-item {
-  min-width: 90%;
+  min-width: 100%;
   box-sizing: border-box;
 }
 
 .carousel-item img {
-  width: 90%;
+  width: 100%;
   height: auto;
   display: block;
 }
