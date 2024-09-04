@@ -1,13 +1,15 @@
-@media screen and (min-width: 768px) {
-  .image-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('https://i.postimg.cc/MTK35Csm/fbce153816e3495e92f5d41c54df451f.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #000000;
 }
-@media screen and (max-width: 480px) {
-  .image-grid {
-    grid-template-columns: 1fr;
-  }
-}
+
+
 .banner {
   position: relative;
   width: 100%;
@@ -28,15 +30,31 @@
   font-weight: bold;
   text-align: center;
 }
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-image: url('https://i.postimg.cc/MTK35Csm/fbce153816e3495e92f5d41c54df451f.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: #000000;
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1200px; /* Máxima largura do carrossel */
+  margin-left: 15% ;
+  margin-right: 16%;
+  overflow: hidden;
+  border-radius: 10px; /* Adiciona bordas arredondadas */
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .image-grid {
@@ -72,7 +90,7 @@ body {
 }
 .conteudo {
   margin-left: 10%;
-  margin-right: 10%;
+  margin-right: 12%;
 }
 p {
   text-align: justify;
@@ -106,4 +124,14 @@ nav a {
   overflow: hidden;
   width: 50%;
 
+}
+@media screen and (min-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 480px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
 }
