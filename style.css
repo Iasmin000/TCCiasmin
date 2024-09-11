@@ -8,6 +8,62 @@
     grid-template-columns: 1fr;
   }
 }
+.menu-container {
+  position: relative;
+}
+
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #000000;
+  color: #fff;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.menu-container.menu-open .menu-icon {
+  left: 130px; /* Ajuste conforme necessário */
+  background-color: #201f1f;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 40%;
+  background-color: #201f1f;
+  color: #fff;
+  overflow: auto;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.menu.active {
+  transform: translateX(0);
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li {
+  padding: 15px;
+}
+
+.menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+
 .banner {
   position: relative;
   width: 100%;
