@@ -95,23 +95,33 @@ body {
   background-position: center;
   color: #f5e1e9;
 }
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
 .image {
-  border: 1px solid rgb(250, 214, 234);
-  padding: 9px;
-  border-radius: 8px;
-  margin-bottom: 10px; /* Espaçamento abaixo da imagem */
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(250, 214, 234); 
+  padding: 9px; 
+  border-radius: 8px; 
 }
-
 .image img {
-  max-width: 100%; /* Mantém a imagem responsiva */
-  height: auto; 
+  max-width: 55%;
+  height: auto;
+  margin-right: 15px;
+  transition: transform 0.4s ease; /* Adicionando transição de transformação */
   border-radius: 8px;
 }
 
+.image:hover img {
+  transform: scale(1.1); /* Aumenta a escala ao passar o mouse */
+}
 .image-description {
-  font-size: 16px; /* Aumenta o tamanho da fonte se necessário */
-  padding: 10px; 
+  font-size: 14px;
   text-align: justify;
+  text-align: left;
 }
 .conteudo {
   margin-left: 10%;
