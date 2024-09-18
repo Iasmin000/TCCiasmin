@@ -169,7 +169,7 @@ nav a {
 }
 .carousel {
   position: relative;
-  width: 100%;
+  width: 90%;
   max-width: 1200px; /* Máxima largura do carrossel */
   margin:auto;
   overflow: hidden;
@@ -182,12 +182,12 @@ nav a {
 }
 
 .carousel-item {
-  min-width: 100%;
+  min-width: 90%;
   box-sizing: border-box;
 }
 
 .carousel-item img {
-  width: 100%;
+  width: 90%;
   height: auto;
   display: block;
 }
