@@ -108,7 +108,7 @@ body {
   border-radius: 8px; 
 }
 .image img {
-  max-width: 55%;
+  max-width: 60%;
   height: auto;
   margin-right: 15px;
   transition: transform 0.4s ease; /* Adicionando transição de transformação */
