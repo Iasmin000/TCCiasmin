@@ -8,6 +8,8 @@
     grid-template-columns: 1fr;
   }
 }
+
+
 .menu-container {
   position: relative;
 }
@@ -16,80 +18,107 @@
   font-size: 24px;
   cursor: pointer;
   padding: 10px;
-  background-color: #000000;
+  background-color: transparent; /* Torna o fundo transparente */
+
   color: #fff;
   position: fixed;
-  top: 10px;
-  left: 10px;
-  transition: left 0.3s ease;
-  z-index: 1000;
+  top: 10px; /* Distância do topo */
+  left: 80%; /* Mantém à esquerda */
+  z-index: 1000; /* Garante que fique acima de outros elementos */
+  border: 2px solid #fff; /* Contorno */
+  border-radius: 5px; /* Cantos arredondados *
 }
 
+
+
+
 .menu-container.menu-open .menu-icon {
-  left: 130px; /* Ajuste conforme necessário */
-  background-color: #201f1f;
+  background-color: #c45f87; /* Muda apenas a cor ao clicar */
+  /* Remova a propriedade left ou right */
 }
 
 .menu {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 6;
   width: 200px;
   height: 40%;
-  background-color: #201f1f;
+  
+  background: linear-gradient(to right, #c56592 0%, #f1b1d6 100%);
+  
   color: #fff;
   overflow: auto;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
+  transform: translateX(-100%); /* Oculta inicialmente */
+  transition: transform 0.3s ease; /* Animação suave ao abrir */
 }
+
 
 .menu.active {
-  transform: translateX(0);
-}
-
-.menu ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+  transform: translateX(0); /* Mostra o menu quando ativo */
 }
 
 .menu ul li {
-  padding: 15px;
+  display: flex;
+ 
+
+    padding: 0; /* Remove o padding da lista */
+    margin: 1; /* Remove a margem da lista */
+  
 }
 
 .menu ul li a {
   color: #fff;
   text-decoration: none;
-  display: block;
+  display: flex;
+  align-items: center; /* Alinha o coração e o texto verticalmente */
+  padding: 15px; /* Ajuste conforme necessário */
+  margin: 5px 0;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 5px;
+  width: 100%; /* Para ocupar toda a largura do item da lista */
 }
 
-
-.banner {
-  position: relative;
-  width: 100%;
-  height: 100px; /* Altura da imagem */
+.menu ul li a::before {
+  content: '♥'; /* Coração preenchido */
+  color: #fff; /* Cor branca */
+  margin-right: 8px; /* Espaçamento entre o coração e o texto */
 }
-.banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.banner .texto {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: rgba(0, 0, 0, 0.89);
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
+#grad1 {
+  height: 110px;
+  background-color: #ff80b3;
+  background-image: linear-gradient(#ff80b3, #131313);
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;    /* Centraliza verticalmente */
 }
 
+#imagem-centralizada {
+  height: auto;
+  max-height: 230%; /* Limita a altura da imagem */
+  margin-top: 68px;
+}
+
+. .led-line {
+  width: 20px; /* Largura da linha */
+  height: 200px; /* Altura da linha */
+  border-radius: 10px; /* Cantos arredondados */
+  background: linear-gradient(to bottom, #00ff00, #005700); /* Degradê verde */
+  position: relative; /* Para o efeito de LED */
+}
+.led-effect {
+  width: 100%; 
+  height: 20px; /* Altura do efeito LED */
+  border-radius: 10px; 
+  background: linear-gradient(to right, #00ff00, #005700); /* Degradê verde */
+  position: absolute; 
+  bottom: -10px; /* Para colocar abaixo da linha */
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.6), 0 0 40px rgba(0, 255, 0, 0.3); /* Efeito de brilho */
+}
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: rgb(32, 32, 32);
+  background-color: rgb(19, 19, 19);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -108,7 +137,7 @@ body {
   border-radius: 8px; 
 }
 .image img {
-  max-width: 60%;
+  max-width: 50%;
   height: auto;
   margin-right: 15px;
   transition: transform 0.4s ease; /* Adicionando transição de transformação */
@@ -130,19 +159,7 @@ body {
 p {
   text-align: justify;
 }
-nav {
-  background-color: rgb(32, 32,32);
-  color: rgb(230, 182, 204);
-  padding: 10px;
-  text-align: center;
-  border: 2px solid rgb(230, 182, 204);
-  border-radius: 6px;
-}
-nav a {
-  color: rgb(245, 237, 241);
-  text-decoration: none;
-  padding: 20px;
-}
+
 .elemento {
   transition: background-color 0.3s ease;
 }
@@ -191,4 +208,3 @@ nav a {
   height: auto;
   display: block;
 }
-
