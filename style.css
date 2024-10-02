@@ -8,102 +8,98 @@
     grid-template-columns: 1fr;
   }
 }
-
-
-.menu-container {
-  position: relative;
-}
-
-.menu-icon {
-  font-size: 24px;
-  cursor: pointer;
-  padding: 10px;
-  background-color: transparent; /* Torna o fundo transparente */
-
-  color: #fff;
-  position: fixed;
-  top: 10px; /* Distância do topo */
-  left: 80%; /* Mantém à esquerda */
-  z-index: 1000; /* Garante que fique acima de outros elementos */
-  border: 2px solid #fff; /* Contorno */
-  border-radius: 5px; /* Cantos arredondados *
-}
-
-
-
-
-.menu-container.menu-open .menu-icon {
-  background-color: #c45f87; /* Muda apenas a cor ao clicar */
-  /* Remova a propriedade left ou right */
-}
-
 .menu {
-  position: fixed;
+  z-index: 10; 
+}
+.menu {
+  display: none;
+  background: linear-gradient(to right, #e478a3 0%, #be4877 100%);
+  position: absolute;
   top: 0;
-  left: 6;
-  width: 200px;
-  height: 40%;
-  
-  background: linear-gradient(to right, #c56592 0%, #f1b1d6 100%);
-  
-  color: #fff;
-  overflow: auto;
-  transform: translateX(-100%); /* Oculta inicialmente */
-  transition: transform 0.3s ease; /* Animação suave ao abrir */
+  left: 0;
+  width: 180px;
+  height:30% ;
+  opacity: 0; 
+  transform: translateX(-20px); 
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+  width: 180px;
+  border-radius: 2%;
 }
-
-
-.menu.active {
-  transform: translateX(0); /* Mostra o menu quando ativo */
+.menu.show {
+  display: block; 
+  opacity: 1; 
+  transform: translateX(0); 
 }
-
-.menu ul li {
-  display: flex;
- 
-
-    padding: 0; /* Remove o padding da lista */
-    margin: 1; /* Remove a margem da lista */
-  
-}
-
-.menu ul li a {
-  color: #fff;
+.menu a {
+  color: #ffffff;
+  padding: 10px 10px 10px 25px; 
   text-decoration: none;
-  display: flex;
-  align-items: center; /* Alinha o coração e o texto verticalmente */
-  padding: 15px; /* Ajuste conforme necessário */
-  margin: 5px 0;
-  border-bottom: 1px solid #fff;
-  margin-bottom: 5px;
-  width: 100%; /* Para ocupar toda a largura do item da lista */
+  display: block;
+  position: relative;
+  border-bottom: 1px solid rgb(255, 255, 255); 
+  margin-top: 20px; 
 }
-
-.menu ul li a::before {
-  content: '♥'; /* Coração preenchido */
-  color: #fff; /* Cor branca */
-  margin-right: 8px; /* Espaçamento entre o coração e o texto */
+.menu a:hover {
+  background: #e681a9;
+}
+.menu a::before {
+  content: '';
+  position: absolute;
+  left: 10px; 
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px; 
+  height: 8px; 
+  border-radius: 50%; 
+  background: #fffdfd; 
+}
+.hamburger {
+  cursor: pointer;
+  padding: 15px;
+  background: transparent; 
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 6%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 24px; 
 }
 #grad1 {
   height: 110px;
   background-color: #ff80b3;
-  background-image: linear-gradient(#ff80b3, #131313);
+  background-image: linear-gradient(#ff80b3,#000000 );
   display: flex;
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center;    /* Centraliza verticalmente */
+  justify-content: center; 
+  align-items: center;   
 }
-
 #imagem-centralizada {
   height: auto;
-  max-height: 230%; /* Limita a altura da imagem */
+  max-height: 230%; 
   margin-top: 68px;
 }
-
-
+@keyframes glow {
+  0% { filter: brightness(1); }
+  100% { filter: brightness(1.2); }
+}
+nav {
+  background-color: hsla(332, 80%, 71%, 0);
+  color: #e6b6cc;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid rgb(230, 182, 204);
+  border-radius: 10px;
+}
+nav a {
+  color: rgb(245, 237, 241);
+  text-decoration: none;
+  padding: 10px;
+}
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: rgb(19, 19, 19);
+  background-color: #000000;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -117,20 +113,17 @@ body {
 .image {
   display: flex;
   align-items: center;
-  border: 1px solid rgb(250, 214, 234); 
   padding: 9px; 
-  border-radius: 8px; 
 }
 .image img {
   max-width: 50%;
   height: auto;
   margin-right: 15px;
-  transition: transform 0.4s ease; /* Adicionando transição de transformação */
+  transition: transform 0.4s ease; 
   border-radius: 8px;
 }
-
 .image:hover img {
-  transform: scale(1.1); /* Aumenta a escala ao passar o mouse */
+  transform: scale(1.1); 
 }
 .image-description {
   font-size: 14px;
@@ -144,11 +137,9 @@ body {
 p {
   text-align: justify;
 }
-
 .elemento {
   transition: background-color 0.3s ease;
 }
-
 .elemento:hover {
   background-color: rgb(255, 234, 248);
 }
@@ -172,22 +163,19 @@ p {
 .carousel {
   position: relative;
   width: 100%;
-  max-width: 1200px; /* Máxima largura do carrossel */
+  max-width: 1200px; 
   margin:auto;
   overflow: hidden;
-  border-radius: 10px; /* Adiciona bordas arredondadas */
+  border-radius: 10px; 
 }
-
 .carousel-inner {
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
-
 .carousel-item {
   min-width: 100%;
   box-sizing: border-box;
 }
-
 .carousel-item img {
   width: 100%;
   height: auto;

@@ -1,6 +1,13 @@
 function toggleMenu() {
     const menu = document.getElementById('menu');
-    const menuContainer = document.querySelector('.menu-container');
-    menu.classList.toggle('active');
-    menuContainer.classList.toggle('menu-open');
+    if (menu.classList.contains('show')) {
+        menu.classList.remove('show');
+        setTimeout(() => {
+            menu.style.display = 'none';
+        }, 300); 
+    } else {
+        menu.style.display = 'block'; 
+        setTimeout(() => {
+            menu.classList.add('show'); 
+        }, 10); 
 }
