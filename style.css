@@ -43,11 +43,11 @@
   background: #e681a9;
 }
 .menu a::before {
-  content: '';
+  content: ''; 
   position: absolute;
-  left: 10px; 
+  left: 10px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%); 
   width: 8px; 
   height: 8px; 
   border-radius: 50%; 
@@ -63,7 +63,7 @@
   position: absolute;
   right: 0;
   top: 0;
-  font-size: 24px; 
+  font-size: 24px;
 }
 #grad1 {
   height: 110px;
@@ -71,8 +71,8 @@
   background-image: linear-gradient(#ff80b3,#000000 );
   display: flex;
   justify-content: center; 
-  align-items: center;   
-}
+  align-items: center;
+}    
 #imagem-centralizada {
   height: auto;
   max-height: 230%; 
@@ -113,7 +113,9 @@ body {
 .image {
   display: flex;
   align-items: center;
+ 
   padding: 9px; 
+   
 }
 .image img {
   max-width: 50%;
