@@ -1,178 +1,436 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Romance</title>
     <style>
-@media screen and (min-width: 768px) {
-  .image-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-@media screen and (max-width: 480px) {
-  .image-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.banner {
-  position: relative;
-  width: 100%;
-  height: 100px; /* Altura da imagem */
-}
-.banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.banner .texto {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: rgba(0, 0, 0, 0.89);
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color:rgb(32, 32, 32);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: #f5e1e9;
-}
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
-}
-.image {
-  display: flex;
-  align-items: center;
-}
-.image img {
-  max-width: 50%;
-  height: auto;
-  margin-right: 15px;
-  transition: transform 0.4s ease; /* Adicionando transição de transformação */
-  border-radius: 8px;
-}
-
-.image:hover img {
-  transform: scale(1.1); /* Aumenta a escala ao passar o mouse */
-}
-.image-description {
-  font-size: 14px;
-  text-align: justify;
-  text-align: left;
-}
-.conteudo {
-  margin-left: 10%;
-  margin-right: 10%;
-}
-p {
-  text-align: justify;
-}
-nav {
-  background-color: rgb(32,32,32);
-  color: rgb(230, 182, 204);
-  padding: 10px;
-  text-align: center;
-  border: 2px solid rgb(230, 182, 204);
-  border-radius: 10px;
-}
-nav a {
-  color: rgb(245, 237, 241);
-  text-decoration: none;
-  padding: 10px;
-}
-.elemento {
-  transition: background-color 0.3s ease;
-}
-
-.elemento:hover {
-  background-color: rgb(255, 234, 248);
-}
-.estrela {
-  font-size: 1.5rem;
-  color: rgb(168, 166, 166);;
-  position: relative;
-  display: inline-block;
-}
-.estrela.amarela {
-  color: rgb(255, 166, 0);;
-}
-.meia-estrela::after {
-  content: '\2605'; 
-  color: rgb(255, 166, 0);;
-  position: absolute;
-  left: 0;
-  overflow: hidden;
-  width: 50%;
-}
-.hidden {
-            display: none;
+        @media screen and (min-width: 768px) {
+                .image-grid {
+                  grid-template-columns: repeat(4, 1fr);
+                }
+              }
+              @media screen and (max-width: 480px) {
+                .image-grid {
+                  grid-template-columns: 1fr;
+                }
         }
-        .button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 30px auto;
-    padding: 0.8% 48%;
-    background-color: hsl(342, 100%, 88%);
-    color: rgb(0, 0, 0);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s, transform 0.3s;
-}
+          .menu {
+            z-index: 10; 
+          }
+          .menu {
+            display: none;
+            background: linear-gradient(to right, #e478a3 0%, #be4877 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 180px;
+            height:40% ;
+            opacity: 0; 
+            transform: translateX(-20px); 
+            transition: opacity 0.3s ease, transform 0.3s ease; 
+            width: 180px;
+            border-radius: 2%;
+          }
+          .menu.show {
+            display: block; 
+            opacity: 1; 
+            transform: translateX(0); 
+          }
+          .menu a {
+            color: #ffffff;
+            padding: 10px 10px 10px 25px; 
+            text-decoration: none;
+            display: block;
+            position: relative;
+            border-bottom: 1px solid rgb(255, 255, 255); 
+            margin-top: 20px; 
+          }
+          .menu a:hover {
+            background: #e681a9;
+          }
+          .menu a::before {
+            content: ''; 
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%); 
+            width: 8px; 
+            height: 8px; 
+            border-radius: 50%; 
+            background: #fffdfd; 
+          }
+          .hamburger {
+            cursor: pointer;
+            padding: 15px;
+            background: transparent; 
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            border-radius: 6%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 24px;
+          }
+          #grad1 {
+            height: 110px;
+            background-color: #ff80b3;
+            background-image: linear-gradient(#ff80b3,#000000 );
+            display: flex;
+            justify-content: center; 
+            align-items: center;    
+          }
+          #imagem-centralizada {
+            height: auto;
+            max-height: 230%; 
+            margin-top: 68px;
+          }
+          body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(0, 0, 0);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #f5e1e9;
+          }
+          .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+          }
+          .image {
+            display: flex;
+            align-items: center;
+            
+            padding: 9px; 
+            border-radius: 8px; 
+          }
+          .image img {
+            max-width: 50%;
+            height: auto;
+            margin-right: 15px;
+            transition: transform 0.4s ease; 
+            border-radius: 8px;
+          }
+          .image:hover img {
+            transform: scale(1.1); 
+          }
+          .image-description {
+            font-size: 14px;
+            text-align: justify;
+            text-align: left;
+          }
+          .conteudo {
+            margin-left: 10%;
+            margin-right: 10%;
+          }
+          p {
+            text-align: justify;
+          }
+          nav {
+            background-color: hsla(332, 80%, 71%, 0);
+            color: rgb(230, 182, 204);
+            padding: 10px;
+            text-align: center;
+            border: 2px solid rgb(230, 182, 204);
+            border-radius: 10px;
+          }
+          nav a {
+            color: rgb(245, 237, 241);
+            text-decoration: none;
+            padding: 10px;
+          }
+          .elemento {
+            transition: background-color 0.3s ease;
+          }
+          .elemento:hover {
+            background-color: rgb(255, 234, 248);
+          }
+          .estrela {
+            font-size: 1.5rem;
+            color: rgb(168, 166, 166);;
+            position: relative;
+            display: inline-block;
+          }
+          .estrela.amarela {
+            color: rgb(255, 166, 0);;
+          }
+          .meia-estrela::after {
+            content: '\2605'; 
+            color: rgb(255, 166, 0);;
+            position: absolute;
+            left: 0;
+            overflow: hidden;
+            width: 50%;
+          }
+          /* .hidden {
+            display: none;
+          }
+          .button {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              margin: 30px auto;
+              padding: 0.8% 48%;
+              background-color: hsl(342, 100%, 88%);
+              color: rgb(0, 0, 0);
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              font-size: 18px;
+              text-align: center;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+              transition: background-color 0.3s, transform 0.3s;
+          }
+          .button:hover {
+              background-color: hsl(342, 85%, 79%);
+              transform: scale(1.05);
+          }
+          .arrow {
+              display: inline-block;
+              width: 0;
+              height: 0;
+              margin-left: 10px;
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+              border-top: 7px solid rgb(0, 0, 0); */
+          /* } */
+          .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin:auto;
+            overflow: hidden;
+            border-radius: 10px; 
+          }
+          .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+          }
+          .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+          }
+          .carousel-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+          }
+          h1{
+          margin-left: 10%;
+          font-family: Garamond, serif;
+          color: #f5c5d8;
+          }
+          #grad {
+            height: 30px;
+            background-color: #000000; 
+            background-image: linear-gradient(#000000, #ff80b3);
+          }
+          @media (max-width: 768px) {
+            #grad {
+              display: none;
+            }
+          }
+            @media (max-width: 600px) {
+                h1 {
+                    font-size: 1.7em;
+                  margin-left: 12px;
+              
+                }
+            }
+            #grad {
+              height: 30px;
+              background-color: #000000; 
+              background-image: linear-gradient(#000000, #ff80b3);
+            }
+            
+            @media (max-width: 768px) {
+              #grad {
+                display: none;
+              }
+            }      
+            .image-row {
+              display: flex;
+              overflow-x: auto;
+              overflow-y: hidden; 
+              white-space: nowrap;
+              position: relative;
+              width: calc(100% - 20px);
+              margin-left: 6%;
+              margin-right: 6%;
+              }
+              @media (max-width: 768px) {
+                .image-row     {
+                            display: none; 
+                        }
+                    }
+              .image-row::-webkit-scrollbar {
+              width: 8px;
+              }
+              .image-row::-webkit-scrollbar-track {
+              background: rgba(0, 0, 0, 0.3);
+              border-radius: 10px;
+              }
+              .image-row::-webkit-scrollbar-thumb {
+              background: rgba(19, 19, 19, 0.5);
+              border-radius: 10px;
+              width: 5px;
+              }
+              .image-row img {
+              width: 350px;
+              margin-right: 10px;
+              border-radius: 10px;
+              transition: filter 0.3s ease;
+              }
+              .image-row img:hover {
+              filter: grayscale(100%);
+              }
+              @media only screen and (max-width: 768px) {
+              .image-row img {
+              width: px;
+              width: 260px;
+              }
+              }
+              @media only screen and (max-width: 600px) {
+                .image-row img {
+                width: 260px;
+                }
+                }
+            .image-row {
+              display: flex;
+              overflow-x: auto;
+              overflow-y: hidden;
+              white-space: nowrap;
+              position: relative;
+              width: calc(100% - 40px);
+              margin: 0 20px;
+            }
+            .image-row::-webkit-scrollbar {
+              width: 8px;
+            }
+            .image-row::-webkit-scrollbar-track {
+              background: rgba(0, 0, 0, 0.3);
+              border-radius: 10px;
+            }
+            .image-row::-webkit-scrollbar-thumb {
+              background: rgba(19, 19, 19, 0.5);
+              border-radius: 10px;
+              width: 5px;
+            }
+            .image-row img {
+              width: 180px;
+              margin-right: 15px;
+              border-radius: 8px;
+              transition: filter 0.3s ease;
+            }
+            .image-row img:hover {
+              filter: grayscale(100%);
+            }
+            @media only screen and (max-width: 768px) {
+              .image-row {
+                margin: 0 20px;
+                width: calc(100% - 40px);
+              }
 
-.button:hover {
-    background-color: hsl(342, 85%, 79%);
-    transform: scale(1.05);
-}
-
-.arrow {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    margin-left: 10px;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 7px solid rgb(0, 0, 0);
-}
- </style>
-</head>
+              .image-row img {
+                width: 125px;
+              }
+            }
+            @media only screen and (min-width: 769px) {
+              .image-row {
+                margin: 0 80px;
+                width: calc(100% - 160px);
+              }
+            }
+            .aa{
+              margin-left: 6%;
+              margin-right: 6%;
+            }
+            .botao-amazon {
+            margin-top: 10px;
+            padding: 4px 12px;
+            background-color: #e99ec7;
+            color: rgb(13, 13, 90);
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            }
+            .botao-amazon:hover {
+            background-color: #f5c5d8;
+            }
+      </style>
+    </head>
     <body>
         <main>
-          <div class="banner">
-            <img src="https://i.ibb.co/mcnRnp1/946efa38-6213-4383-ac37-e0e2ebc2d199.jpg"alt="Imagem do Banner">
-            <div class="texto">
-                Romance
+          <div id="grad1">
+            <img src="https://i.postimg.cc/zf0njKq8/Logotipo-para-manicure-rosa-e-branco-delicado-e-feminino-com-borboleta-removebg-preview.png" alt="Descrição" id="imagem-centralizada">
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
+                <div class="menu" id="menu">
+                    <a href="index.html">Home</a>
+                    <a href="Formulario.html">Formulario</a>
+                    <a href="fantasia.html">Fantasia</a>
+                    <a href="romance.html">Romance</a> 
+                    <a href="poesia.html">Poesia</a>                     
+                </div>
             </div>
-        </div> 
-              <nav>
-                  <a href="index.html">Home</a>
-                  <a href="fantasia.html">Fantasia</a> 
-                  <a href="poesia.html">Poesia</a> 
-              </nav>
-              <div class="conteudo">
-                <p>Um romance pode ter um conteúdo fictício ou mesclado com a realidade. Sendo nesse caso nada mais é do que um caso de amor entre pessoas.</p> 
+              <br>
+            <nav>
+              <a href="index.html">Home</a>
+              <a href="fantasia.html">Fantasia</a> 
+              <a href="poesia.html">Poesia</a> 
+            </nav>
+              <br>
+              <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <img src="https://i.postimg.cc/8zy2Jvcj/a-sereia-sem-dons-banner.jpg" alt="Imagem 1">
+                    </div>
                     
+                    <div class="carousel-item">
+                        <img src="https://i.postimg.cc/zGWd5Rhs/a-guerra-dos-fura-es-banner.jpg" alt="Imagem 3">
+                    </div> 
+                      <!-- loop infinito -->
+                    <div class="carousel-item">
+                        <img src="https://i.postimg.cc/8zy2Jvcj/a-sereia-sem-dons-banner.jpg" alt="Imagem 1">
+                    </div>
+                   
+                    <div class="carousel-item">
+                        <img src="https://i.postimg.cc/zGWd5Rhs/a-guerra-dos-fura-es-banner.jpg" alt="Imagem 3">
+                    </div>   
+                  </div>
+                </div>
+            <!-- <h1>Anne de Green Gables</h1>
+            <div class="aa">
+              <div class="image-row">
+                  <a href="https://www.amazon.com.br/Anne-green-gables-Lucy-Montgomery/dp/8538092669"><img src="https://i.postimg.cc/13vr7Yvq/anne-1.jpg" alt="Imagem 1"></a>
+                  <a href="https://www.amazon.com.br/Anne-Avonlea-Lucy-Maud-Montgomery/dp/8538092545"><img src="https://i.postimg.cc/cJKw91Kp/anne-2.jpg" alt="Imagem 2"></a>
+                  <a href="https://www.amazon.com.br/Anne-ilha-Lucy-Maud-Montgomery/dp/8538093347"><img src="https://i.postimg.cc/cCdKSdH4/anne-3.jpg" alt="Imagem 3"></a>
+                  <a href="https://www.amazon.com.br/Anne-Windy-Poplars-Lucy-Montgomery/dp/655500147X"><img src="https://i.postimg.cc/nVTrmbrB/anne-4.jpg" alt="Imagem 4"></a>
+                  <a href="https://www.amazon.com.br/Anne-casa-sonhos-Lucy-Montgomery/dp/6555001984"><img src="https://i.postimg.cc/SsSqQRW5/anne-5.jpg" alt="Imagem 5"></a>
+                  <a href="https://www.amazon.com.br/Anne-Ingleside-Lucy-Maud-Montgomery/dp/6555002107"><img src="https://i.postimg.cc/CMtyXm69/anne-6.jpg" alt="Imagem 6"></a>
+                  <a href="https://www.amazon.com.br/Vale-Arco-%C3%8Dris-Lucy-Maud-Montgomery/dp/6555002425"><img src="https://i.postimg.cc/L4Zqr081/annee7.jpg" alt="Imagem 7"></a>
+                  <a href="https://www.amazon.com.br/Rilla-Ingleside-Lucy-Maud-Montgomery/dp/6555002972"><img src="https://i.postimg.cc/667682sJ/anne-8.jpg" alt="Imagem 8"></a>
+                  <a href="https://www.amazon.com.br/Os-contos-dos-Blythes-Vol/dp/6555004681https://www.amazon.com.br/Os-contos-dos-Blythes-Vol/dp/6555004681"><img src="https://i.postimg.cc/8zpqr9FJ/anne9.jpg" alt="Imagem 9"></a>
+                  <a href="https://www.amazon.com.br/Os-contos-dos-Blythes-Vol/dp/6555004673"><img src="https://i.postimg.cc/gjKgzcHM/anne10.jpg" alt="Imagem 10"></a>
+                  <a href="https://www.amazon.com.br/poemas-Blythes-Lucy-Maud-Montgomery/dp/6555004711"><img src="https://i.postimg.cc/LsdLWKzh/anne-11.jpg" alt="Imagem 11"></a>
+                  <a href="https://www.amazon.com.br/Cr%C3%B4nicas-Avonlea-Lucy-Maud-Montgomery/dp/6555003804"><img src="https://i.postimg.cc/k5cGvks0/anne12.jpg" alt="Imagem 12"></a>
+                  <a href="https://www.amazon.com.br/Mais-Cr%C3%B4nicas-Avonlea-Lucy-Montgomery/dp/6555003812"><img src="https://i.postimg.cc/0y1NR8Bg/anne13.jpg" alt="Imagem 13"></a>
+              </div> -->
+          </div>  
+          <div class="conteudo">
+            <!-- <div id="grad"></div> -->
+            <br>     
                 <div class="image-grid">
 
-
-                  <div class="image">
-                    <img src="https://i.postimg.cc/K8FC308p/54b57a1995b25a79a887b2abd53c3b7e.jpg" alt="Imagem 1">
-                    <div class="image-description">Os Sete Maridos de Evelyn Hugo é um livro de ficção histórica, escrito por Taylor Jenkins Reid e publicado pela Atria Books em 2017. O romance conta a história da estrela fictícia da ‘Antiga Hollywood’, Evelyn Hugo, que, aos 79 anos, dá uma última entrevista a uma jornalista desconhecida, Monique Grant.<br>
+                  <article class="image">
+                    <img src="https://i.postimg.cc/d3p69F7C/a-sereia-sem-dons.jpg" alt="Imagem 1">
+                    <div class="image-description">Admete, princesa sereia, busca vingança contra os humanos que caçam sereias, infiltrando-se no reino deles ao se passar por humana. Durante sua missão, ela precisa escolher entre salvar seu povo ou ceder à vingança.</p>
+                        <a href="https://www.amazon.com.br/sereia-sem-dons-Cristina-Bomfim-ebook/dp/B0CFC6Y7SR" class="botao-amazon"> Amazon</a>
                         <div>
                             <span class="estrela amarela">&#9733;</span>
                             <span class="estrela amarela">&#9733;</span>
@@ -181,255 +439,334 @@ nav a {
                             <span class="estrela amarela">&#9733;</span>
                         </div>
                     </div>
-                </div>    
-
-                        <div class="image">
-                          <div class="image">
-                            <img src="https://i.postimg.cc/CKTXMsPC/conectadas.jpg" alt="Imagem 3">
-                            <div class="image-description">Ser uma garota gamer não é fácil. Principalmente quando um romance está em jogo. Raíssa e Ayla se conheceram jogando Feéricos, um dos games mais populares , e não se desgrudaram mais ― pelo menos virtualmente. Ayla sente que, com Raíssa, finalmente pode ser ela .
-                              <div>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela ">&#9733;</span>
-                                <span class="estrela meia-estrela">&#9733;</span>
-                              </div>
-                            </div>
-                        </div>
-                        </div>
-
-                        <div class="image">
-                            <img src="https://i.postimg.cc/hGLwXQ6k/Amor-e-gelado.jpg" alt="Imagem 3">
-                            <div class="image-description">Lina é uma adolescente que acabou de perder a mãe. Agora está prestes a aterrar em Itália para conhecer pela primeira vez o seu pai, Howard. Lá ela descobre um diário da sua mãe, e antes que Howard lhe possa contar o que aconteceu, ela decide ouvir primeiro a versão da sua mãe através da sua escrita.
-                              <div>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela ">&#9733;</span>
-                                <span class="estrela meia-estrela">&#9733;</span>
-                              </div>
-                            </div>
-                        </div>
-
-                        <div class="image">
-                          <img src="https://i.postimg.cc/sfnsKbxM/vermelho-branco-e-sangue-azul.jpg" alt="Imagem 3">
-                          <div class="image-description">A mãe de Alex é eleita presidenta dos EUA, e tudo muda quando sua família é convidada para o casamento real do príncipe britânico Philip. Alex se vê tendo que lidar com lidar Henry, a quem ele  não suporta. Após um encontro desastroso, os dois são forçados a fingir uma amizade, no entanto, essa farsa pode se transforma em algo inesperado
-                            <div>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela ">&#9733;</span>
-                                <span class="estrela amarela">&#9733;</span>
-                            </div>
-                        </div>
-                      </div>
-
-                        
-                    
-                      <div class="image">
-                        <img src="https://i.postimg.cc/brs39ZVN/luzes-do-norte.jpg" alt="Imagem 1">
-                        <div class="image-description">
-                          Dimitria Coromandel, uma caçadora talentosa, torna-se a provedora de sua família após a morte dos pais. Sua vida muda quando é contratada para proteger Aurora, da rica família Van Vintermer. Enquanto acompanha Aurora, Dimitria se vê dividida entre seu trabalho e sentimentos 
-                          <div>
-                            <span class="estrela amarela">&#9733;</span>
-                            <span class="estrela amarela">&#9733;</span>
-                            <span class="estrela amarela">&#9733;</span>
-                            <span class="estrela amarela ">&#9733;</span>
-                            <span class="estrela meia-estrela">&#9733;</span>
-                          </div>
-                        </div>
-                    </div>
-
-                      <div class="image">
-                        <div class="image">
-                          <img src="https://i.postimg.cc/8P70h0xB/todo-esse-tempo.jpg" alt="Imagem 3">
-                          <div class="image-description">Após um acidente de carro que termina com a morte de sua namorada Kimberly e uma lesão cerebral para ele, Kyle conhece Marley, que também está sofrendo. Eles se aproximam enquanto curam suas feridas emocionais, desenvolvendo um amor mútuo. No entanto, Kyle teme que outro desastre esteja por vir, e ele está correto.<br>
-                            <div>
-                              <span class="estrela amarela">&#9733;</span>
-                              <span class="estrela amarela">&#9733;</span>
-                              <span class="estrela amarela">&#9733;</span>
-                              <span class="estrela amarela ">&#9733;</span>
-                              <span class="estrela meia-estrela">&#9733;</span>
-                            </div>
-                          </div>
-                      </div>
-                      </div>
-
-                      <div class="image">
-                        <img src="https://i.postimg.cc/rpMjYnZH/o-amor-n-o-e-obvio.jpg" alt="Imagem 3">
-                        <div class="image-description"> Iris, é uma adolescente, viciada na novela "Amor em Atos" e, sua primeira melhor amiga, que está preocupada com a falta de interesse de Íris em festa de formatura. Mas a situação muda quando Cadu Sena, fica solteiro. Íris decide investigar a razão pela qual a namorada de Cadu o deixou por uma garota chamada ÉdraNorr.
-                          <div>
-                            <span class="estrela amarela">&#9733;</span>
-                            <span class="estrela amarela">&#9733;</span>
-                            <span class="estrela amarela">&#9733;</span>
-                            <span class="estrela amarela ">&#9733;</span>
-                            <span class="estrela amarela">&#9733;</span>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div class="image">
-                      <div class="image">
-                        <img src="https://i.postimg.cc/cJn3hsTB/imperfeitos.jpg" alt="Imagem 3">
-                        <div class="image-description">Olive, é muito azarada mas  tem sua sorte mudada quando sua alergia a frutos do mar a protege de uma intoxicação alimentar em um casamento. Juntamente com Ethan, o irmão do noivo e inimigo mortal devido a um passado conturbado, eles acabam compartilhando uma lua-de-mel no Havaí.
-                          <div>
-                            <span class="estrela amarela">&#9733;</span>
-                            <span class="estrela amarela">&#9733;</span>
-                            <span class="estrela amarela">&#9733;</span>
-                            <span class="estrela amarela ">&#9733;</span>
-                            <span class="estrela meia-estrela">&#9733;</span>
-                          </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <div class="image">
-                      <img src="https://i.postimg.cc/SQTPYh1x/um-farsa-de-amor-na-espanha.jpg" alt="Imagem 1">
-                      <div class="image-description">
-                        Catalina Martín é uma jovem espanhola que trabalha como engenheira em Nova York. Com o casamento da irmã se aproximando, ela precisa desesperadamente de um acompanhante, porque não quer encarar sozinha toda a família e, principalmente, o irmão do noivo, que é ninguém menos do que seu ex
-                        <div>
-                          <span class="estrela amarela">&#9733;</span>
-                          <span class="estrela amarela">&#9733;</span>
-                          <span class="estrela amarela">&#9733;</span>
-                          <span class="estrela amarela ">&#9733;</span>
-                          <span class="estrela meia-estrela">&#9733;</span>
-                        </div>
-                    </div>
-                  </div>
-
-                      
-
-                      <div class="image">
-                        <div class="image">
-                          <img src="https://i.postimg.cc/nLYVfMdc/2704eaa6da63c5ed4dd2707c8a228960.jpg" alt="Imagem 3">
-                          <div class="image-description">Felipe e Caio desde crianças sempre viveram juntos, até que ao chegarem na adolescência, a amizade entre os dois foi enfraquecida. Só que tudo está prestes a mudar, quando as férias do meio do ano de Felipe iniciam e ele recebe a surpresa de que seu vizinho do 57, o Caio, irá passar 15 dias na sua casa.<br>
-                            <div>
-                              <span class="estrela amarela">&#9733;</span>
-                              <span class="estrela amarela">&#9733;</span>
-                              <span class="estrela amarela">&#9733;</span>
-                              <span class="estrela amarela ">&#9733;</span>
-                              <span class="estrela amarela">&#9733;</span>
-                            </div>
-                          </div>
-                      </div>
-                      </div>
-    
-                 
-                    <div class="image">
-                      <img src="https://i.postimg.cc/MGS3JKHd/e5228d9168dc9c3daf6a6192649f5665.jpg" alt="Imagem 3">
-                      <div class="image-description">Uma inesquecível história de amor e de superação da autora de Os sete maridos de Evelyn Hugo. Emma e Jesse tinham a vida com que sempre haviam sonhado, quando o impensável aconteceu. Um ano depois do casamento, Jesse foi dado como desaparecido e Emma teve de aprender a viver sem ele.<br>
-                        <div>
-                          <span class="estrela amarela">&#9733;</span>
-                          <span class="estrela amarela">&#9733;</span>
-                          <span class="estrela amarela">&#9733;</span>
-                          <span class="estrela amarela ">&#9733;</span>
-                          <span class="estrela meia-estrela">&#9733;</span>
-                        </div>
-                      </div>
-                  </div>
-
-                  
-
-              
-
-                  <div class="image">
-                    <img src="https://i.postimg.cc/9QSTy4Pf/50af41fceb1b167b29ee968cd3c2721c.jpg" alt="Imagem 1">
-                    <div class="image-description">
-                      Stella Grant, tem fibrose cística, e seu objetivo principal é garantir a felicidade de seus pais e obter um transplante de pulmão. No entanto, para ser considerada para o transplante, ela deve evitar infecções, mantendo uma distância de dois metros de outros pacientes com a mesma doença. Então ela conhece Will que anseia por liberdade, e tudo muda.<br>
-                      <div>
-                        <span class="estrela amarela">&#9733;</span>
-                        <span class="estrela amarela">&#9733;</span>
-                        <span class="estrela amarela">&#9733;</span>
-                        <span class="estrela amarela ">&#9733;</span>
-                        <span class="estrela amarela">&#9733;</span>
-                      </div>
-                    </div>
-                </div>
-
-            
-                <div class="image hidden">
-                  <div class="image">
-                    <img src="https://i.postimg.cc/3RbZNKrM/Teto-para-dois.jpgg" alt="Imagem 3">
-                    <div class="image-description"> Leon, enfrentando problemas financeiros, decide alugar seu apartamento em horários específicos para conseguir dinheiro rápido. Ele compartilha o espaço com Tiffy, uma mulher que trabalha durante o dia e precisa de um lugar para morar. Eles nunca se encontraram pessoalmente, mas fecham um contrato de seis meses.<br>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/Zn8g00sR/Conectadas.jpg" alt="imagem 2">
+                  <div class="image-description">Ser uma garota gamer não é fácil. Principalmente quando um romance está em jogo. Raíssa e Ayla se conheceram jogando Feéricos, um dos games mais populares , e não se desgrudaram mais ― pelo menos virtualmente. Ayla sente que, com Raíssa, finalmente pode ser ela.</p>
+                      <a href="https://www.amazon.com.br/Conectadas-Clara-Alves/dp/8555340896" class="botao-amazon"> Amazon</a>
                       <div>
                         <span class="estrela amarela">&#9733;</span>
                         <span class="estrela amarela">&#9733;</span>
                         <span class="estrela amarela">&#9733;</span>
                         <span class="estrela amarela ">&#9733;</span>
                         <span class="estrela meia-estrela">&#9733;</span>
-                      </div> 
+                      </div>
+                  </div>
+              </article>
+                <article class="image">
+                    <img src="https://i.postimg.cc/sfnsKbxM/vermelho-branco-e-sangue-azul.jpg" alt="Imagem 3">
+                    <div class="image-description">Quando a mãe de Alex é eleita presidenta dos EUA, sua vida vira de cabeça para baixo com o convite para o casamento real do príncipe Philip. Ao ter que lidar com Henry, a quem detesta, eles acabam forçados a fingir uma amizade, mas essa farsa pode levar a sentimentos inesperados.</p>
+                        <a href="https://www.amazon.com.br/Vermelho-branco-sangue-Casey-McQuiston/dp/8555340942" class="botao-amazon"> Amazon</a>
+                        <div>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela ">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
                     </div>
                 </div>
-              </div>
-
-              <div class="image hidden">
-                  <div class="image">
-                      <img src="https://i.postimg.cc/QM1B5fx6/a-mecanica-do-amor.jpg" alt="Imagem 1">
-                      <div class="image-description">
-                        Bel não sabe o que fazer quando se formar no colégio,mas quando revela um talento especial para engenharia, é incentivada por uma professora a entrar para o clube de robótica da escola. O problema é que o clube é comandado por Teo. Quando os dois se conhecem, o choque é instantâneo: eles se odeiam. Mas com o tempo , Teo percebe que não consegue parar de pensar na constelação de sardas no rosto da garota.<br> 
-                        <div>
-                          <span class="estrela amarela">&#9733;</span>
-                          <span class="estrela amarela">&#9733;</span>
-                          <span class="estrela amarela">&#9733;</span>
-                          <span class="estrela amarela ">&#9733;</span>
-                          <span class="estrela meia-estrela">&#9733;</span>
-                        </div>
+            </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/ncb8GfvZ/amor-e-gelado.jpg" alt="imagem 2">
+                  <div class="image-description">Lina, uma adolescente que acabou de perder a mãe, viaja para a Itália para conhecer seu pai, Howard, pela primeira vez. Lá, ela encontra o diário de sua mãe e decide descobrir o passado através das palavras dela antes de ouvir a versão de Howard.</p>
+                      <a href="https://www.amazon.com.br/Conectadas-Clara-Alves/dp/8555340896" class="botao-amazon"> Amazon</a>
+                      <div>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela ">&#9733;</span>
+                        <span class="estrela meia-estrela">&#9733;</span>
                       </div>
                   </div>
-                </div>  
-
-
-                <div class="image hidden">
-                  <div class="image">
-                    <div class="image">
-                      <img src="https://i.postimg.cc/1X2MCyb0/princesas-das-aguas.jpg" alt="Imagem 3">
-                      <div class="image-description">Em Princesa das águas Arielle Botrel é uma nadadora famosa, prestes a viver o maior desafio de sua vida: participar das Olimpíadas pela primeira vez. Porém, ao contrário do que todos pensam, ela não possui tudo que deseja.<br>
-                        <div>
-                          <span class="estrela amarela">&#9733;</span>
-                          <span class="estrela amarela">&#9733;</span>
-                          <span class="estrela amarela">&#9733;</span>
-                          <span class="estrela amarela ">&#9733;</span>
-                          <span class="estrela meia-estrela">&#9733;</span>
-                        </div>
-                      </div>
-                  </div>
-                  </div>
+              </article>
+               <article class="image">
+                <img src="https://i.postimg.cc/jjg6RKs7/A-princesa-e-o-queijo-quente.jpg" alt="Imagem 1">
+                <div class="image-description">Lady Camembert, determinada a não se casar, se disfarça de homem para herdar a fortuna da família e inicia uma nova vida como Conde Camembert. Na capital do Reino de Fromage, ela se aproxima da Princesa Brie, mas a atração crescente torna difícil manter sua verdadeira identidade em segredo.</p>
+                    <a href="https://www.amazon.com.br/princesa-queijo-quente-Deya-Muniz/dp/6588343582" class="botao-amazon"> Amazon</a>
+                    <div>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela ">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                    </div>
                 </div>
-
-                <div class="image hidden">
-                  <div class="image">
-                    <div class="image">
-                      <img src="https://i.postimg.cc/nLbrHqYq/uma-peincesa-em-toquio.jpg" alt="Imagem 3">
-                      <div class="image-description">Izumi Tanaka nunca sentiu que pertence ao lugar onde vive. Afinal, ela é uma das únicas garotas com ascendência japonesa em sua cidadezinha natal,. Criada apenas pela mãe, as duas sempre foram muito unidas ― até Izzy descobrir que seu misterioso pai é ninguém mais, ninguém menos do que o príncipe herdeiro do Japão. O que significa que Izumi é literalmente uma princesa.<br>
+            </article>
+            <article class="image">
+              <img src="https://i.postimg.cc/KYqWwdw9/Uma-tempestade-de-ver-o.jpg" alt="imagem 2">
+              <div class="image-description">Meredith, ainda lidando com a perda da irmã, tenta se reconectar com sua família durante uma viagem a Martha's Vineyard. E ao participar de um jogo em homenagem à irmã, ela forma uma aliança inesperada com Wit, descobrindo novos sentimentos e a possibilidade de seguir em frente.</p>
+                  <a href="https://www.amazon.com.br/Uma-tempestade-ver%C3%A3o-Sucesso-TikTok/dp/8570870175" class="botao-amazon"> Amazon</a>
+                  <div>
+                    <span class="estrela amarela">&#9733;</span>
+                    <span class="estrela amarela">&#9733;</span>
+                    <span class="estrela amarela">&#9733;</span>
+                    <span class="estrela amarela ">&#9733;</span>
+                    <span class="estrela meia-estrela">&#9733;</span>
+                  </div>
+              </div>
+          </article>
+                   <article class="image">
+                    <img src="https://i.postimg.cc/QCb1nrnC/Uma-segunda-chance.jpg" alt="Imagem 1">
+                    <div class="image-description">Kenna Rowan volta à sua cidade após cinco anos na prisão, buscando se reconectar com sua filha, mas enfrenta rejeição da comunidade. A única pessoa disposta a apoiá-la é Ledger Ward, e juntos lidam com os desafios de julgamentos precipitados enquanto Kenna luta por uma segunda chance.</p>
+                        <a href="https://www.amazon.com.br/Uma-segunda-chance-Colleen-Hoover-ebook/dp/B09ZK6M2NN" class="botao-amazon"> Amazon</a>
                         <div>
-                          <span class="estrela amarela">&#9733;</span>
-                          <span class="estrela amarela">&#9733;</span>
-                          <span class="estrela amarela">&#9733;</span>
-                          <span class="estrela amarela ">&#9733;</span>
-                          <span class="estrela meia-estrela">&#9733;</span>
+                            <span class="estrela amarela">&#9733;</span>
+                            <span class="estrela amarela">&#9733;</span>
+                            <span class="estrela amarela">&#9733;</span>
+                            <span class="estrela amarela ">&#9733;</span>
+                            <span class="estrela amarela">&#9733;</span>
                         </div>
+                    </div>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/7ZfXbmLc/Eu-e-Esse-meu-Cora-o.jpg" alt="imagem 2">
+                  <div class="image-description">Leah MacKenzie, de 17 anos, vive com um coração artificial e faz uma lista de coisas para fazer antes de morrer. Quando descobre que o coração doado pertence a um garoto que supostamente se suicidou, ela se une a seu irmão gêmeo, Matt, para desvendar o mistério.</p>
+                      <a href="https://www.amazon.com.br/Eu-esse-meu-cora%C3%A7%C3%A3o-Hunter/dp/8555391210" class="botao-amazon"> Amazon</a>
+                      <div>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela ">&#9733;</span>
+                        <span class="estrela meia-estrela">&#9733;</span>
                       </div>
                   </div>
+              </article>
+              <article class="image">
+                <img src="https://i.postimg.cc/zvN8GySt/O-amor-n-o-bvio.jpg" alt="Imagem 1">
+                <div class="image-description">Íris, uma adolescente fã da novela "Amor em Atos", está desinteressada na festa de formatura, o que preocupa sua melhor amiga. No entanto, sua atenção muda quando Cadu Sena fica solteiro, e Íris decide investigar por que a namorada dele o deixou por uma garota chamada Édra Norr.</p>
+                    <a href="https://www.amazon.com.br/amor-n%C3%A3o-%C3%A9-%C3%B3bvio/dp/8501118265" class="botao-amazon"> Amazon</a>
+                    <div>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela ">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                    </div>
                 </div>
-              </div>
-
-              <div class="image hidden">
-                  <div class="image">
-                    <div class="image">
-                      <img src="https://i.postimg.cc/pTRR1HKF/um-ver-o-inesquesivel.jpg" alt="Imagem 3">
-                      <div class="image-description">Larissa sempre teve olhos apenas para Chase Harding e ele finalmente começou a prestar atenção nela, mas porque agora ela não consegue tirar da cabeça os dias de verão que viveu com uma garota chamada Jasmine. As coisas ficam ainda mais esquisitas quando Lara descobre que Jasmine se transferiu para sua escola e percebe que a garota parece disposta a esquecer tudo o que aconteceu entre elas.<br>
-                        <div>
-                          <span class="estrela amarela">&#9733;</span>
-                          <span class="estrela amarela">&#9733;</span>
-                          <span class="estrela amarela">&#9733;</span>
-                          <span class="estrela amarela ">&#9733;</span>
-                          <span class="estrela meia-estrela">&#9733;</span>
-                        </div>
-                      </div>
+            </article>
+              <article class="image">
+                <img src="https://i.postimg.cc/gkrB6YSN/Teto-para-dois.jpg" alt="imagem 2">
+                <div class="image-description">Leon, enfrentando problemas financeiros, aluga seu apartamento em horários específicos e compartilha o espaço com Tiffy, que precisa de um lugar para morar. Eles firmam um contrato de seis meses, mesmo sem nunca terem se encontrado pessoalmente.</p>
+                    <a href="https://www.amazon.com.br/Teto-Para-Dois-Beth-Oleary/dp/8551005413" class="botao-amazon"> Amazon</a>
+                    <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela meia-estrela">&#9733;</span>
+                    </div>
+                </div>
+            </article>   
+            <article class="image">
+              <img src="https://i.postimg.cc/J4qZmJcF/A-can-o-de-Aquiles.jpg" alt="Imagem 1">
+              <div class="image-description">Na Grécia Antiga, Pátroclo, um príncipe exilado, se conecta profundamente com Aquiles, filho do rei e da deusa Tétis. Quando a guerra em Troia se inicia, Aquiles busca cumprir seu destino heroico, e Pátroclo o acompanha, enfrentando amor e sacrifícios.</p>
+                  <a href="https://www.amazon.com.br/can%C3%A7%C3%A3o-Aquiles-aclamada-releitura-Il%C3%ADada/dp/6555354186" class="botao-amazon"> Amazon</a>
+                  <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela meia-estrela">&#9733;</span>
                   </div>
-                </div>
               </div>
-                
+          </article>
+          <article class="image">
+            <img src="https://i.postimg.cc/BQkrN8Rj/Uma-farsa-de-amor-na-Espanha.jpg" alt="Imagem 1">
+            <div class="image-description">Catalina Martín, uma engenheira espanhola em Nova York, precisa de um acompanhante para o casamento da irmã, pois não quer enfrentar a família sozinha, especialmente seu ex-namorado, que é o irmão do noivo.</p>
+                <a href="https://www.amazon.com.br/farsa-amor-Espanha-Sucesso-TikTok/dp/6555652977" class="botao-amazon"> Amazon</a>
+                <div>
+                    <span class="estrela amarela">&#9733;</span>
+                    <span class="estrela amarela">&#9733;</span>
+                    <span class="estrela amarela">&#9733;</span>
+                    <span class="estrela amarela ">&#9733;</span>
+                    <span class="estrela meia-estrela">&#9733;</span>
+                </div>
+            </div>
+        </article>
+        <article class="image">
+          <img src="https://i.postimg.cc/RZzB46dj/Untitled-Project-16.jpg" alt="Imagem 1">
+          <div class="image-description">Felipe e Caio, amigos de infância, se distanciam na adolescência, mas suas vidas mudam quando Caio, seu vizinho, passa 15 dias na casa de Felipe durante as férias de meio de ano. Essa inesperada convivência promete reacender a amizade entre os dois.</p>
+              <a href="https://www.amazon.com.br/Quinze-Dias-Vitor-Martins/dp/8525063150" class="botao-amazon"> Amazon</a>
+              <div>
+                  <span class="estrela amarela">&#9733;</span>
+                  <span class="estrela amarela">&#9733;</span>
+                  <span class="estrela amarela">&#9733;</span>
+                  <span class="estrela amarela ">&#9733;</span>
+                  <span class="estrela amarela">&#9733;</span>
+              </div>
+          </div>
+      </article>
+      <article class="image">
+        <img src="https://i.postimg.cc/tCFg3HMG/Imperfeitos.jpg" alt="Imagem 1">
+        <div class="image-description">Olive, uma mulher azarada, tem sua sorte transformada ao ser protegida de uma intoxicação alimentar por sua alergia a frutos do mar durante um casamento. Ela acaba compartilhando uma lua de mel no Havaí com Ethan, o irmão do noivo e seu inimigo devido a um passado conturbado.</p>
+            <a href="https://www.amazon.com.br/Imperfeitos-Christina-Lauren/dp/6559571289" class="botao-amazon"> Amazon</a>
+            <div>
+                <span class="estrela amarela">&#9733;</span>
+                <span class="estrela amarela">&#9733;</span>
+                <span class="estrela amarela">&#9733;</span>
+                <span class="estrela amarela ">&#9733;</span>
+                <span class="estrela meia-estrela">&#9733;</span>
+            </div>
+        </div>
+    </article>
+        <article class="image">
+          <img src="https://i.postimg.cc/fTRHXwLJ/Amor-es-verdadeiro-s.jpg" alt="Imagem 1">
+          <div class="image-description">Uma inesquecível história de amor e de superação da autora de Os sete maridos de Evelyn Hugo. Emma e Jesse tinham a vida com que sempre haviam sonhado, quando o impensável aconteceu. Um ano depois do casamento, Jesse foi dado como desaparecido e Emma teve de aprender a viver sem ele.</p>
+              <a href="https://www.amazon.com.br/Amor-verdadeiro-Taylor-Jenkins-Reid/dp/8584391673" class="botao-amazon"> Amazon</a>
+              <div>
+                  <span class="estrela amarela">&#9733;</span>
+                  <span class="estrela amarela">&#9733;</span>
+                  <span class="estrela amarela">&#9733;</span>
+                  <span class="estrela amarela ">&#9733;</span>
+                  <span class="estrela amarela">&#9733;</span>
+              </div>
+          </div>
+      </article>
+      <article class="image">
+        <img src="https://i.postimg.cc/QNFCMzG1/A-garota-do-mar.jpg" alt="Imagem 1">
+        <div class="image-description">Morgan deseja se formar e deixar sua pequena ilha, lidando com sua mãe, irmão e amigas. No entanto, tudo muda quando conhece Kelpie, uma misteriosa garota que desperta uma paixão inesperada e traz à tona seus segredos.</p>
+            <a href="https://i.postimg.cc/QNFCMzG1/A-garota-do-mar.jpg" class="botao-amazon"> Amazon</a>
+            <div>
+                <span class="estrela amarela">&#9733;</span>
+                <span class="estrela amarela">&#9733;</span>
+                <span class="estrela amarela">&#9733;</span>
+                <span class="estrela amarela ">&#9733;</span>
+                <span class="estrela meia-estrela">&#9733;</span>
+            </div>
+        </div>
+    </article>
+
+  <article class="image">
+    <img src="https://i.postimg.cc/vThQc5zq/Cool-for-the-summer.jpg" alt="Imagem 1">
+    <div class="image-description">Larissa sempre teve um crush em Chase Harding, que agora a nota, mas ela não consegue esquecer os dias de verão com Jasmine. Quando Jasmine se transfere para sua escola, Lara percebe que a garota quer deixar o passado para trás.</p>
+        <a href="https://www.amazon.com.br/Cool-summer-Um-ver%C3%A3o-inesquec%C3%ADvel/dp/6588131380" class="botao-amazon"> Amazon</a>
+        <div>
+            <span class="estrela amarela">&#9733;</span>
+            <span class="estrela amarela">&#9733;</span>
+            <span class="estrela amarela">&#9733;</span>
+            <span class="estrela amarela ">&#9733;</span>
+            <span class="estrela meia-estrela">&#9733;</span>
+        </div>
+    </div>
+</article>
+<article class="image">
+  <img src="https://i.postimg.cc/B6xF7wSj/Todo-esse-tempo.jpg" alt="Imagem 1">
+  <div class="image-description">Após um acidente que mata sua namorada Kimberly e deixa Kyle com uma lesão cerebral, ele conhece Marley, que também enfrenta sua dor. Eles desenvolvem um amor enquanto tentam curar suas feridas emocionais, mas Kyle teme que outro desastre esteja a caminho, e sua intuição se revela correta.</p>
+      <a href="https://www.amazon.com.br/Todo-esse-tempo-Rachael-Lippincott/dp/6588131089" class="botao-amazon"> Amazon</a>
+      <div>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela ">&#9733;</span>
+          <span class="estrela meia-estrela">&#9733;</span>
+      </div>
+  </div>
+</article>                  
+<article class="image">
+  <img src="https://i.postimg.cc/htr9cYTT/Amor-teoricamente.jpg" alt="Imagem 1">
+  <div class="image-description">Elsie, uma física teórica que trabalha como professora adjunta e namorada de mentira, vê sua vida mudar quando Jack Smith, se torna um obstáculo para seu emprego dos sonhos. Enquanto enfrenta essa rivalidade acadêmica, ela questiona suas crenças sobre o amor.</p>
+      <a href="https://www.amazon.com.br/Amor-teoricamente-Ali-Hazelwood/dp/6555655259" class="botao-amazon"> Amazon</a>
+      <div>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela ">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+      </div>
+  </div>
+</article>
+<article class="image">
+  <img src="https://i.postimg.cc/sxYtXyV3/Assim-que-Acaba.jpg" alt="Imagem 1">
+  <div class="image-description">Lily é uma jovem que se muda para Boston e conhece Ryle, um neurocirurgião. Ao se apaixonar, Lily se vê em um relacionamento turbulento e doloroso, enquanto o livro explora as complexidades das relações tóxicas e a interseção entre amor e abuso.</p>
+      <a href="https://www.amazon.com.br/Assim-que-Acaba-Colleen-Hoover/dp/8501112518" class="botao-amazon"> Amazon</a>
+      <div>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela ">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+      </div>
+  </div>
+</article>  
+<article class="image">
+  <img src="https://i.postimg.cc/c4VnZSvv/Heartstopper.jpg" alt="Imagem 1">
+  <div class="image-description">Charlie Spring, um estudante gay alvo de bullying, e Nick Nelson, um popular jogador de rúgbi, formam uma amizade ao se sentarem juntos. Charlie se apaixona por Nick, que começa a explorar seus próprios sentimentos, resultando em uma descoberta inesperada do amor.</p>
+      <a href="https://www.amazon.com.br/Heartstopper-Dois-garotos-encontro-vol/dp/8555341612" class="botao-amazon"> Amazon</a>
+      <div>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela ">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+      </div>
+  </div>
+</article>              
+<article class="image">
+  <img src="https://i.postimg.cc/4NCcRG7m/A-mec-nica-do-amor.jpg" alt="Imagem 1">
+  <div class="image-description">Bel, sem planos após a formatura, descobre seu talento para engenharia e é incentivada a se juntar ao clube de robótica, liderado por Teo, com quem tem uma forte antipatia. No entanto, à medida que se conhecem, Teo se vê atraído pelas sardas de Bel, mudando a relação entre eles.</p>
+      <a href="https://www.amazon.com.br/mec%C3%A2nica-amor-Alexene-Farol-Follmuth/dp/6588131992" class="botao-amazon"> Amazon</a>
+      <div>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela ">&#9733;</span>
+          <span class="estrela meia-estrela">&#9733;</span>
+      </div>
+  </div>
+</article>
+<article class="image">
+  <img src="https://i.postimg.cc/t4hbYhHk/a-cinco-passos-de-voc.jpg" alt="Imagem 1">
+  <div class="image-description">
+      Stella, com fibrose cística, sonha em fazer seus pais felizes e conseguir um transplante de pulmão, mas deve evitar infecções mantendo distância de outros pacientes. Sua vida muda ao conhecer Will, que busca liberdade, e juntos enfrentam desafios emocionais e de saúde.</p>
+      <a href="https://www.amazon.com.br/cinco-passos-voc%C3%AA-Rachael-Lippincott/dp/8525067423" class="botao-amazon"> Amazon</a>
+      <div>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela ">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+      </div>
+  </div>
+</article>
+ <article class="image">
+  <img src="https://i.postimg.cc/ncRtQF4L/luzes-do-note.jpg" alt="Imagem 1">
+  <div class="image-description">Dimitria Coromandel, uma caçadora talentosa, torna-se a provedora de sua família após a morte dos pais. Sua vida muda quando é contratada para proteger Aurora, da rica família Van Vintermer. Enquanto acompanha Aurora, Dimitria se vê dividida entre seu trabalho e sentimentos</p>
+      <a href="https://www.amazon.com.br/Luzes-do-Norte-Giulianna-Domingues/dp/6559810836" class="botao-amazon"> Amazon</a>
+      <div>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela ">&#9733;</span>
+          <span class="estrela meia-estrela">&#9733;</span>
+      </div>
+  </div>
+</article>  
+<article class="image">
+  <img src="https://i.postimg.cc/qvFhQdTJ/A-Guerra-dos-Furac-es.jpg" alt="Imagem 1">
+  <div class="image-description">Dimitria Coromandel, uma caçadora talentosa, torna-se a provedora de sua família após a morte dos pais. Sua vida muda quando é contratada para proteger Aurora, da rica família Van Vintermer. Enquanto acompanha Aurora, Dimitria se vê dividida entre seu trabalho e sentimentos</p>
+      <a href="https://www.amazon.com.br/Luzes-do-Norte-Giulianna-Domingues/dp/6559810836" class="botao-amazon"> Amazon</a>
+      <div>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela ">&#9733;</span>
+          <span class="estrela meia-estrela">&#9733;</span>
+      </div>
+  </div>
+</article>                         
+<article class="image">
+  <img src="https://i.postimg.cc/RVrgsjvT/Eu-beijei-Shara-Wheeler.jpg" alt="Imagem 1">
+  <div class="image-description">Dimitria Coromandel, uma caçadora talentosa, torna-se a provedora de sua família após a morte dos pais. Sua vida muda quando é contratada para proteger Aurora, da rica família Van Vintermer. Enquanto acompanha Aurora, Dimitria se vê dividida entre seu trabalho e sentimentos</p>
+      <a href="https://www.amazon.com.br/Luzes-do-Norte-Giulianna-Domingues/dp/6559810836" class="botao-amazon"> Amazon</a>
+      <div>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela">&#9733;</span>
+          <span class="estrela amarela ">&#9733;</span>
+          <span class="estrela meia-estrela">&#9733;</span>
+      </div>
+  </div>
+</article>                       
               <div class="image hidden">
                  <div class="image">
                             <img src="https://i.postimg.cc/Hk5m9yv2/taticas-do-amoir.jpg" alt="Imagem 1">
@@ -446,51 +783,71 @@ nav a {
                         </div>
                    </div>
 
-                   <div class="image hidden">
-                        <div class="image">
-                          <img src="https://i.postimg.cc/tTGxmLMQ/duff.jpg" alt="Imagem 3">
-                          <div class="image-description">Bianca Piper é a DUFF em seu grupo de amigas,é aquela que não se destaca. Quando Wesley Rush, o pegador da escola, sugere que ser amigável com a DUFF o ajudaria com suas amigas, Bianca começa a questionar sua posição. Enquanto lida com problemas familiares. Com o tempo, Bianca amadurece  e questionar os rótulos impostos pela sociedade.<br>
-                            <div>
-                              <span class="estrela amarela">&#9733;</span>
-                              <span class="estrela amarela">&#9733;</span>
-                              <span class="estrela amarela">&#9733;</span>
-                              <span class="estrela amarela ">&#9733;</span>
-                              <span class="estrela meia-estrela">&#9733;</span>
-                            </div>
-                          </div>
-                      </div>
-                    </div>
-                    <div class="image hidden">
-                      <div class="image">
-                          <img src="https://i.postimg.cc/9XNmh6BT/divinos-rivais.jpg" alt="Imagem 3">
-                          <div class="image-description">Iris Winnow é uma jornalista de 18 anos que sonha em conquistar a vaga de colunista no jornal em que trabalha, a Gazeta de Oath. Em meio a uma guerra entre poderosos deuses ela luta para ajudar sua mãe, que sofre para superar um vício, e para encontrar o irmão, que está desaparecido em meio às trincheiras da guerra.<br>
-                            <div>
-                              <span class="estrela amarela">&#9733;</span>
-                              <span class="estrela amarela">&#9733;</span>
-                              <span class="estrela amarela">&#9733;</span>
-                              <span class="estrela amarela ">&#9733;</span>
-                              <span class="estrela meia-estrela">&#9733;</span>
-                            </div>
-                          </div>
-                      </div>
-                    </div>
                   </div>
-                  <button class="button" id="loadMore">
+                  <!-- <button class="button" id="loadMore">
                 Mais <span class="arrow"></span>
-            </button>
+            </button> -->
             </div>
         </main>
-          <script>
-          document.getElementById('loadMore').addEventListener('click', function() {
-              const hiddenItems = document.querySelectorAll('.image.hidden');
-              hiddenItems.forEach(item => item.classList.remove('hidden'));
-              
-              // Verifica se ainda há itens ocultos
-              const remainingHiddenItems = document.querySelectorAll('.image.hidden');
-              if (remainingHiddenItems.length === 0) {
-                  this.style.display = 'none';
+                  <script>
+                  // document.getElementById('loadMore').addEventListener('click', function() {
+                  //     const hiddenItems = document.querySelectorAll('.image.hidden');
+                  //     hiddenItems.forEach(item => item.classList.remove('hidden'));
+                      
+                  //     // Verifica se ainda há itens ocultos
+                  //     const remainingHiddenItems = document.querySelectorAll('.image.hidden');
+                  //     if (remainingHiddenItems.length === 0) {
+                  //         this.style.display = 'none';
+                  //     }
+                  // });
+
+
+                  const carouselInner = document.querySelector('.carousel-inner');
+              const totalSlides = document.querySelectorAll('.carousel-item').length;
+              let index = 0;
+
+              function showSlide(n) {
+                  if (n >= totalSlides) {
+                      carouselInner.style.transition = 'none';
+                      index = 0;
+                      carouselInner.style.transform = `translateX(${-index * 100}%)`;
+                      setTimeout(() => {
+                          carouselInner.style.transition = 'transform 0.5s ease-in-out'; 
+                          showSlide(index + 1);
+                      }, 50);
+                      return;
+                  } else if (n < 0) {
+                      carouselInner.style.transition = 'none'; 
+                      index = totalSlides / 2 - 1; 
+                      carouselInner.style.transform = `translateX(${-index * 100}%)`; 
+                      setTimeout(() => {
+                          carouselInner.style.transition = 'transform 0.5s ease-in-out'; 
+                          showSlide(index + 1);
+                      }, 50);
+                      return;
+                  }
+                  index = n;
+                  carouselInner.style.transform = `translateX(${-index * 100}%)`;
               }
-          });
+              setInterval(() => showSlide(index + 1), 5000);
+
+              function toggleMenu() {
+    const menu = document.getElementById('menu');
+    if (menu.classList.contains('show')) {
+        menu.classList.remove('show');
+        setTimeout(() => {
+            menu.style.display = 'none'; 
+        }, 300); 
+    } else {
+        menu.style.display = 'block'; 
+        setTimeout(() => {
+            menu.classList.add('show'); 
+            
+        }, 10); 
+        
+    }
+}
+              
         </script>
     </body>
 </html>   
