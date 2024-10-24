@@ -5,275 +5,864 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poesia</title>
     <style>
-@media screen and (min-width: 768px) {
-  .image-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+ @media screen and (min-width: 768px) {
+            .image-grid {
+              grid-template-columns: repeat(4, 1fr);
+            }
+          }
+          @media screen and (max-width: 480px) {
+            .image-grid {
+              grid-template-columns: 1fr;
+            }
+          }
+          .menu {
+  z-index: 10; 
 }
-@media screen and (max-width: 480px) {
-  .image-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.banner {
-  position: relative;
-  width: 100%;
-  height: 100px; /* Altura da imagem */
-}
-.banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.banner .texto {
+.menu {
+  display: none;
+  background: linear-gradient(to right, #e478a3 0%, #be4877 100%);
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: rgba(0, 0, 0, 0.89);
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: rgb(32, 32, 32);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: #f5e1e9;
-}
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
-}
-.image {
-  display: flex;
-  align-items: center;
-}
-.image img {
-  max-width: 50%;
-  height: auto;
-  margin-right: 15px;
-  transition: transform 0.4s ease; /* Adicionando transição de transformação */
-  border-radius: 8px;
-}
-
-.image:hover img {
-  transform: scale(1.1); /* Aumenta a escala ao passar o mouse */
-}
-.image-description {
-  font-size: 14px;
-  text-align: justify;
-  text-align: left;
-}
-.conteudo {
-  margin-left: 10%;
-  margin-right: 10%;
-}
-p {
-  text-align: justify;
-}
-nav {
-  background-color: rgb(32,32,32);
-  color: rgb(230, 182, 204);
-  padding: 10px;
-  text-align: center;
-  border: 2px solid rgb(230, 182, 204);
-  border-radius: 10px;
-}
-nav a {
-  color: rgb(245, 237, 241);
-  text-decoration: none;
-  padding: 10px;
-}
-.elemento {
-  transition: background-color 0.3s ease;
-}
-
-.elemento:hover {
-  background-color: rgb(255, 234, 248);
-}
-.estrela {
-  font-size: 1.5rem;
-  color: rgb(168, 166, 166);;
-  position: relative;
-  display: inline-block;
-}
-.estrela.amarela {
-  color: rgb(255, 166, 0);;
-}
-.meia-estrela::after {
-  content: '\2605'; 
-  color: rgb(255, 166, 0);;
-  position: absolute;
+  top: 0;
   left: 0;
-  overflow: hidden;
-  width: 50%;
+  width: 180px;
+  height:40% ;
+  opacity: 0; 
+  transform: translateX(-20px); 
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+  width: 180px;
+  border-radius: 2%;
 }
+.menu.show {
+  display: block; 
+  opacity: 1; 
+  transform: translateX(0); 
+}
+.menu a {
+  color: #ffffff;
+  padding: 10px 10px 10px 25px; 
+  text-decoration: none;
+  display: block;
+  position: relative;
+  border-bottom: 1px solid rgb(255, 255, 255); 
+  margin-top: 20px; 
+}
+.menu a:hover {
+  background: #e681a9;
+}
+.menu a::before {
+  content: ''; 
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%); 
+  width: 8px; 
+  height: 8px; 
+  border-radius: 50%; 
+  background: #fffdfd; 
+}
+.hamburger {
+  cursor: pointer;
+  padding: 15px;
+  background: transparent; 
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 6%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 24px;
+}
+#grad1 {
+  height: 110px;
+  background-color: #ff80b3;
+  background-image: linear-gradient(#ff80b3,#000000 );
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}    
+#imagem-centralizada {
+  height: auto;
+  max-height: 230%; 
+  margin-top: 68px;
+}
+          body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(0, 0, 0);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #f5e1e9;
+          }
+          .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+          }
+          .image {
+            display: flex;
+            align-items: center;
+            
+            padding: 9px; 
+            border-radius: 8px; 
+          }
+          .image img {
+            max-width: 50%;
+            height: auto;
+            margin-right: 15px;
+            transition: transform 0.4s ease; 
+            border-radius: 8px;
+          }
+          .image:hover img {
+            transform: scale(1.1); 
+          }
+          .image-description {
+            font-size: 14px;
+            text-align: justify;
+            text-align: left;
+          }
+          .conteudo {
+            margin-left: 10%;
+            margin-right: 10%;
+          }
+          p {
+            text-align: justify;
+          }
+          nav {
+            background-color: hsla(332, 80%, 71%, 0);
+            color: rgb(230, 182, 204);
+            padding: 10px;
+            text-align: center;
+            border: 2px solid rgb(230, 182, 204);
+            border-radius: 10px;
+          }
+          nav a {
+            color: rgb(245, 237, 241);
+            text-decoration: none;
+            padding: 10px;
+          }
+          .elemento {
+            transition: background-color 0.3s ease;
+          }
+          .elemento:hover {
+            background-color: rgb(255, 234, 248);
+          }
+          .estrela {
+            font-size: 1.5rem;
+            color: rgb(168, 166, 166);;
+            position: relative;
+            display: inline-block;
+          }
+          .estrela.amarela {
+            color: rgb(255, 166, 0);;
+          }
+          .meia-estrela::after {
+            content: '\2605'; 
+            color: rgb(255, 166, 0);;
+            position: absolute;
+            left: 0;
+            overflow: hidden;
+            width: 50%;
+          }
+          /* .hidden {
+            display: none;
+          }
+          .button {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              margin: 30px auto;
+              padding: 0.8% 48%;
+              background-color: hsl(342, 100%, 88%);
+              color: rgb(0, 0, 0);
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              font-size: 18px;
+              text-align: center;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+              transition: background-color 0.3s, transform 0.3s;
+          }
+          .button:hover {
+              background-color: hsl(342, 85%, 79%);
+              transform: scale(1.05);
+          } */
+          .arrow {
+              display: inline-block;
+              width: 0;
+              height: 0;
+              margin-left: 10px;
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+              border-top: 7px solid rgb(0, 0, 0);
+          }
+          .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin:auto;
+            overflow: hidden;
+            border-radius: 10px; 
+          }
+          .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+          }
+          .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+          }
+          .carousel-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+          }
+          h1{
+          margin-left: 10%;
+          font-family: Garamond, serif;
+          color: #f5c5d8;
+          }
+          #grad {
+            height: 30px;
+            background-color: #000000; 
+            background-image: linear-gradient(#000000, #ff80b3);
+          }
+          @media (max-width: 768px) {
+            #grad {
+              display: none;
+            }
+          }
+            @media (max-width: 600px) {
+                h1 {
+                    font-size: 1.4em;
+                  margin-left: 12px;
+              
+                }
+            }
+            
+            #grad {
+              height: 30px;
+              background-color: #000000; 
+              background-image: linear-gradient(#000000, #ff80b3);
+            }
+            
+            @media (max-width: 768px) {
+              #grad {
+                display: none;
+              }
+            }      
+            .image-row {
+              display: flex;
+              overflow-x: auto;
+              overflow-y: hidden; 
+              white-space: nowrap;
+              position: relative;
+              width: calc(100% - 20px);
+              margin-left: 6%;
+              margin-right: 6%;
+              }
+              @media (max-width: 768px) {
+                .image-row     {
+                            display: none; 
+                        }
+                    }
+              .image-row::-webkit-scrollbar {
+              width: 8px;
+              }
+              .image-row::-webkit-scrollbar-track {
+              background: rgba(0, 0, 0, 0.3);
+              border-radius: 10px;
+              }
+              .image-row::-webkit-scrollbar-thumb {
+              background: rgba(19, 19, 19, 0.5);
+              border-radius: 10px;
+              width: 5px;
+              }
+              .image-row img {
+              width: 350px;
+              margin-right: 10px;
+              border-radius: 10px;
+              transition: filter 0.3s ease;
+              }
+              .image-row img:hover {
+              filter: grayscale(100%);
+              }
+              @media only screen and (max-width: 768px) {
+              .image-row img {
+              width: px;
+              width: 260px;
+              }
+              }
+              @media only screen and (max-width: 600px) {
+                .image-row img {
+                width: 260px;
+                }
+                }
+            .image-row {
+              display: flex;
+              overflow-x: auto;
+              overflow-y: hidden;
+              white-space: nowrap;
+              position: relative;
+              width: calc(100% - 40px);
+              margin: 0 20px;
+            }
+            .image-row::-webkit-scrollbar {
+              width: 8px;
+            }
+            .image-row::-webkit-scrollbar-track {
+              background: rgba(0, 0, 0, 0.3);
+              border-radius: 10px;
+            }
+            .image-row::-webkit-scrollbar-thumb {
+              background: rgba(19, 19, 19, 0.5);
+              border-radius: 10px;
+              width: 5px;
+            }
+            .image-row img {
+              width: 180px;
+              margin-right: 15px;
+              border-radius: 8px;
+              transition: filter 0.3s ease;
+            }
+            .image-row img:hover {
+              filter: grayscale(100%);
+            }
+            @media only screen and (max-width: 768px) {
+              .image-row {
+                margin: 0 20px;
+                width: calc(100% - 40px);
+              }
+
+              .image-row img {
+                width: 125px;
+              }
+            }
+            @media only screen and (min-width: 769px) {
+              .image-row {
+                margin: 0 80px;
+                width: calc(100% - 160px);
+              }
+            }
+            .aa{
+              margin-left: 6%;
+              margin-right: 6%;
+            }
+            .botao-amazon {
+            margin-top: 10px;
+            padding: 4px 12px;
+            background-color: #e99ec7;
+            color: rgb(13, 13, 90);
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            }
+            .botao-amazon:hover {
+            background-color: #f5c5d8;
+            }
 
  </style>
 </head>
     <body>
         <main>
-          <div class="banner">
-            <img src="https://i.ibb.co/mcnRnp1/946efa38-6213-4383-ac37-e0e2ebc2d199.jpg"alt="Imagem do Banner">
-            <div class="texto">
-                Poesia
-            </div>
-        </div> 
-              <nav>
-                  <a href="index.html">Home</a>
-                  <a href="fantasia.html">Fantasia</a> 
-                  <a href="romance.html">Romance</a> 
-              </nav>
+           <div id="grad1">
+            <img src="https://i.postimg.cc/zf0njKq8/Logotipo-para-manicure-rosa-e-branco-delicado-e-feminino-com-borboleta-removebg-preview.png" alt="Descrição" id="imagem-centralizada">
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
+                <div class="menu" id="menu">
+                    <a href="index.html">Home</a>
+                    <a href="Formulario.html">Formulario</a>
+                    <a href="fantasia.html">Fantasia</a>
+                    <a href="romance.html">Romance</a> 
+                    <a href="poesia.html">Poesia</a>                     
+                </div>
+        </div>
+        <br>
+            <nav>
+              <a href="index.html">Home</a>
+              <a href="fantasia.html">Fantasia</a> 
+              <a href="romance.html">Romance</a> 
+            </nav>
+            <br>
+              
+             
+                
               <div class="conteudo">
                 <p>Poesia é uma forma de expressão artística que utiliza a linguagem de maneira esteticamente elaborada para transmitir sentimentos, ideias e imagens de forma intensa e emotiva.</p> 
                     <div class="image-grid">
 
-                        <div class="image">
-                            <img src="https://i.postimg.cc/4xq9nZ0t/eu-tenho-seios-poemas-mentais.jpg" alt="Imagem 1">
-                            <div class="image-description">
-                                Este livro retrata em forma de poesias a vida de um rapaz com TOC e esquizofrenia. Quando senti que a paz não habitava em mim, foi o momento que a minha loucura achou uma capa pra estreia um livro, e aqui está, divirta-se e não perca a luz na escuridão.
-                                <div>
-                                  <span class="estrela amarela">&#9733;</span>
-                                  <span class="estrela amarela">&#9733;</span>
-                                  <span class="estrela amarela">&#9733;</span>
-                                  <span class="estrela amarela ">&#9733;</span>
-                                  <span class="estrela meia-estrela">&#9733;</span>
-                                </div>
-                              </div>
-                        </div>
-                        
-                          <div class="image">
-                            <img src="https://i.postimg.cc/HnnYQ8cL/tudo-nela-brilha-e-queima.jpg "alt="Imagem 3">
-                            <div class="image-description">Livro de estreia de Ryane Leão  "a poesia é minha chance de ser eu mesma diante de um mundo que tanto me silencia. é minha vez de ser crua. .... os tropeços, as partidas, as contrapartidas, os pés firmes que insistem em voar, e tudo isso que é maluco e lindo e nos faz ser quem somos."
-                              <div>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela ">&#9733;</span>
-                                <span class="estrela meia-estrela">&#9733;</span>
-                              </div>
-                            </div>
-                          </div>
-                       
-                        
-
-
-                        <div class="image">
-                            <img src="https://i.postimg.cc/v82HGhkx/chorar-de-alegria.jpg" alt="Imagem 3">
-                            <div class="image-description">Chorar de alegria explora as muitas nuances dos complexos relacionamentos humanos e do que significa ser mulher no cenário atual. Com as poéticas ilustrações de Brunna Mancuso, este livro é uma mensagem de esperança – a esperança de que, se a vida nos der motivos pra chorar, que seja de alegria.
-                              <div>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela ">&#9733;</span>
-                                <span class="estrela meia-estrela">&#9733;</span>
-                              </div>
-                            </div>
-                            </div>
-                        
-
-                        <div class="image">
-                          <img src="https://i.postimg.cc/kX8rLymm/voz-da-sereia-volta.jpg" alt="Imagem 3">
-                          <div class="image-description">A sereia é conhecida por seu canto misterioso capaz de atrair marinheiros curiosos para a sua morte. No entanto, por trás desses mitos equivocados estão contos de escapismo e cura que Lovelace tece ao longo desta poderosa coletânea de poemas.
+                      <article class="image">
+                        <img src="https://i.postimg.cc/02qcrgb4/Desculpe-o-exagero-mas-n-o-sei-sentir-pouco.jpg" alt="Imagem 3">
+                        <div class="image-description">No amor, não há espaço para o raso. Ele não existe na superfície ou mesmo na escassez. Amor é para quem tem coragem de se atirar na intensidade e se esbaldar na abundância. Então, nem perca tempo em ficar onde seus pés alcançam. É no profundo que ele acontece.</p>
+                            <a href="https://www.amazon.com.br/Desculpe-exagero-mas-sentir-pouco/dp/6555662786" class="botao-amazon"> Amazon</a>
                             <div>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela ">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                            </div>
+                        </div>
+                    </article>
+                      <article class="image">
+                        <img src="https://i.postimg.cc/ncHB6nsn/Outras-coisas-que-guardei-pra-mim.jpg" alt="Imagem 3">
+                        <div class="image-description">Outras coisas que guardei pra mim são reflexões destiladas de experiências, de pensamentos que capturam o triunfo sobre a adversidade, os abraços silenciosos da amizade, os reencontros, mas também as lágrimas derramadas na escuridão da tristeza, as perdas dolorosas, as despedidas.</p>
+                            <a href="https://www.amazon.com.br/Outras-coisas-que-guardei-pra/dp/655097058X" class="botao-amazon"> Amazon</a>
+                            <div>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela ">&#9733;</span>
+                                <span class="estrela meia-estrela">&#9733;</span>
+                            </div>
+                        </div>
+                    </article>
+                      <article class="image">
+                        <img src="https://i.postimg.cc/5y9ykNsG/A-morte-um-dia-que-vale-a-pena-viver.jpg" alt="Imagem 3">
+                        <div class="image-description">Sobre a arte de ganhar existem muitas lições, mas e sobre a arte de perder? Ninguém quer falar a respeito disso, mas a verdade é que passamos muito tempo da vida em grande sofrimento quando perdemos bens, pessoas, realidades, sonhos.</p>
+                            <a href="https://www.amazon.com.br/morte-dia-vale-pena-viver/dp/8543107202" class="botao-amazon"> Amazon</a>
+                            <div>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela ">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                            </div>
+                        </div>
+                    </article>
+                      <article class="image">
+                        <img src="https://i.postimg.cc/rmZ2MV87/Quebre-os-seus-sapatinhos-de-cristal.jpg" alt="Imagem 3">
+                        <div class="image-description">Em Você é o seu próprio conto de fadas, reinventa a história da Cinderela com poemas sobre autoaceitação e superação, abordando temas como relacionamentos tóxicos e transtornos alimentares.</p>
+                            <a href="https://www.amazon.com.br/Quebre-os-seus-sapatinhos-cristal/dp/6556431176" class="botao-amazon"> Amazon</a>
+                            <div>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela ">&#9733;</span>
+                                <span class="estrela meia-estrela">&#9733;</span>
+                            </div>
+                        </div>
+                    </article>
+                      <article class="image">
+                        <img src="https://i.postimg.cc/wB6BBBpB/Pra-voc-que-teve-um-dia-ruim.jpg" alt="Imagem 3">
+                        <div class="image-description">Este livro é um conforto para quem precisa de afeto e esperança, lembrando que, apesar das dificuldades, é importante continuar seguindo em frente. A mensagem central é que a dor vai passar e a força vem da superação diária.</p>
+                            <a href="https://www.amazon.com.br/Pra-voc%C3%AA-que-teve-ruim/dp/8542215273" class="botao-amazon"> Amazon</a>
+                            <div>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela ">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                            </div>
+                        </div>
+                    </article>
+                      <article class="image">
+                        <img src="https://i.postimg.cc/FHGY3SGS/Untitled-Project-17.jpg" alt="Imagem 3">
+                        <div class="image-description">A obra explora questões existenciais e dilemas contemporâneos com uma abordagem leve e irreverente, tratando de temas como ansiedade, autoestima, amor e os desafios da vida moderna. Com um tom cômico, o autor utiliza a poesia para refletir sobre a mente humana.</p>
+                            <a href="https://www.amazon.com.br/Tenho-s%C3%A9rios-poemas-mentais-Salom%C3%A3o-ebook/dp/B07H2M7M8P" class="botao-amazon"> Amazon</a>
+                            <div>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela ">&#9733;</span>
+                                <span class="estrela meia-estrela">&#9733;</span>
+                            </div>
+                        </div>
+                    </article>
+                      <article class="image">
+                        <img src="https://i.postimg.cc/3R8992HH/o-que-o-sol-faz-com-as-flores.jpg" alt="Imagem 3">
+                        <div class="image-description">O Que o Sol Faz com as Flores, de Rupi Kaur, é uma coletânea de poemas sobre crescimento, cura, amor e empoderamento, usando metáforas da natureza para explorar temas como perda e superação.</p>
+                            <a href="https://www.amazon.com.br/que-sol-faz-com-flores/dp/8542212339" class="botao-amazon"> Amazon</a>
+                            <div>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela ">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                            </div>
+                        </div>
+                    </article>
+                      <article class="image">
+                        <img src="https://i.postimg.cc/SNCTSSd3/Tudo-o-que-eu-sei-sobre-o-amor.jpg" alt="Imagem 3">
+                        <div class="image-description">É um livro de memórias que explora o amor em suas diversas formas, especialmente as amizades e o autoconhecimento, ao longo da vida adulta. A autora narra suas experiências com relacionamentos, encontros amorosos e as lições aprendidas,</p>
+                            <a href="https://www.amazon.com.br/Tudo-que-sei-sobre-amor/dp/6555604573" class="botao-amazon"> Amazon</a>
+                            <div>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela ">&#9733;</span>
+                                <span class="estrela meia-estrela">&#9733;</span>
+                            </div>
+                        </div>
+                    </article>
+                      <article class="image">
+                        <img src="https://i.postimg.cc/G38rjD3D/Poesias-que-escrevi-enquanto-aprendia-a-viver.jpg" alt="Imagem 3">
+                        <div class="image-description">Poesias que escrevi enquanto aprendia a viver, do professor e poeta Fagner Mera, explora assuntos e temáticas que possibilita ao leitor reflexões complexas, mas feitas de forma simples e aconchegante, sobre assuntos e temas do cotidiano, como amores, desamores, encontros, despedidas e autocuidado.</p>
+                            <a href="https://www.amazon.com.br/Poesias-escrevi-enquanto-aprendia-viver/dp/6598122120" class="botao-amazon"> Amazon</a>
+                            <div>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela ">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                            </div>
+                        </div>
+                    </article>
+                      <article class="image">
+                        <img src="https://i.postimg.cc/nrtd7Nc0/Fa-a-sua-coroa-de-gelo-brilhar.jpg" alt="Imagem 3">
+                        <div class="image-description"> Faça Sua Coroa de Gelo Brilhar, de Tânia Carvalho, é um livro que explora empoderamento feminino e autoaceitação através de contos e poemas. A obra incentiva as leitoras a reconhecerem sua força interior e a valorizarem sua singularidade.</p>
+                            <a href="https://www.amazon.com.br/Fa%C3%A7a-sua-coroa-gelo-brilhar/dp/6556431214" class="botao-amazon"> Amazon</a>
+                            <div>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela ">&#9733;</span>
+                                <span class="estrela meia-estrela">&#9733;</span>
+                            </div>
+                        </div>
+                    </article>
+                      <article class="image">
+                        <img src="https://i.postimg.cc/0ygNSfpr/talvez-a-sua-jornada-agora-seja-s-sobre-voc.jpg" alt="Imagem 3">
+                        <div class="image-description">Fala sobre a nossa jornada E também sobre aquele medo de dar os primeiros passos pra seguir em frente, sobre tudo o que a gente sente ao longo da nossa caminhada de mudanças: insegurança, saudade, machucados. sobre todos os sentimentos que  e sobre como é difícil ressignificar alguns.</p>
+                            <a href="https://www.amazon.com.br/talvez-jornada-agora-seja-sobre/dp/6555357274" class="botao-amazon"> Amazon</a>
+                            <div>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela ">&#9733;</span>
+                                <span class="estrela meia-estrela">&#9733;</span>
+                            </div>
+                        </div>
+                    </article>
+                      <article class="image">
+                        <img src="https://i.postimg.cc/Fz44RWtQ/O-colecionador-de-saudades.jpg" alt="Imagem 3">
+                        <div class="image-description">Mesclando poesia com histórias pessoais, este é um mergulho nas memórias que todos nós compartilhamos: os almoços na casa da vó, as noites febris da infância, os causos na companhia dos amigos, os conselhos dos mais velhos para aplacar nossos medos.</p>
+                            <a href="https://www.amazon.com.br/colecionador-saudades-Hist%C3%B3rias-celebrar-presente-ebook/dp/B0C9VMLMVT" class="botao-amazon"> Amazon</a>
+                            <div>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela ">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                            </div>
+                        </div>
+                    </article>
+                      <article class="image">
+                        <img src="https://i.postimg.cc/g08tJYGn/O-meu-caf-esfriou-e-eu-lembrei-da-gente.jpg" alt="Imagem 3">
+                        <div class="image-description">Nostalgia  memórias de um amor passado. A autora utiliza a metáfora do café esfriando para refletir sobre o tempo, os sentimentos e as experiências vividas em relacionamentos. Abordando a saudade, as lembranças e as lições aprendidas, mesclando prosa poética e reflexões pessoais</p>
+                            <a href="https://www.amazon.com.br/meu-caf%C3%A9-esfriou-lembrei-gente/dp/659812218X" class="botao-amazon"> Amazon</a>
+                            <div>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela ">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                            </div>
+                        </div>
+                    </article>
+                        <article class="image">
+                        <img src="https://i.postimg.cc/283Y2XQ2/Sobre-a-morte-e-o-morrer.jpg" alt="Imagem 3">
+                        <div class="image-description">Elisabeth Kübler-Ross descreve nesta obra que se tornou um clássico as experiências de pacientes terminais, suas agonias e frustrações, numa tentativa de encorajar as pessoas a não se afastar dos doentes condenados, mas, antes, aproximar-se deles e ajudá-los em seus últimos momentos.</p>
+                            <a href="https://www.amazon.com.br/Sobre-Morte-Morrer-Elisabeth-Kubler/dp/8546901686" class="botao-amazon"> Amazon</a>
+                            <div>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                                <span class="estrela amarela ">&#9733;</span>
+                                <span class="estrela amarela">&#9733;</span>
+                            </div>
+                        </div>
+                    </article>
+                      <article class="image">
+                      <img src="https://i.postimg.cc/HsbqZDJ0/Todas-as-coisas-que-eu-te-escreveria-se-pudese.jpg" alt="Imagem 3">
+                      <div class="image-description">Escrita durante a pandemia, a obra é uma coleção de textos poéticos sobre todas as impressões que ficam quando alguém vai embora – ainda que esse alguém seja você mesmo. Além de toda a poesia e sensibilidade características do autor, o livro traz as coloridas ilustrações – que flertam com o surreal. </p>
+                          <a href="https://www.amazon.com.br/Todas-coisas-que-escreveria-pudesse/dp/6588131240" class="botao-amazon"> Amazon</a>
+                          <div>
+                              <span class="estrela amarela">&#9733;</span>
+                              <span class="estrela amarela">&#9733;</span>
+                              <span class="estrela amarela">&#9733;</span>
+                              <span class="estrela amarela ">&#9733;</span>
+                              <span class="estrela amarela">&#9733;</span>
+                          </div>
+                      </div>
+                  </article>
+                    <article class="image">
+                      <img src="https://i.postimg.cc/sg75GmNg/Sede-de-me-beber-inteira.jpg" alt="Imagem 3">
+                      <div class="image-description">Beber-se inteira: o que parece ideia inusitada vira algo natural como a sede na poesia de Liana Ferraz. Seja com uma xícara de chá, de café ou com uma taça de vinho, a sede dos poemas deste livro é uma só – compreender-se para melhor amar-se, beber sem medo a própria essência.</p>
+                          <a href="https://www.amazon.com.br/Sede-me-beber-inteira-Poemas/dp/6555358319" class="botao-amazon"> Amazon</a>
+                          <div>
                               <span class="estrela amarela">&#9733;</span>
                               <span class="estrela amarela">&#9733;</span>
                               <span class="estrela amarela">&#9733;</span>
                               <span class="estrela amarela ">&#9733;</span>
                               <span class="estrela meia-estrela">&#9733;</span>
-                            </div>
                           </div>
-                 
                       </div>
-                    
-
-                
-                        <div class="image">
-                            <img src="https://i.postimg.cc/cLHHQj3m/a-prinsesa-salva-a-si-mesma-nesse-livro.jpg" alt="Imagem 1">
-                            <div class="image-description">
-                                Esta é uma obra sobre amor, perda, sofrimento, redenção, empoderamento e inspiração. Dividido em quatro partes ("A princesa", "A donzela", "A rainha" e "Você"), o livro combina o imaginário dos contos de fada à realidade feminina do século XXI com delicadeza, emoção e contundência.
-                                <div>
-                                  <span class="estrela amarela">&#9733;</span>
-                                  <span class="estrela amarela">&#9733;</span>
-                                  <span class="estrela amarela">&#9733;</span>
-                                  <span class="estrela amarela ">&#9733;</span>
-                                  <span class="estrela meia-estrela">&#9733;</span>
-                                </div>
-                              </div>
-                              
+                  </article>
+                    <article class="image">
+                      <img src="https://i.postimg.cc/X7JbvDX9/Pra-vida-toda-valer-a-pena-viver-1.jpg" alt="Imagem 3">
+                      <div class="image-description">A mensagem central de Pra Viver a Vida Toda, de Pedro Salomão, é a importância de valorizar o presente e viver plenamente, cultivando gratidão e autoconfiança. O autor inspira a reflexão sobre a passagem do tempo e a busca pela felicidade, mesmo diante das adversidades. </p>
+                          <a href="https://www.amazon.com.br/vida-toda-valer-pena-viver/dp/6555642424" class="botao-amazon"> Amazon</a>
+                          <div>
+                              <span class="estrela amarela">&#9733;</span>
+                              <span class="estrela amarela">&#9733;</span>
+                              <span class="estrela amarela">&#9733;</span>
+                              <span class="estrela amarela ">&#9733;</span>
+                              <span class="estrela amarela">&#9733;</span>
+                          </div>
+                      </div>
+                  </article>
+                    <article class="image">
+                      <img src="https://i.postimg.cc/26Kx76Fk/Eu-sempre-morro.jpg" alt="Imagem 3">
+                      <div class="image-description">É um romance que segue a vida de um protagonista que lida com a morte de forma recorrente, seja em sua vida pessoal, seja nas histórias que conta. A narrativa aborda temas como a efemeridade da vida, a busca por significado e a reflexão sobre as relações humanas.  </p>
+                          <a href="https://www.amazon.com.br/Eu-sempre-morro-edi%C3%A7%C3%A3o-definitiva/dp/6598122163" class="botao-amazon"> Amazon</a>
+                          <div>
+                              <span class="estrela amarela">&#9733;</span>
+                              <span class="estrela amarela">&#9733;</span>
+                              <span class="estrela amarela">&#9733;</span>
+                              <span class="estrela amarela ">&#9733;</span>
+                              <span class="estrela meia-estrela">&#9733;</span>
+                          </div>
+                      </div>
+                  </article>
+                  <article class="image">
+                    <img src="https://i.postimg.cc/02XRLdkZ/Meu-corpo-minha-casa.jpg" alt="Imagem 3">
+                    <div class="image-description">os poemas dessa coletânea, ilustrada pela autora, inspiram uma conversa interna em cada uma, em cada um, lembrando que precisamos nos preencher de amor, de aceitação e de confiança em nossas relações familiares e de comunidade. e, sempre, que precisamos estar de braços abertos para as mudanças em nossas vidas. </p>
+                        <a href="https://www.amazon.com.br/corpo-minha-casa-Rupi-Kaur/dp/6555351993" class="botao-amazon"> Amazon</a>
+                        <div>
+                            <span class="estrela amarela">&#9733;</span>
+                            <span class="estrela amarela">&#9733;</span>
+                            <span class="estrela amarela">&#9733;</span>
+                            <span class="estrela amarela ">&#9733;</span>
+                            <span class="estrela amarela">&#9733;</span>
                         </div>
-
-                        <div class="image">
-                          <div class="image">
-                            <img src="https://i.postimg.cc/tCGWNXRz/a-bruxa-nao-vai-para-a-fogueira.jpg" alt="Imagem 3">
-                            <div class="image-description">Aqueles que consideram bruxa um xingamento não poderiam estar mais enganados bruxas são mulheres capazes de incendiar o mundo ao seu redor. Resgatando essa imagem ancestral da figura feminina naturalmente poderosa, independente e, agora, indestrutível, Amanda Lovelace aprofunda a combinação de contundência e lirismo.
-                              <div>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela ">&#9733;</span>
-                                <span class="estrela meia-estrela">&#9733;</span>
-                              </div>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="image">
-                            <img src="https://i.postimg.cc/xdysGSd4/o-que-o-sol-faz-com-as-flores.jpg" alt="Imagem 3">
-                            <div class="image-description">expatriação e o amadurecimento até encontrar um lar dentro de você. Organizado em cinco partes e ilustrado por Rupi Kaur, o livro percorre uma extraordinária jornada dividida em murchar, cair, enraizar, crescer, florescer. uma celebração do amor em todas as suas formas.
-                              <div>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela ">&#9733;</span>
-                                <span class="estrela amarela">&#9733;</span>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="image">
-                            <img src="https://i.postimg.cc/s2R6Z23W/meu-corpo-minha-casa.jpg" alt="Imagem 3">
-                            <div class="image-description">os poemas dessa coletânea, ilustrada pela autora, inspiram uma conversa interna em cada uma, em cada um, lembrando que precisamos nos preencher de amor, de aceitação e de confiança em nossas relações familiares e de comunidade. e, sempre, que precisamos estar de braços abertos para as mudanças em nossas vidas.
-                              <div>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela">&#9733;</span>
-                                <span class="estrela amarela ">&#9733;</span>
-                                <span class="estrela amarela">&#9733;</span>
-                              </div>
-                            </div>
-                        </div>
-                  
-
-                    
-                 
-                      <div class="image">
-                          <img src="https://i.postimg.cc/cLHHQj3m/a-prinsesa-salva-a-si-mesma-nesse-livro.jpg" alt="Imagem 1">
-                          <div class="image-description">
-                              Esta é uma obra sobre amor, perda, sofrimento, redenção, empoderamento e inspiração. Dividido em quatro partes ("A princesa", "A donzela", "A rainha" e "Você"), o livro combina o imaginário dos contos de fada à realidade feminina do século XXI com delicadeza, emoção e contundência.</div>
+                    </div>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/rwz0kJSp/Acreditar-em-mim-a-minha-nica-possibilidade-de-existir.jpg" alt="Imagem 3">
+                  <div class="image-description">Neste livro delicado e potente, a autora nos conduz pelo processo de cura que todos enfrentamos quando nossos planos não saem como esperamos. afinal, a vida é assim: muitas vezes, o que sonhamos dá errado, a pessoa que amamos nos decepciona e as promessas que pareciam sinceras são quebradas.  </p>
+                      <a href="https://www.amazon.com.br/Acreditar-minha-%C3%BAnica-possibilidade-existir/dp/8542226313" class="botao-amazon"> Amazon</a>
+                      <div>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela ">&#9733;</span>
+                          <span class="estrela meia-estrela">&#9733;</span>
                       </div>
-                      <div class="image">
-                        <div class="image">
-                          <img src="https://i.postimg.cc/tCGWNXRz/a-bruxa-nao-vai-para-a-fogueira.jpg" alt="Imagem 3">
-                          <div class="image-description">Aqueles que consideram bruxa um xingamento não poderiam estar mais enganados bruxas são mulheres capazes de incendiar o mundo ao seu redor. Resgatando essa imagem ancestral da figura feminina naturalmente poderosa, independente e, agora, indestrutível, Amanda Lovelace aprofunda a combinação de contundência e lirismo.</div>
+                  </div>
+              </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/xjwnCPDC/O-autor-explora-temas-como-a-beleza-das-rela-es-a-import-ncia-de-expressar-sentimentos-e-a-busca-p.jpg" alt="Imagem 3">
+                  <div class="image-description">O autor explora temas como a beleza das relações, a importância de expressar sentimentos e a busca por conexões significativas. Com uma linguagem poética e acessível, Bessa incentiva os leitores a manterem viva a chama do romantismo, mesmo diante das dificuldades da vida</p>
+                      <a href="https://www.amazon.com.br/corpo-minha-casa-Rupi-Kaur/dp/6555351993" class="botao-amazon"> Amazon</a>
+                      <div>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela ">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
                       </div>
+                  </div>
+              </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/13zC1LCN/Leia-um-caf-e-tome-uma-poesia.jpg" alt="Imagem 3">
+                  <div class="image-description">O livro apresenta reflexões poéticas e metafóricas sobre temas do cotidiano, como amor, desamor, felicidade e autocuidado. Ele convida o leitor a uma introspecção, permitindo que experimente e reflita sobre suas próprias emoções e realidades. </p>
+                      <a href="https://www.amazon.com.br/Leia-caf%C3%A9-uma-poesia-esfrie-ebook/dp/B0D5BYRQHM" class="botao-amazon"> Amazon</a>
+                      <div>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela ">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
                       </div>
-                      <div class="image">
-                          <img src="https://i.postimg.cc/xdysGSd4/o-que-o-sol-faz-com-as-flores.jpg" alt="Imagem 3">
-                          <div class="image-description">expatriação e o amadurecimento até encontrar um lar dentro de você. Organizado em cinco partes e ilustrado por Rupi Kaur, o livro percorre uma extraordinária jornada dividida em murchar, cair, enraizar, crescer, florescer. uma celebração do amor em todas as suas formas.</div>
+                  </div>
+              </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/DwbGG6mM/o-dia-em-que-perdi-a-minha-voz.jpg" alt="Imagem 3">
+                  <div class="image-description">O dia em que perdi a minha voz é um livro sobre as miudezas do cotidiano, que em muitas circunstâncias nos passam despercebidas, por causa da vida agitada e cada vez mais estimulada pelas tecnologias. É sobre os conflitos familiares, dores e magoas  </p>
+                      <a href="https://www.amazon.com.br/dia-que-perdi-minha-voz/dp/6598122139" class="botao-amazon"> Amazon</a>
+                      <div>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela ">&#9733;</span>
+                          <span class="estrela meia-estrela">&#9733;</span>
                       </div>
-                      <div class="image">
-                          <img src="https://i.postimg.cc/s2R6Z23W/meu-corpo-minha-casa.jpg" alt="Imagem 3">
-                          <div class="image-description">os poemas dessa coletânea, ilustrada pela autora, inspiram uma conversa interna em cada uma, em cada um, lembrando que precisamos nos preencher de amor, de aceitação e de confiança em nossas relações familiares e de comunidade. e, sempre, que precisamos estar de braços abertos para as mudanças em nossas vidas.</div>
-                      </div>
-                  </div><br>
-                  
-                </div>                     
+                  </div>
+              </article>
+              <article class="image">
+                <img src="https://i.postimg.cc/DyGfdMdL/Poemas-de-amor-pr-prio.jpg" alt="Imagem 3">
+                <div class="image-description">Aprecie todas as partes do seu ser, quer você tenha o temperamento mais racional ou mais sentimental. De um lado estão os poemas para as pessoas que tendem a usar mais o lado esquerdo do cérebro, ou seja, que pensam demais e são mais analíticas e literais. </p>
+                    <a href="https://www.amazon.com.br/Poemas-amor-pr%C3%B3prio-pensa-demais-sente/dp/6555647167" class="botao-amazon"> Amazon</a>
+                    <div>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela ">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                    </div>
+                </div>
+            </article>
+              <article class="image">
+                <img src="https://i.postimg.cc/6qJWDVBy/A-voz-da-sereia-volta-neste.jpg" alt="Imagem 3">
+                <div class="image-description">A sereia é conhecida por seu canto misterioso capaz de atrair marinheiros curiosos para a sua morte. No entanto, por trás desses mitos equivocados estão contos de escapismo e cura que Lovelace tece ao longo desta poderosa coletânea de poemas. Eles tentaram silenciá-la de uma vez por todas, mas a voz da sereia volta neste livro.  </p>
+                    <a href="https://www.amazon.com.br/voz-sereia-volta-neste-livro/dp/8542217462" class="botao-amazon"> Amazon</a>
+                    <div>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela ">&#9733;</span>
+                        <span class="estrela meia-estrela">&#9733;</span>
+                    </div>
+                </div>
+            </article>
+              <article class="image">
+                <img src="https://i.postimg.cc/yN3zsJQ9/Ainda-ontem-pensei-com-o-cora-o.jpg" alt="Imagem 3">
+                <div class="image-description">Ainda ontem pensei com o coração, livro de estreia do poeta e dramaturgo, Vini Queiroz, explora as nuances de se estar apaixonado, e como as paixões, sejam elas por pessoas, coisas, lugares, situações, podem tornar a vida mais leve, acessível, suportável. </p>
+                    <a href="https://www.amazon.com.br/Ainda-ontem-pensei-com-cora%C3%A7%C3%A3o/dp/6598122104" class="botao-amazon"> Amazon</a>
+                    <div>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela ">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                    </div>
+                </div>
+            </article>
+              <article class="image">
+                <img src="https://i.postimg.cc/QCx4Nw8P/A-bruxa-n-o-vai-para-a-fogueira-neste-livro.jpg" alt="Imagem 3">
+                <div class="image-description">Aqueles que consideram bruxa um xingamento não poderiam estar mais enganados bruxas são mulheres capazes de incendiar o mundo ao seu redor. Resgatando essa imagem ancestral da figura feminina naturalmente poderosa, independente e, agora, indestrutível, Amanda Lovelace aprofunda a combinação de contundência e lirismo.</p>
+                    <a href="https://www.amazon.com.br/bruxa-para-fogueira-neste-livro/dp/854410701X" class="botao-amazon"> Amazon</a>
+                    <div>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela ">&#9733;</span>
+                        <span class="estrela meia-estrela">&#9733;</span>
+                    </div>
+                </div>
+            </article>
+            <article class="image">
+              <img src="https://i.postimg.cc/R05gJNCw/Tudo-nela-brilha-e-queima.jpg" alt="Imagem 3">
+              <div class="image-description">Livro de estreia de Ryane Leão "a poesia é minha chance de ser eu mesma diante de um mundo que tanto me silencia. é minha vez de ser crua. .... os tropeços, as partidas, as contrapartidas, os pés firmes que insistem em voar, e tudo isso que é maluco e lindo e nos faz ser quem somos." </p>
+                  <a href="https://www.amazon.com.br/Tudo-Nela-Brilha-Queima-Poemas/dp/8542211804" class="botao-amazon"> Amazon</a>
+                  <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela meia-estrela">&#9733;</span>
+                  </div>
+              </div>
+          </article>
+            <article class="image">
+              <img src="https://i.postimg.cc/MTrRRF0g/O-fim-em-doses-homeop-ticas.jpg" alt="Imagem 3">
+              <div class="image-description">Após o sucesso absoluto dos dois volumes de Textos cruéis demais para serem lidos rapidamente, Igor Pires retorna em mais uma coletânea inédita de textos poéticos, desta vez sobre as características das complexas fases que percorrem os relacionamentos. </p>
+                  <a href="https://www.amazon.com.br/fim-doses-homeop%C3%A1ticas-Textos-rapidamente-ebook/dp/B0858CQVVM" class="botao-amazon"> Amazon</a>
+                  <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela meia-estrela">&#9733;</span>
+                  </div>
+              </div>
+          </article>
+            <article class="image">
+              <img src="https://i.postimg.cc/BbK8FQn1/Cura-pelas-palavras.jpg" alt="Imagem 3">
+              <div class="image-description">Neste livro, Rupi Kaur – autora #1 do The New York Times – traz exercícios guiados de escrita criados por ela a fim de inspirar a criatividade e a cura. Esses exercícios podem ajudar você a explorar seus traumas, lutos, corações partidos, amor, cura e a celebração da vida.</p>
+                  <a href="https://www.amazon.com.br/cura-pelas-palavras-autora-times/dp/8542219325" class="botao-amazon"> Amazon</a>
+                  <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela meia-estrela">&#9733;</span>
+                  </div>
+              </div>
+          </article>
+            <article class="image">
+              <img src="https://i.postimg.cc/XJXQBhBy/A-princesa-salva-a-si-mesma-neste-livro.jpg" alt="Imagem 3">
+              <div class="image-description">Esta é uma obra sobre amor, perda, sofrimento, redenção, empoderamento e inspiração. Dividido em quatro partes ("A princesa", "A donzela", "A rainha" e "Você"), o livro combina o imaginário dos contos de fada à realidade feminina do século XXI com delicadeza, emoção e contundência.</p>
+                  <a href="https://www.amazon.com.br/princesa-salva-mesma-neste-livro/dp/8544106595" class="botao-amazon"> Amazon</a>
+                  <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela meia-estrela">&#9733;</span>
+                  </div>
+              </div>
+          </article>
+            <article class="image">
+              <img src="https://i.postimg.cc/3rcz1jKT/E-se-estivermos-errados.jpg" alt="Imagem 3">
+              <div class="image-description">Nós vivemos em uma cultura de certezas casuais.Esse sempre foi o caso, não importa quantas vezes essas convicções tenham falhado, o pensamento corrente é sempre que o que se define e aceita como verdade é (provavelmente) bem próximo de como a realidade será vista para todo o sempre.   </p>
+                  <a href="https://www.amazon.com.br/Se-Estivermos-Errados-Chuck-Klosterman/dp/8595080755" class="botao-amazon"> Amazon</a>
+                  <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela">&#9733;</span>
+                  </div>
+              </div>
+          </article>
+                </div>  
+            </div>                     
             </main>
+            <script>
+            
+            
+              const carouselInner = document.querySelector('.carousel-inner');
+              const totalSlides = document.querySelectorAll('.carousel-item').length;
+              let index = 0;
+
+              function showSlide(n) {
+                  if (n >= totalSlides) {
+                      carouselInner.style.transition = 'none';
+                      index = 0;
+                      carouselInner.style.transform = `translateX(${-index * 100}%)`;
+                      setTimeout(() => {
+                          carouselInner.style.transition = 'transform 0.5s ease-in-out'; 
+                          showSlide(index + 1);
+                      }, 50);
+                      return;
+                  } else if (n < 0) {
+                      carouselInner.style.transition = 'none'; 
+                      index = totalSlides / 2 - 1; 
+                      carouselInner.style.transform = `translateX(${-index * 100}%)`; 
+                      setTimeout(() => {
+                          carouselInner.style.transition = 'transform 0.5s ease-in-out'; 
+                          showSlide(index + 1);
+                      }, 50);
+                      return;
+                  }
+                  index = n;
+                  carouselInner.style.transform = `translateX(${-index * 100}%)`;
+              }
+              setInterval(() => showSlide(index + 1), 5000);
+
+              function toggleMenu() {
+    const menu = document.getElementById('menu');
+    if (menu.classList.contains('show')) {
+        menu.classList.remove('show');
+        setTimeout(() => {
+            menu.style.display = 'none'; 
+        }, 300); 
+    } else {
+        menu.style.display = 'block'; 
+        setTimeout(() => {
+            menu.classList.add('show'); 
+            
+        }, 10); 
+        
+    }
+}
+      </script>
+   </body>
+</html>
         </body>
 </html>
