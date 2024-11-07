@@ -104,6 +104,8 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   color: #f5e1e9;
+  
+
 }
 .image-grid {
   display: grid;
@@ -131,6 +133,7 @@ body {
   font-size: 14px;
   text-align: justify;
   text-align: left;
+  word-spacing: 2px;
 }
 .conteudo {
   margin-left: 10%;
@@ -342,29 +345,25 @@ th a {
 th a:hover {
   text-decoration: underline;
 }
-
-
 @media (max-width: 480px) {
-  table {
-      display: flex;
-      flex-wrap: wrap; 
-      justify-content: center; 
+table {
+   display: flex;
+   flex-wrap: wrap; 
+   justify-content: center; 
   }
-  th {
-      flex: 1 1 100px; 
-      padding: 10px;
-      box-sizing: border-box;
-      text-align: center;
+th {
+    flex: 1 1 100px; 
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
   }
 }
-
-
 @media (max-width: 768px) {
-  table {
-      width: 100%;
-  }
-  th {
-      padding: 10px;
-      font-size: 14px;
-  }
+table {
+    width: 100%;
+}
+th {
+    padding: 10px;
+    font-size: 14px;
+}
 }

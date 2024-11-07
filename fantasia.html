@@ -1,371 +1,345 @@
 <!DOCTYPE html>
 <html lang="pt">
- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fantasia</title>
-   <style>
-          @media screen and (min-width: 768px) {
-            .image-grid {
-              grid-template-columns: repeat(4, 1fr);
-            }
-          }
-          @media screen and (max-width: 480px) {
-            .image-grid {
-              grid-template-columns: 1fr;
-            }
-          }
-          .menu {
-  z-index: 10; 
-}
-.menu {
-  display: none;
-  background: linear-gradient(to right, #e478a3 0%, #be4877 100%);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 180px;
-  height:40% ;
-  opacity: 0; 
-  transform: translateX(-20px); 
-  transition: opacity 0.3s ease, transform 0.3s ease; 
-  width: 180px;
-  border-radius: 2%;
-}
-.menu.show {
-  display: block; 
-  opacity: 1; 
-  transform: translateX(0); 
-}
-.menu a {
-  color: #ffffff;
-  padding: 10px 10px 10px 25px; 
-  text-decoration: none;
-  display: block;
-  position: relative;
-  border-bottom: 1px solid rgb(255, 255, 255); 
-  margin-top: 20px; 
-}
-.menu a:hover {
-  background: #e681a9;
-}
-.menu a::before {
-  content: ''; 
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%); 
-  width: 8px; 
-  height: 8px; 
-  border-radius: 50%; 
-  background: #fffdfd; 
-}
-.hamburger {
-  cursor: pointer;
-  padding: 15px;
-  background: transparent; 
-  color: #ffffff;
-  border: 1px solid #ffffff;
-  border-radius: 6%;
-  position: absolute;
-  right: 0;
-  top: 0;
-  font-size: 24px;
-}
-#grad1 {
-  height: 110px;
-  background-color: #ff80b3;
-  background-image: linear-gradient(#ff80b3,#000000 );
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-}    
-#imagem-centralizada {
-  height: auto;
-  max-height: 230%; 
-  margin-top: 68px;
-}
-          body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: rgb(0, 0, 0);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            color: #f5e1e9;
-          }
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Fantasia</title> 
+      <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/vZdLyPqp/pink-book-icon-png-5694164.png">
+      <style>
+        @media screen and (min-width: 768px) {
           .image-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            grid-gap: 20px;
+            grid-template-columns: repeat(4, 1fr);
           }
-          .image {
-            display: flex;
-            align-items: center;
-            
-            padding: 9px; 
-            border-radius: 8px; 
+        }
+        @media screen and (max-width: 480px) {
+          .image-grid {
+            grid-template-columns: 1fr;
           }
-          .image img {
-            max-width: 50%;
-            height: auto;
-            margin-right: 15px;
-            transition: transform 0.4s ease; 
-            border-radius: 8px;
-          }
-          .image:hover img {
-            transform: scale(1.1); 
-          }
-          .image-description {
-            font-size: 14px;
-            text-align: justify;
-            text-align: left;
-          }
-          .conteudo {
-            margin-left: 10%;
-            margin-right: 10%;
-          }
-          p {
-            text-align: justify;
-          }
-          nav {
-            background-color: hsla(332, 80%, 71%, 0);
-            color: rgb(230, 182, 204);
-            padding: 10px;
-            text-align: center;
-            border: 2px solid rgb(230, 182, 204);
-            border-radius: 10px;
-          }
-          nav a {
-            color: rgb(245, 237, 241);
-            text-decoration: none;
-            padding: 10px;
-          }
-          .elemento {
-            transition: background-color 0.3s ease;
-          }
-          .elemento:hover {
-            background-color: rgb(255, 234, 248);
-          }
-          .estrela {
-            font-size: 1.5rem;
-            color: rgb(168, 166, 166);;
-            position: relative;
-            display: inline-block;
-          }
-          .estrela.amarela {
-            color: rgb(255, 166, 0);;
-          }
-          .meia-estrela::after {
-            content: '\2605'; 
-            color: rgb(255, 166, 0);;
-            position: absolute;
-            left: 0;
-            overflow: hidden;
-            width: 50%;
-          }
-          /* .hidden {
+        }
+        .menu {
+        z-index: 10; 
+        }
+        .menu {
+          display: none;
+          background: linear-gradient(to right, #e478a3 0%, #be4877 100%);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 180px;
+          height:40% ;
+          opacity: 0; 
+          transform: translateX(-20px); 
+          transition: opacity 0.3s ease, transform 0.3s ease; 
+          width: 180px;
+          border-radius: 2%;
+        }
+        .menu.show {
+          display: block; 
+          opacity: 1; 
+          transform: translateX(0); 
+        }
+        .menu a {
+          color: #ffffff;
+          padding: 10px 10px 10px 25px; 
+          text-decoration: none;
+          display: block;
+          position: relative;
+          border-bottom: 1px solid rgb(255, 255, 255); 
+          margin-top: 20px; 
+        }
+        .menu a:hover {
+          background: #e681a9;
+        }
+        .menu a::before {
+          content: ''; 
+          position: absolute;
+          left: 10px;
+          top: 50%;
+          transform: translateY(-50%); 
+          width: 8px; 
+          height: 8px; 
+          border-radius: 50%; 
+          background: #fffdfd; 
+        }
+        .hamburger {
+          cursor: pointer;
+          padding: 15px;
+          background: transparent; 
+          color: #ffffff;
+          border: 1px solid #ffffff;
+          border-radius: 6%;
+          position: absolute;
+          right: 0;
+          top: 0;
+          font-size: 24px;
+        }
+        #grad1 {
+          height: 110px;
+          background-color: #ff80b3;
+          background-image: linear-gradient(#ff80b3,#000000 );
+          display: flex;
+          justify-content: center; 
+          align-items: center;
+        }    
+        #imagem-centralizada {
+          height: auto;
+          max-height: 230%; 
+          margin-top: 68px;
+        }
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: rgb(0, 0, 0);
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          color: #f5e1e9;
+        }
+        .image-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          grid-gap: 20px;
+        }
+        .image {
+          display: flex;
+          align-items: center;
+          
+          padding: 9px; 
+          border-radius: 8px; 
+        }
+        .image img {
+          max-width: 50%;
+          height: auto;
+          margin-right: 15px;
+          transition: transform 0.4s ease; 
+          border-radius: 8px;
+        }
+        .image:hover img {
+          transform: scale(1.1); 
+        }
+        .image-description {
+          font-size: 14px;
+          text-align: justify;
+          text-align: left;
+        }
+        .conteudo {
+          margin-left: 10%;
+          margin-right: 10%;
+        }
+        p {
+          text-align: justify;
+        }
+        nav {
+          background-color: hsla(332, 80%, 71%, 0);
+          color: rgb(230, 182, 204);
+          padding: 10px;
+          text-align: center;
+          border: 2px solid rgb(230, 182, 204);
+          border-radius: 10px;
+        }
+        nav a {
+          color: rgb(245, 237, 241);
+          text-decoration: none;
+          padding: 10px;
+        }
+        .elemento {
+          transition: background-color 0.3s ease;
+        }
+        .elemento:hover {
+          background-color: rgb(255, 234, 248);
+        }
+        .estrela {
+          font-size: 1.5rem;
+          color: rgb(168, 166, 166);;
+          position: relative;
+          display: inline-block;
+        }
+        .estrela.amarela {
+          color: rgb(255, 166, 0);;
+        }
+        .meia-estrela::after {
+          content: '\2605'; 
+          color: rgb(255, 166, 0);;
+          position: absolute;
+          left: 0;
+          overflow: hidden;
+          width: 50%;
+        }
+        .arrow {
+          display: inline-block;
+          width: 0;
+          height: 0;
+          margin-left: 10px;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 7px solid rgb(0, 0, 0);
+        }
+        .carousel {
+          position: relative;
+          width: 100%;
+          max-width: 1200px;
+          margin:auto;
+          overflow: hidden;
+          border-radius: 10px; 
+        }
+        .carousel-inner {
+          display: flex;
+          transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+          min-width: 100%;
+          box-sizing: border-box;
+        }
+        .carousel-item img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+        h1{
+        margin-left: 10%;
+        font-family: Garamond, serif;
+        color: #f5c5d8;
+        }
+        #grad {
+          height: 30px;
+          background-color: #000000; 
+          background-image: linear-gradient(#000000, #ff80b3);
+        }
+        @media (max-width: 768px) {
+          #grad {
             display: none;
           }
-          .button {
-              display: inline-flex;
-              align-items: center;
-              justify-content: center;
-              margin: 30px auto;
-              padding: 0.8% 48%;
-              background-color: hsl(342, 100%, 88%);
-              color: rgb(0, 0, 0);
-              border: none;
-              border-radius: 5px;
-              cursor: pointer;
-              font-size: 18px;
-              text-align: center;
-              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-              transition: background-color 0.3s, transform 0.3s;
+        }
+        @media (max-width: 600px) {
+          h1 {
+              font-size: 1.4em;
+            margin-left: 12px;
           }
-          .button:hover {
-              background-color: hsl(342, 85%, 79%);
-              transform: scale(1.05);
-          } */
-          .arrow {
-              display: inline-block;
-              width: 0;
-              height: 0;
-              margin-left: 10px;
-              border-left: 5px solid transparent;
-              border-right: 5px solid transparent;
-              border-top: 7px solid rgb(0, 0, 0);
-          }
-          .carousel {
-            position: relative;
-            width: 100%;
-            max-width: 1200px;
-            margin:auto;
-            overflow: hidden;
-            border-radius: 10px; 
-          }
-          .carousel-inner {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-          }
-          .carousel-item {
-            min-width: 100%;
-            box-sizing: border-box;
-          }
-          .carousel-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-          }
-          h1{
-          margin-left: 10%;
-          font-family: Garamond, serif;
-          color: #f5c5d8;
-          }
+        }
+        #grad {
+          height: 30px;
+          background-color: #000000; 
+          background-image: linear-gradient(#000000, #ff80b3);
+        }
+        @media (max-width: 768px) {
           #grad {
-            height: 30px;
-            background-color: #000000; 
-            background-image: linear-gradient(#000000, #ff80b3);
+            display: none;
           }
-          @media (max-width: 768px) {
-            #grad {
-              display: none;
-            }
+        }      
+        .image-row {
+          display: flex;
+          overflow-x: auto;
+          overflow-y: hidden; 
+          white-space: nowrap;
+          position: relative;
+          width: calc(100% - 20px);
+          margin-left: 6%;
+          margin-right: 6%;
           }
-            @media (max-width: 600px) {
-                h1 {
-                    font-size: 1.4em;
-                  margin-left: 12px;
-              
-                }
-            }
-            
-            #grad {
-              height: 30px;
-              background-color: #000000; 
-              background-image: linear-gradient(#000000, #ff80b3);
-            }
-            
-            @media (max-width: 768px) {
-              #grad {
-                display: none;
+        @media (max-width: 768px) {
+          .image-row     {
+                      display: none; 
+                  }
               }
-            }      
-            .image-row {
-              display: flex;
-              overflow-x: auto;
-              overflow-y: hidden; 
-              white-space: nowrap;
-              position: relative;
-              width: calc(100% - 20px);
-              margin-left: 6%;
-              margin-right: 6%;
-              }
-              @media (max-width: 768px) {
-                .image-row     {
-                            display: none; 
-                        }
-                    }
-              .image-row::-webkit-scrollbar {
-              width: 8px;
-              }
-              .image-row::-webkit-scrollbar-track {
-              background: rgba(0, 0, 0, 0.3);
-              border-radius: 10px;
-              }
-              .image-row::-webkit-scrollbar-thumb {
-              background: rgba(19, 19, 19, 0.5);
-              border-radius: 10px;
-              width: 5px;
-              }
-              .image-row img {
-              width: 350px;
-              margin-right: 10px;
-              border-radius: 10px;
-              transition: filter 0.3s ease;
-              }
-              .image-row img:hover {
-              filter: grayscale(100%);
-              }
-              @media only screen and (max-width: 768px) {
-              .image-row img {
-              width: px;
-              width: 260px;
-              }
-              }
-              @media only screen and (max-width: 600px) {
-                .image-row img {
-                width: 260px;
-                }
-                }
-            .image-row {
-              display: flex;
-              overflow-x: auto;
-              overflow-y: hidden;
-              white-space: nowrap;
-              position: relative;
-              width: calc(100% - 40px);
-              margin: 0 20px;
-            }
-            .image-row::-webkit-scrollbar {
-              width: 8px;
-            }
-            .image-row::-webkit-scrollbar-track {
-              background: rgba(0, 0, 0, 0.3);
-              border-radius: 10px;
-            }
-            .image-row::-webkit-scrollbar-thumb {
-              background: rgba(19, 19, 19, 0.5);
-              border-radius: 10px;
-              width: 5px;
-            }
-            .image-row img {
-              width: 180px;
-              margin-right: 15px;
-              border-radius: 8px;
-              transition: filter 0.3s ease;
-            }
-            .image-row img:hover {
-              filter: grayscale(100%);
-            }
-            @media only screen and (max-width: 768px) {
-              .image-row {
-                margin: 0 20px;
-                width: calc(100% - 40px);
-              }
-
-              .image-row img {
-                width: 125px;
-              }
-            }
-            @media only screen and (min-width: 769px) {
-              .image-row {
-                margin: 0 80px;
-                width: calc(100% - 160px);
-              }
-            }
-            .aa{
-              margin-left: 6%;
-              margin-right: 6%;
-            }
-            .botao-amazon {
-            margin-top: 10px;
-            padding: 4px 12px;
-            background-color: #e99ec7;
-            color: rgb(13, 13, 90);
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            }
-            .botao-amazon:hover {
-            background-color: #f5c5d8;
-            }
-   </style>
- </head>
+        .image-row::-webkit-scrollbar {
+        width: 8px;
+        }
+        .image-row::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        }
+        .image-row::-webkit-scrollbar-thumb {
+        background: rgba(19, 19, 19, 0.5);
+        border-radius: 10px;
+        width: 5px;
+        }
+        .image-row img {
+        width: 350px;
+        margin-right: 10px;
+        border-radius: 10px;
+        transition: filter 0.3s ease;
+        }
+        .image-row img:hover {
+        filter: grayscale(100%);
+        }
+        @media only screen and (max-width: 768px) {
+        .image-row img {
+        width: px;
+        width: 260px;
+        }
+        }
+        @media only screen and (max-width: 600px) {
+          .image-row img {
+          width: 260px;
+          }
+          }
+        .image-row {
+          display: flex;
+          overflow-x: auto;
+          overflow-y: hidden;
+          white-space: nowrap;
+          position: relative;
+          width: calc(100% - 40px);
+          margin: 0 20px;
+        }
+        .image-row::-webkit-scrollbar {
+          width: 8px;
+        }
+        .image-row::-webkit-scrollbar-track {
+          background: rgba(0, 0, 0, 0.3);
+          border-radius: 10px;
+        }
+        .image-row::-webkit-scrollbar-thumb {
+          background: rgba(19, 19, 19, 0.5);
+          border-radius: 10px;
+          width: 5px;
+        }
+        .image-row img {
+          width: 180px;
+          margin-right: 15px;
+          border-radius: 8px;
+          transition: filter 0.3s ease;
+        }
+        .image-row img:hover {
+          filter: grayscale(100%);
+        }
+        @media only screen and (max-width: 768px) {
+          .image-row {
+            margin: 0 20px;
+            width: calc(100% - 40px);
+        }
+          .image-row img {
+            width: 125px;
+          }
+        }
+        @media only screen and (min-width: 769px) {
+          .image-row {
+            margin: 0 80px;
+            width: calc(100% - 160px);
+          }
+        }
+        .aa{
+          margin-left: 6%;
+          margin-right: 6%;
+        }
+        .botao-amazon {
+        margin-top: 10px;
+        padding: 4px 12px;
+        background-color: #e99ec7;
+        color: rgb(13, 13, 90);
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        }
+        .botao-amazon:hover {
+        background-color: #f5c5d8;
+        }
+      </style>
+   </head>
     <body>
       <main>
         <div id="grad1">
@@ -378,58 +352,56 @@
                   <a href="romance.html">Romance</a> 
                   <a href="poesia.html">Poesia</a>                     
               </div>
-      </div>
-      <br>
-          <nav>
-            <a href="index.html">Home</a>
-            <a href="romance.html">Romance</a> 
-            <a href="poesia.html">Poesia</a> 
-          </nav>
-          <br>
-          <div class="carousel">
+        </div>
+        <br>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="romance.html">Romance</a> 
+          <a href="poesia.html">Poesia</a> 
+        </nav>
+        <br>
+        <div class="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item">
-                    <img src="https://i.postimg.cc/WzVtF406/os-garotos-corvos.jpg.jpg" alt="Imagem 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://i.postimg.cc/NjkDm2nB/banner-o-priorado-da-laranjeira.jpg" alt="Imagem 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://i.postimg.cc/C545jVNy/percy-banner.jpg" alt="Imagem 3">
-                </div>
-                  <!-- loop infinito -->
-                <div class="carousel-item">
-                    <img src="https://i.postimg.cc/WzVtF406/os-garotos-corvos.jpg" alt="Imagem 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://i.postimg.cc/NjkDm2nB/banner-o-priorado-da-laranjeira.jpg" alt="Imagem 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://i.postimg.cc/C545jVNy/percy-banner.jpg" alt="Imagem 3">
-                </div>  
+              <div class="carousel-item">
+                  <img src="https://i.postimg.cc/WzVtF406/os-garotos-corvos.jpg.jpg" alt="Imagem 1">
               </div>
+              <div class="carousel-item">
+                  <img src="https://i.postimg.cc/NjkDm2nB/banner-o-priorado-da-laranjeira.jpg" alt="Imagem 2">
+              </div>
+              <div class="carousel-item">
+                  <img src="https://i.postimg.cc/C545jVNy/percy-banner.jpg" alt="Imagem 3">
+              </div>
+                <!-- loop infinito -->
+              <div class="carousel-item">
+                  <img src="https://i.postimg.cc/WzVtF406/os-garotos-corvos.jpg" alt="Imagem 1">
+              </div>
+              <div class="carousel-item">
+                  <img src="https://i.postimg.cc/NjkDm2nB/banner-o-priorado-da-laranjeira.jpg" alt="Imagem 2">
+              </div>
+              <div class="carousel-item">
+                  <img src="https://i.postimg.cc/C545jVNy/percy-banner.jpg" alt="Imagem 3">
+              </div>  
             </div>
-            <h1>Algumas historias envolvida por tramas, conflitos e elementos mágicos</h1>
-            <div class="aa">
-                <div class="image-row">
-                    <a href="https://www.amazon.com.br/Princesa-das-cinzas/dp/8580418933"><img src="https://i.postimg.cc/8kbM5bQk/princesa-das-cinzas.jpg" alt="Imagem 1"></a>
-                    <a href="https://www.amazon.com.br/As-Cr%C3%B4nicas-N%C3%A1rnia-Brochura-Lewis/dp/857827069X"><img src="https://i.postimg.cc/QC414XhY/narnia.jpg" alt="Imagem 2"></a>
-                    <a href="https://www.amazon.com.br/guerra-papoula-vol-1-R-F-Kuang/dp/6555604344"><img src="https://i.postimg.cc/m2wv8Kxx/a-guerra-da-papopoula.jpg" alt="Imagem 3"></a>
-                    <a href="https://www.amazon.com.br/Quarta-asa-Rebecca-Yarros/dp/8542225856"><img src="https://i.postimg.cc/KjVZzVms/quarta-asa.jpg" alt="Imagem 2"></a>
-                    <a href="https://www.amazon.com.br/maldi%C3%A7%C3%A3o-do-mar-Shea-Ernshaw/dp/8501119466"><img src="https://i.postimg.cc/7hBpYTnH/a-maldi-o-do-mar.jpg" alt="Imagem 4"></a>
-                    <a href="https://www.amazon.com.br/magia-destilada-veneno-Vol-Livros/dp/6559811875"><img src="https://i.postimg.cc/90rj9pMR/Uma-magia-destilada-em-veneno.jpg" alt="Imagem 5"></a>
-                    <a href="https://www.amazon.com.br/maldi%C3%A7%C3%A3o-do-tigre-Colleen-Houck/dp/8580410266"><img src="https://i.postimg.cc/bJvv61r8/a-maldi-o-do-tigre.jpg" alt="Imagem 6"></a>
-                    <a href="https://www.amazon.com.br/Promessas-vazias-Sucesso-no-TikTok/dp/8542219406"><img src="https://i.postimg.cc/cC4LbwJ0/Promessas-vazias.jpg" alt="Imagem 7"></a>
-                    <a href="https://www.amazon.com.br/Coroa-sombras-t%C3%ADpica-mocinha-t%C3%ADpico/dp/8542219589"><img src="https://i.postimg.cc/vB9G2XyJ/Untitled-Project-5.jpg" alt="Imagem 8"></a>
-                    <a href="https://www.amazon.com.br/Divinos-rivais-Sucesso-TikTok-Rebecca/dp/6585348168"><img src="https://i.postimg.cc/1zFxytd6/divinos-rivais.jpg" alt="Imagem 9"></a>
-                    <a href="https://www.amazon.com.br/Safira-Prata-Especial-Edi%C3%A7%C3%B5es-Especiais-ebook/dp/B099KG3N1X"><img src="https://i.postimg.cc/yxV2hT8X/safira-de-prata-2.jpg" alt="Imagem 10"></a>
-                    
-                </div>
-            </div>
+          </div>
+          <h1>Algumas historias envolvida por tramas, conflitos e elementos mágicos</h1>
+          <div class="aa">
+            <div class="image-row">
+                <a href="https://www.amazon.com.br/Princesa-das-cinzas/dp/8580418933"><img src="https://i.postimg.cc/8kbM5bQk/princesa-das-cinzas.jpg" alt="Imagem 1"></a>
+                <a href="https://www.amazon.com.br/As-Cr%C3%B4nicas-N%C3%A1rnia-Brochura-Lewis/dp/857827069X"><img src="https://i.postimg.cc/QC414XhY/narnia.jpg" alt="Imagem 2"></a>
+                <a href="https://www.amazon.com.br/guerra-papoula-vol-1-R-F-Kuang/dp/6555604344"><img src="https://i.postimg.cc/m2wv8Kxx/a-guerra-da-papopoula.jpg" alt="Imagem 3"></a>
+                <a href="https://www.amazon.com.br/Quarta-asa-Rebecca-Yarros/dp/8542225856"><img src="https://i.postimg.cc/KjVZzVms/quarta-asa.jpg" alt="Imagem 2"></a>
+                <a href="https://www.amazon.com.br/maldi%C3%A7%C3%A3o-do-mar-Shea-Ernshaw/dp/8501119466"><img src="https://i.postimg.cc/7hBpYTnH/a-maldi-o-do-mar.jpg" alt="Imagem 4"></a>
+                <a href="https://www.amazon.com.br/magia-destilada-veneno-Vol-Livros/dp/6559811875"><img src="https://i.postimg.cc/90rj9pMR/Uma-magia-destilada-em-veneno.jpg" alt="Imagem 5"></a>
+                <a href="https://www.amazon.com.br/maldi%C3%A7%C3%A3o-do-tigre-Colleen-Houck/dp/8580410266"><img src="https://i.postimg.cc/bJvv61r8/a-maldi-o-do-tigre.jpg" alt="Imagem 6"></a>
+                <a href="https://www.amazon.com.br/Promessas-vazias-Sucesso-no-TikTok/dp/8542219406"><img src="https://i.postimg.cc/cC4LbwJ0/Promessas-vazias.jpg" alt="Imagem 7"></a>
+                <a href="https://www.amazon.com.br/Coroa-sombras-t%C3%ADpica-mocinha-t%C3%ADpico/dp/8542219589"><img src="https://i.postimg.cc/vB9G2XyJ/Untitled-Project-5.jpg" alt="Imagem 8"></a>
+                <a href="https://www.amazon.com.br/Divinos-rivais-Sucesso-TikTok-Rebecca/dp/6585348168"><img src="https://i.postimg.cc/1zFxytd6/divinos-rivais.jpg" alt="Imagem 9"></a>
+                <a href="https://www.amazon.com.br/Safira-Prata-Especial-Edi%C3%A7%C3%B5es-Especiais-ebook/dp/B099KG3N1X"><img src="https://i.postimg.cc/yxV2hT8X/safira-de-prata-2.jpg" alt="Imagem 10"></a>     
+              </div>
+          </div>
           <div class="conteudo">
             <div id="grad"></div>
             <br>
-           
               <div class="image-grid" id="imageGrid">
                 <article class="image">
                   <img src="https://i.postimg.cc/J7P0SrBK/dance-of-thieve.jpg" alt="Imagem 1">
@@ -441,19 +413,19 @@
                       <span class="estrela amarela">&#9733;</span>
                       <span class="estrela amarela ">&#9733;</span>
                       <span class="estrela amarela">&#9733;</span>
+                    </div>
                   </div>
-                </div>
-              </article>
-              <article class="image">
-                <img src="https://i.postimg.cc/5N8kjjD2/o-encando-dos-corvos.jpg" alt="Imagem 3">
-                <div class="image-description"> Isobel, retratista de fadas, troca suas pinturas por feitiços valiosos. Ao pintar uma emoção humana no retrato do príncipe Rook, ela comete um erro que pode custar seu trono e sua vida. Após um ataque em sua jornada ao reino das fadas, Isobel e Rook precisam confiar um no outro, para enfretar forças sombrias.</p>
-                  <a href="https://www.amazon.com.br/Encanto-dos-Corvos-Margaret-Rogerson/dp/659916613X" class="botao-amazon"> Amazon</a>
-                  <div>
-                  <span class="estrela amarela">&#9733;</span>
-                  <span class="estrela amarela">&#9733;</span>
-                  <span class="estrela amarela">&#9733;</span>
-                  <span class="estrela amarela ">&#9733;</span>
-                  <span class="estrela meia-estrela">&#9733;</span>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/5N8kjjD2/o-encando-dos-corvos.jpg" alt="Imagem 3">
+                  <div class="image-description"> Isobel, retratista de fadas, troca suas pinturas por feitiços valiosos. Ao pintar uma emoção humana no retrato do príncipe Rook, ela comete um erro que pode custar seu trono e sua vida. Após um ataque em sua jornada ao reino das fadas, Isobel e Rook precisam confiar um no outro, para enfretar forças sombrias.</p>
+                    <a href="https://www.amazon.com.br/Encanto-dos-Corvos-Margaret-Rogerson/dp/659916613X" class="botao-amazon"> Amazon</a>
+                    <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela meia-estrela">&#9733;</span>
                     </div>
                   </div>
                 </article>
@@ -462,6 +434,97 @@
                   <div class="image-description">Jude tinha 7 anos quando seus pais foram assassinados e foi forçada a viver no Reino das Fadas. Dez anos depois, tudo o que ela quer é ser como eles – lindos e imortais – e realmente pertencer ao Reino das Fadas, apesar de sua mortalidade. Mas muitos do povo das Fadas desprezam os humanos.</p>
                       <a href="https://www.amazon.com.br/pr%C3%ADncipe-cruel-Vol-Povo-Ar/dp/850111555X" class="botao-amazon"> Amazon</a>
                       <div>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela ">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                      </div>
+                  </div>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/kXFWrx98/cinder.jpg" alt="Imagem 3">
+                  <div class="image-description">Cinder, uma jovem ciborgue e mecânica talentosa, tem sua vida transformada quando o príncipe Kai a contrata para consertar um androide antes de um baile. Sua situação se complica quando sua meia-irmã adoece e Cinder é levada para pesquisas sobre uma doença mortal.</p>
+                    <a href="https://www.amazon.com.br/Cinder-Edi%C3%A7%C3%A3o-expandida-conte%C3%BAdo-extra/dp/6555324686" class="botao-amazon"> Amazon</a>
+                    <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela meia-estrela">&#9733;</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/MGQdknGQ/Untitled-Project-6.jpg" alt="Imagem 3">
+                  <div class="image-description">O mundo da magia está em ruínas, e Will, um garoto de dezessete anos, foge dos assassinos de sua mãe. Ele descobre que deve lutar ao lado dos Regentes contra o retorno do Rei das Trevas, unindo-se aos últimos heróis da Luz para impedir forças sinistras de dominarem novamente.</p>
+                    <a href="https://www.amazon.com.br/Ascens%C3%A3o-das-Trevas-C-Pacat/dp/6559811689" class="botao-amazon"> Amazon</a>
+                    <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/9QjfPS7H/Os-garotos-corvos.jpg" alt="Imagem 2">
+                  <div class="image-description">Blue nunca consegue vê-los - até este ano, quando um garoto emerge da escuridão e fala diretamente com ela. Seu nome é Gansey, e ela logo descobre que ele é um estudante rico da Academia Aglionby, a escola particular da cidade. Mas Blue se impôs uma regra: ficar longe dos garotos da Aglionby.</p>
+                    <a href="https://www.amazon.com.br/garotos-corvos-Vol-saga-dos/dp/8576862549" class="botao-amazon"> Amazon</a>
+                    <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela meia-estrela">&#9733;</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/Y917S2d4/Percy-Jackson.jpg" alt="Imagem 3">
+                  <div class="image-description">Quando um valentão ameaça seu amigo e seu professor se transforma em um monstro, Percy se vê obrigado a reagir. No entanto, ninguém acredita nele. Tudo muda quando ele é perseguido por um Minotauro até um acampamento, onde descobre mais sobre si e que os deuses do monte olimpo estão vivos</p>
+                    <a href="https://www.amazon.com.br/Ladr%C3%A3o-Raios-Percy-Jackson-Olimpianos/dp/8580575397" class="botao-amazon"> Amazon</a>
+                    <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/CM3rFyt8/Tr-s-coroas-negras.jpg" alt="Imagem 3">
+                  <div class="image-description">Três irmãs herdeiras da coroa possuem poderes mágicos: Mirabella (elemental), Katharine (envenenadora) e Arsinoe (naturalista). Ao completarem dezesseis anos, elas entram em uma batalha de vida ou morte para se tornarem rainha, com a última sobrevivente ganhando a coroa.</p>
+                    <a href="https://www.amazon.com.br/Tr%C3%AAs-Coroas-Negras-Kendare-Blake/dp/8525060798" class="botao-amazon"> Amazon</a>
+                    <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela meia-estrela">&#9733;</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/pLJqzw0z/caraval.jpg" alt="Imagem 1">
+                  <div class="image-description">Scarlett recebe o tão esperado convite para o Caraval, mas seu pai e um casamento arranjado ameaçam sua chance. Sua irmã, Donatella, se une a um marinheiro para ajudar Scarlett, mas acaba sequestrada. Agora, Scarlett deve encontrar Tella antes que outros o façam, enquanto se vê envolvida em uma situação perigosa.</p>
+                    <a href="https://www.amazon.com.br/Caraval-Stephanie-Garber/dp/8581638562" class="botao-amazon"> Amazon</a>
+                    <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela meia-estrela">&#9733;</span>
+                  </div>
+                </div>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/DZMxPMTT/Era-uma-vez-um-cora-o-partido-1.jpg" alt="Imagem 1">
+                  <div class="image-description"><p>Criada na loja de seu pai, cercada por lendas de seres poderosos e imortais, Evangeline cresceu acreditando em histórias de amores verdadeiros e em finais felizes. Mas essas crenças se veem abaladas quando a jovem descobre que o amor de sua vida está prestes a se casar com outra pessoa.</p>
+                      <a href="https://www.amazon.com.br/Era-cora%C3%A7%C3%A3o-partido-Sucesso-TikTok/dp/858235648X" class="botao-amazon"> Amazon</a>
+                      <div>
                           <span class="estrela amarela">&#9733;</span>
                           <span class="estrela amarela">&#9733;</span>
                           <span class="estrela amarela">&#9733;</span>
@@ -469,458 +532,343 @@
                           <span class="estrela amarela">&#9733;</span>
                       </div>
                   </div>
-              </article>
-              <article class="image">
-                <img src="https://i.postimg.cc/kXFWrx98/cinder.jpg" alt="Imagem 3">
-                <div class="image-description">Cinder, uma jovem ciborgue e mecânica talentosa, tem sua vida transformada quando o príncipe Kai a contrata para consertar um androide antes de um baile. Sua situação se complica quando sua meia-irmã adoece e Cinder é levada para pesquisas sobre uma doença mortal.</p>
-                  <a href="https://www.amazon.com.br/Cinder-Edi%C3%A7%C3%A3o-expandida-conte%C3%BAdo-extra/dp/6555324686" class="botao-amazon"> Amazon</a>
-                  <div>
-                    <span class="estrela amarela">&#9733;</span>
-                    <span class="estrela amarela">&#9733;</span>
-                    <span class="estrela amarela">&#9733;</span>
-                    <span class="estrela amarela ">&#9733;</span>
-                    <span class="estrela meia-estrela">&#9733;</span>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/7hy8zv55/jogos-vorezes.jpg" alt="Imagem 1">
+                  <div class="image-description">
+                    Nos Jogos Vorazes, jovens tributos lutam até a morte sob a opressão da Capital de Panem. Katniss se oferece para participar no lugar de sua irmã, enfrentando desafios que vão além de suas habilidades. Seu colega Peeta busca fama e fortuna. A trilogia foi adaptada para o cinema com Jennifer Lawrence.</p>
+                    <a href="https://www.amazon.com.br/Jogos-Vorazes-1-Suzanne-Collins/dp/8579800242" class="botao-amazon"> Amazon</a>
+                    <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                    </div>
+                  </div>
+                </article>
+                  <article class="image">
+                  <div class="image">
+                    <img src="https://i.postimg.cc/59hN50HR/Untitled-Project-8.jpg" alt="Imagem 1">
+                    <div class="image-description">Mia Corvere, uma figura misteriosa,  que busca vingança após testemunhar a execução pública de seu pai e a prisão de sua família. Ela almeja se tornar uma serva da Igreja Vermelha, um grupo mortal de assassinos. Em sua  jornada não espaço para amor ou amizade.</p>
+                      <a href="https://www.amazon.com.br/Nevernight-Sombra-Corvo-Cr%C3%B4nicas-Quasinoite/dp/8592783240" class="botao-amazon"> Amazon</a>
+                      <div>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela ">&#9733;</span>
+                        <span class="estrela meia-estrela">&#9733;</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/gjV9HG5C/renegados.jpg" alt="Imagem 3">
+                  <div class="image-description">Os Renegados, prodígios que trouxeram paz a uma sociedade em colapso, são alvos de ódio dos Anarquistas. Nova, uma Anarquista em busca de vingança, encontra Adrian, um Renegado que acredita na justiça, mas sua lealdade a um vilão poderoso coloca ambos em perigo.</p>
+                    <a href="https://www.amazon.com.br/Renegados-Marissa-Meyer-ebook/dp/B087N6RT7M" class="botao-amazon"> Amazon</a>
+                    <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela meia-estrela">&#9733;</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/yY79hv35/O-Priorado-da-Laranjeira.jpg" alt="Imagem 3">
+                  <div class="image-description">Em "O Priorado da Laranjeira", Tané, do Leste, sonha em montar dragões, enquanto a rainha Sabran, do Oeste, enfrenta uma conspiração para assassiná-la. Quando um dragão ancestral desperta, os dois mundos opostos precisam se unir para enfrentar a ameaça.</p>
+                    <a href="https://www.amazon.com.br/Priorado-Laranjeira-maga-1/dp/6588343302" class="botao-amazon"> Amazon</a>
+                    <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela meia-estrela">&#9733;</span>
+                  </div>
+                  </div>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/KjDGv7Z3/A-Filha-da-Deusa-da-lua.jpg" alt="Imagem 3">
+                  <div class="image-description">A Filha da Deusa da Lua" é uma duologia que segue a jovem protagonista em sua busca para libertar sua mãe, a imortal Chang’e, a deusa da lua. Em uma aventura cheia de magia, amor e traições, ela confronta o imortal mais poderoso do reino, arriscando a vida de seus entes queridos.</p>
+                    <a href="https://www.amazon.com.br/filha-Deusa-Lua-Sue-Lynn/dp/8550819182" class="botao-amazon"> Amazon</a>
+                    <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela meia-estrela">&#9733;</span>
                   </div>
                 </div>
-              </article>
-              <article class="image">
-                <img src="https://i.postimg.cc/MGQdknGQ/Untitled-Project-6.jpg" alt="Imagem 3">
-                <div class="image-description">O mundo da magia está em ruínas, e Will, um garoto de dezessete anos, foge dos assassinos de sua mãe. Ele descobre que deve lutar ao lado dos Regentes contra o retorno do Rei das Trevas, unindo-se aos últimos heróis da Luz para impedir forças sinistras de dominarem novamente.</p>
-                  <a href="https://www.amazon.com.br/Ascens%C3%A3o-das-Trevas-C-Pacat/dp/6559811689" class="botao-amazon"> Amazon</a>
-                  <div>
-                  <span class="estrela amarela">&#9733;</span>
-                  <span class="estrela amarela">&#9733;</span>
-                  <span class="estrela amarela">&#9733;</span>
-                  <span class="estrela amarela ">&#9733;</span>
-                  <span class="estrela amarela">&#9733;</span>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/652jSxh4/lendarios.jpg" alt="Imagem 2">
+                  <div class="image-description">Bree Matthews tenta escapar de seu passado ao entrar em um programa acadêmico, mas sua vida muda ao descobrir os Lendários, uma ordem secreta dedicada à caça de demônios. Com a ajuda de Nick, um ex-membro da ordem, ela se envolve em um universo de magia e segredos.</p>
+                    <a href="https://www.amazon.com.br/Lend%C3%A1rios-S%C3%A9rie-1-Tracy-Deonn/dp/6555602651" class="botao-amazon"> Amazon</a>
+                    <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                    </div>
                   </div>
-                </div>
-              </article>
-              <article class="image">
-                <img src="https://i.postimg.cc/9QjfPS7H/Os-garotos-corvos.jpg" alt="Imagem 2">
-                <div class="image-description">Blue nunca consegue vê-los - até este ano, quando um garoto emerge da escuridão e fala diretamente com ela. Seu nome é Gansey, e ela logo descobre que ele é um estudante rico da Academia Aglionby, a escola particular da cidade. Mas Blue se impôs uma regra: ficar longe dos garotos da Aglionby.</p>
-                  <a href="https://www.amazon.com.br/garotos-corvos-Vol-saga-dos/dp/8576862549" class="botao-amazon"> Amazon</a>
-                  <div>
-                    <span class="estrela amarela">&#9733;</span>
-                    <span class="estrela amarela">&#9733;</span>
-                    <span class="estrela amarela">&#9733;</span>
-                    <span class="estrela amarela ">&#9733;</span>
-                    <span class="estrela meia-estrela">&#9733;</span>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/mgccqpCD/Estilha-a-me.jpg" alt="Imagem 3">
+                  <div class="image-description">Com apenas um toque, Juliette é capaz de fazer um homem adulto se ajoelhar de dor e implorar por misericórdia. Um único toque de Juliette pode matar. Ninguém sabe por que a garota tem um poder tão impressionante, o qual ela acredita ser uma maldição, um fardo que uma pessoa sozinha seria incapaz de carregar.</p>
+                      <a href="https://www.amazon.com.br/Estilha%C3%A7a-Me-Tahereh-Mafi/dp/8550303011" class="botao-amazon"> Amazon</a>
+                      <div>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela ">&#9733;</span>
+                        <span class="estrela meia-estrela">&#9733;</span>
+                    </div>
                   </div>
-                </div>
-              </article>
-              <article class="image">
-                <img src="https://i.postimg.cc/Y917S2d4/Percy-Jackson.jpg" alt="Imagem 3">
-                <div class="image-description">Quando um valentão ameaça seu amigo e seu professor se transforma em um monstro, Percy se vê obrigado a reagir. No entanto, ninguém acredita nele. Tudo muda quando ele é perseguido por um Minotauro até um acampamento, onde descobre mais sobre si e que os deuses do monte olimpo estão vivos</p>
-                  <a href="https://www.amazon.com.br/Ladr%C3%A3o-Raios-Percy-Jackson-Olimpianos/dp/8580575397" class="botao-amazon"> Amazon</a>
-                  <div>
-                    <span class="estrela amarela">&#9733;</span>
-                    <span class="estrela amarela">&#9733;</span>
-                    <span class="estrela amarela">&#9733;</span>
-                    <span class="estrela amarela ">&#9733;</span>
-                    <span class="estrela amarela">&#9733;</span>
-                </div>
-              </div>
-            </article>
-            <article class="image">
-              <img src="https://i.postimg.cc/CM3rFyt8/Tr-s-coroas-negras.jpg" alt="Imagem 3">
-              <div class="image-description">Três irmãs herdeiras da coroa possuem poderes mágicos: Mirabella (elemental), Katharine (envenenadora) e Arsinoe (naturalista). Ao completarem dezesseis anos, elas entram em uma batalha de vida ou morte para se tornarem rainha, com a última sobrevivente ganhando a coroa.</p>
-                <a href="https://www.amazon.com.br/Tr%C3%AAs-Coroas-Negras-Kendare-Blake/dp/8525060798" class="botao-amazon"> Amazon</a>
-                <div>
-                  <span class="estrela amarela">&#9733;</span>
-                  <span class="estrela amarela">&#9733;</span>
-                  <span class="estrela amarela">&#9733;</span>
-                  <span class="estrela amarela ">&#9733;</span>
-                  <span class="estrela meia-estrela">&#9733;</span>
-              </div>
-            </div>
-          </article>
-          <article class="image">
-            <img src="https://i.postimg.cc/pLJqzw0z/caraval.jpg" alt="Imagem 1">
-            <div class="image-description">Scarlett recebe o tão esperado convite para o Caraval, mas seu pai e um casamento arranjado ameaçam sua chance. Sua irmã, Donatella, se une a um marinheiro para ajudar Scarlett, mas acaba sequestrada. Agora, Scarlett deve encontrar Tella antes que outros o façam, enquanto se vê envolvida em uma situação perigosa.</p>
-              <a href="https://www.amazon.com.br/Caraval-Stephanie-Garber/dp/8581638562" class="botao-amazon"> Amazon</a>
-              <div>
-                <span class="estrela amarela">&#9733;</span>
-                <span class="estrela amarela">&#9733;</span>
-                <span class="estrela amarela">&#9733;</span>
-                <span class="estrela amarela ">&#9733;</span>
-                <span class="estrela meia-estrela">&#9733;</span>
-            </div>
-          </div>
-        </article>
-        <article class="image">
-          <img src="https://i.postimg.cc/DZMxPMTT/Era-uma-vez-um-cora-o-partido-1.jpg" alt="Imagem 1">
-          <div class="image-description"><p>Criada na loja de seu pai, cercada por lendas de seres poderosos e imortais, Evangeline cresceu acreditando em histórias de amores verdadeiros e em finais felizes. Mas essas crenças se veem abaladas quando a jovem descobre que o amor de sua vida está prestes a se casar com outra pessoa.</p>
-              <a href="https://www.amazon.com.br/Era-cora%C3%A7%C3%A3o-partido-Sucesso-TikTok/dp/858235648X" class="botao-amazon"> Amazon</a>
-              <div>
-                  <span class="estrela amarela">&#9733;</span>
-                  <span class="estrela amarela">&#9733;</span>
-                  <span class="estrela amarela">&#9733;</span>
-                  <span class="estrela amarela ">&#9733;</span>
-                  <span class="estrela amarela">&#9733;</span>
-              </div>
-          </div>
-      </article>
-              <article class="image">
-                <img src="https://i.postimg.cc/7hy8zv55/jogos-vorezes.jpg" alt="Imagem 1">
-                <div class="image-description">
-                  Nos Jogos Vorazes, jovens tributos lutam até a morte sob a opressão da Capital de Panem. Katniss se oferece para participar no lugar de sua irmã, enfrentando desafios que vão além de suas habilidades. Seu colega Peeta busca fama e fortuna. A trilogia foi adaptada para o cinema com Jennifer Lawrence.</p>
-                  <a href="https://www.amazon.com.br/Jogos-Vorazes-1-Suzanne-Collins/dp/8579800242" class="botao-amazon"> Amazon</a>
-                  <div>
-                    <span class="estrela amarela">&#9733;</span>
-                    <span class="estrela amarela">&#9733;</span>
-                    <span class="estrela amarela">&#9733;</span>
-                    <span class="estrela amarela ">&#9733;</span>
-                    <span class="estrela amarela">&#9733;</span>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/VkGqhbbz/Untitled-Project-10.jpg" alt="Imagem 3">
+                  <div class="image-description">Sophie é amaldiçoada por uma bruxa e transformada em uma senhora de noventa anos, fugindo para o castelo do Mago Howl. Lá, ela trabalha com ele e um demônio do fogo, buscando quebrar sua maldição enquanto descobre um novo mundo mágico..</p>
+                    <a href="https://www.amazon.com.br/castelo-animado-Diana-Wynne-Jones/dp/655587208X/ref=asc_df_655587208X/?tag=googleshopp00-20&linkCode=df0&hvadid=709857900372&hvpos=&hvnetw=g&hvrand=16072877443022792207&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9100078&hvtargid=pla-1255084911297&psc=1&mcid=828fd68f32c9393c84a7aa9ac5f8119e&gad_source=4" class="botao-amazon"> Amazon</a>
+                    <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                    </div>
                   </div>
-                </div>
-              </article>
-              <article class="image">
-              <div class="image">
-                <img src="https://i.postimg.cc/59hN50HR/Untitled-Project-8.jpg" alt="Imagem 1">
-                <div class="image-description">Mia Corvere, uma figura misteriosa,  que busca vingança após testemunhar a execução pública de seu pai e a prisão de sua família. Ela almeja se tornar uma serva da Igreja Vermelha, um grupo mortal de assassinos. Em sua  jornada não espaço para amor ou amizade.</p>
-                  <a href="https://www.amazon.com.br/Nevernight-Sombra-Corvo-Cr%C3%B4nicas-Quasinoite/dp/8592783240" class="botao-amazon"> Amazon</a>
-                  <div>
-                  <span class="estrela amarela">&#9733;</span>
-                  <span class="estrela amarela">&#9733;</span>
-                  <span class="estrela amarela">&#9733;</span>
-                  <span class="estrela amarela ">&#9733;</span>
-                  <span class="estrela meia-estrela">&#9733;</span>
-                </div>
-            </div>
-          </article>
-          <article class="image">
-            <img src="https://i.postimg.cc/gjV9HG5C/renegados.jpg" alt="Imagem 3">
-            <div class="image-description">Os Renegados, prodígios que trouxeram paz a uma sociedade em colapso, são alvos de ódio dos Anarquistas. Nova, uma Anarquista em busca de vingança, encontra Adrian, um Renegado que acredita na justiça, mas sua lealdade a um vilão poderoso coloca ambos em perigo.</p>
-              <a href="https://www.amazon.com.br/Renegados-Marissa-Meyer-ebook/dp/B087N6RT7M" class="botao-amazon"> Amazon</a>
-              <div>
-                <span class="estrela amarela">&#9733;</span>
-                <span class="estrela amarela">&#9733;</span>
-                <span class="estrela amarela">&#9733;</span>
-                <span class="estrela amarela ">&#9733;</span>
-                <span class="estrela meia-estrela">&#9733;</span>
-              </div>
+                </article>
+                <article class="image">
+                    <img src="https://i.postimg.cc/2jMgsVhF/o-ceifador.jpg" alt="Imagem 2">
+                    <div class="image-description">Em um mundo onde a morte foi superada, os ceifadores controlam a população. Citra e Rowan, adolescentes escolhidos como aprendizes, não querem se tornar ceifadores. Eles devem aprender a "arte" da coleta, enfrentando dilemas morais e os riscos de sua relação durante o treinamento.</p>
+                      <a href="https://www.amazon.com.br/ceifador-Neal-Shusterman/dp/8555340357" class="botao-amazon"> Amazon</a>
+                      <div>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela ">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="image">
+                    <img src="https://i.postimg.cc/jSbfk45V/A-rebelde-do-deserto.jpg" alt="Imagem 3">
+                    <div class="image-description">Amani Al’Hiza, uma jovem habilidosa com armas, busca liberdade em um deserto mágico chamado Miraji, repleto de mistérios e criaturas míticas. Em um mundo dominado por mortais, os humanos, especialmente os mais pobres, enfrentam grandes dificuldades.</p>
+                        <a href="https://www.amazon.com.br/rebelde-do-deserto-Alwyn-Hamilton/dp/8565765997" class="botao-amazon"> Amazon</a>
+                      <div>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela ">&#9733;</span>
+                        <span class="estrela meia-estrela">&#9733;</span>
+                      </div>
+                  </div>
+                </article>
+                <article class="image">            
+                  <img src="https://i.postimg.cc/fRqw0M1H/Untitled-Project-12.jpg" alt="Imagem 1">
+                  <div class="image-description">Depois de sobreviver ao Caraval, Donatella Dragna se liberta da tirania do pai e salva sua irmã Scarlett de um casamento arranjado. Em um ato desesperado, ela faz um acordo secreto com um criminoso e agora deve revelar o verdadeiro nome do mestre que controla o Caraval.</p> 
+                      <a href="https://www.amazon.com.br/Lend%C3%A1rio-Stephanie-Garber/dp/8581639062" class="botao-amazon"> Amazon</a>
+                      <div>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela ">&#9733;</span>
+                        <span class="estrela meia-estrela">&#9733;</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/T3Dkn94Z/Untitled-Project-13.jpg" alt="Imagem 1">
+                  <div class="image-description">Wu Zetian se torna piloto-concubina em Huaxia para vingar a morte da irmã. Após se transformar na temida Viúva de Ferro, capaz de matar homens nas crisálidas, ela se une ao piloto Li Shimin e decide lutar contra um sistema que despreza as mulheres.</p> 
+                    <a href="https://www.amazon.com.br/Vi%C3%BAva-Ferro-Xiran-Jay-Zhao/dp/6555605316" class="botao-amazon"> Amazon</a>
+                    <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela meia-estrela">&#9733;</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/RCWbM4TS/O-Cora-o-do-Guerreiro-do-sol-1.jpg" alt="Imagem 2">
+                  <div class="image-description">Xingyin, após libertar sua mãe, enfrenta uma nova ameaça no Império Celestial ao descobrir uma estranha magia lunar. Forçada a fugir, ela explora o Reino Imortal, buscando alianças e enfrentando um grande mal que ameaça tudo o que ama.</p>
+                    <a href="https://www.amazon.com.br/Cora%C3%A7%C3%A3o-Guerreiro-sol-Sue-Lynn/dp/8550821144" class="botao-amazon"> Amazon</a>
+                    <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/qB6BDt6r/Um-tom-mais-escuro-de-magia.jpg" alt="Imagem 2">
+                  <div class="image-description">Kell, um dos últimos Viajantes, a viaja entre universos paralelos e contrabandeia vislumbres de magia. Ao encontrar a ladra Delilah Bard na Londres Cinza, eles embarcam em uma aventura cheia de perigos e traições para salvar os mundos.</p>
+                    <a href="https://www.amazon.com.br/mais-escuro-magia-Vol-tons/dp/8501106666" class="botao-amazon"> Amazon</a>
+                    <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela meia-estrela">&#9733;</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/N0ZSK0s8/Powerless.jpg" alt="Imagem 2">
+                  <div class="image-description">Kai, um príncipe mortal, e Paedyn, uma garota comum que finge ter poderes, se encontram em uma competição mágica perigosa. Enquanto Paedyn esconde sua verdade, ambos lutam contra a atração proibida que surge entre eles.</p>
+                    <a href="https://i.postimg.cc/N0ZSK0s8/Powerless.jpg" class="botao-amazon"> Amazon</a>
+                    <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela meia-estrela">&#9733;</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/MKVwpyYp/Untitled-Project-14.jpg" alt="Imagem 2">
+                  <div class="image-description">Violet, uma vidente astuta, acidentalmente lança uma maldição ao criar uma profecia sobre o amor do príncipe Cyrus, seu inimigo. Entre intrigas e uma crescente apaixão, ela deve escolher entre controlar seu destino ou salvar o reino da destruição.</p>
+                    <a href="https://www.amazon.com.br/Flores-feitas-espinhos-Gina-Chen/dp/6555322977" class="botao-amazon"> Amazon</a>
+                    <div>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela">&#9733;</span>
+                      <span class="estrela amarela ">&#9733;</span>
+                      <span class="estrela meia-estrela">&#9733;</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/xjkBf1Ft/Trono-de-vidro.jpg" alt="Imagem 3">
+                  <div class="image-description">Celaena, uma jovem assassina presa, é oferecida uma chance de liberdade ao competir em uma competição mortal. Enquanto enfrenta adversários perigosos, ela descobre intrigas e uma ameaça sombria no castelo.</p>
+                    <a href="https://www.amazon.com.br/Trono-vidro-Vol-Sarah-Maas/dp/8501401382" class="botao-amazon"> Amazon</a>
+                      <div>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela ">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="image">
+                  <div class="image">
+                    <img src="https://i.postimg.cc/7ZN6rdHw/assistente-do-vil-o.jpg" alt="Imagem 3">
+                    <div class="image-description">Evie Sage, uma jovem alegre e desesperada por um emprego, acaba aceitando uma oferta inesperada após um encontro acidental com o vilão mais famoso do reino de Rennedawn. Mesmo não sendo o trabalho dos seus sonhos, ela aceita a proposta por necessidade.</p>
+                      <a href="https://www.amazon.com.br/Assistente-Sucesso-TikTok-Hannah-Maehrer/dp/6585348249" class="botao-amazon"> Amazon</a>
+                      <div>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela ">&#9733;</span>
+                        <span class="estrela meia-estrela">&#9733;</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="image">
+                  <div class="image">
+                    <img src="https://i.postimg.cc/9M20P7Jh/Winter.jpg" alt="Imagem 3">
+                    <div class="image-description">Winter, uma releitura de Branca de Neve, é sobre uma princesa lidando com a loucura e a ameaça de sua madrasta invejosa. Jacin, seu leal guarda-costas, está disposto a arriscar a vida para protegê-la.<p>
+                      <a href="https://www.amazon.com.br/Winter-Cr%C3%B4nicas-Lunares-Marissa-Meyer/dp/6555321474" class="botao-amazon"> Amazon</a>
+                      <div>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela">&#9733;</span>
+                        <span class="estrela amarela ">&#9733;</span>
+                        <span class="estrela meia-estrela">&#9733;</span>
+                    </div>
+                  </div>
+                </article>   
+                <article class="image">
+                  <img src="https://i.postimg.cc/RhyNHbYP/Cidade-da-Lua-Crescente.jpg" alt="Imagem 1">
+                  <div class="image-description">Após a morte de amigos por um demônio, Bryce Quinlan se une ao anjo caído Hunt Athalar para investigar novos crimes que seguem o mesmo padrão. Juntos, eles descobrem segredos sombrios na Cidade da Lua Crescente e desenvolvem uma paixão que pode libertá-los.</p>
+                      <a href="https://www.amazon.com.br/Cidade-Lua-Crescente-sangue-Revista/dp/6555871709" class="botao-amazon"> Amazon</a>
+                      <div>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela ">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                      </div>
+                  </div>
+                </article>
+                <article class="image">
+                  <img src="https://i.postimg.cc/pXb1y3XN/sem-cora-o.jpg" alt="Imagem 1">
+                  <div class="image-description">Catherine, uma das garotas mais cobiçadas do País das Maravilhas e está sendo pressionada, para se casar com o Rei de Copas. No entanto, ela se apaixona por  Jest, o bobo da corte, Em um mundo cheio de magia e loucura, ela luta para escolher seu próprio destino.</p>
+                      <a href="https://www.amazon.com.br/Sem-cora%C3%A7%C3%A3o-SELO-Marissa-Meyer/dp/6555321172" class="botao-amazon"> Amazon</a>
+                      <div>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela ">&#9733;</span>
+                          <span class="estrela meia-estrela">&#9733;</span>
+                      </div>
+                  </div>
+                </article>             
+                <article class="image">
+                  <img src="https://i.postimg.cc/8CwW5GRD/A-ca-adora-de-drag-es.jpg" alt="Imagem 1">
+                  <div class="image-description">Envolvida pelos contos, a pequena Asha acabou despertando Kozu, o mais feroz de todos os dragões, que queimou a cidade e matou milhares de pessoas ― um peso que a garota ainda carrega nas costas. Agora, aos dezessete anos, ela se tornou uma caçadora de dragões temida por todos.</p>
+                      <a href="https://www.amazon.com.br/ca%C3%A7adora-drag%C3%B5es-Kristen-Ciccarelli/dp/8555340527" class="botao-amazon"> Amazon</a>
+                      <div>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela">&#9733;</span>
+                          <span class="estrela amarela ">&#9733;</span>
+                          <span class="estrela meia-estrela">&#9733;</span>
+                      </div>
+                  </div>
+                </article>  
+              </div> 
           </div>
-        </article>
-              <article class="image">
-                <img src="https://i.postimg.cc/yY79hv35/O-Priorado-da-Laranjeira.jpg" alt="Imagem 3">
-                <div class="image-description">Em "O Priorado da Laranjeira", Tané, do Leste, sonha em montar dragões, enquanto a rainha Sabran, do Oeste, enfrenta uma conspiração para assassiná-la. Quando um dragão ancestral desperta, os dois mundos opostos precisam se unir para enfrentar a ameaça.</p>
-                  <a href="https://www.amazon.com.br/Priorado-Laranjeira-maga-1/dp/6588343302" class="botao-amazon"> Amazon</a>
-                  <div>
-                    <span class="estrela amarela">&#9733;</span>
-                    <span class="estrela amarela">&#9733;</span>
-                    <span class="estrela amarela">&#9733;</span>
-                    <span class="estrela amarela ">&#9733;</span>
-                    <span class="estrela meia-estrela">&#9733;</span>
-                </div>
-              </div>
-            </article>
-            <article class="image">
-              <img src="https://i.postimg.cc/KjDGv7Z3/A-Filha-da-Deusa-da-lua.jpg" alt="Imagem 3">
-              <div class="image-description">A Filha da Deusa da Lua" é uma duologia que segue a jovem protagonista em sua busca para libertar sua mãe, a imortal Chang’e, a deusa da lua. Em uma aventura cheia de magia, amor e traições, ela confronta o imortal mais poderoso do reino, arriscando a vida de seus entes queridos.</p>
-                <a href="https://www.amazon.com.br/filha-Deusa-Lua-Sue-Lynn/dp/8550819182" class="botao-amazon"> Amazon</a>
-                <div>
-                  <span class="estrela amarela">&#9733;</span>
-                  <span class="estrela amarela">&#9733;</span>
-                  <span class="estrela amarela">&#9733;</span>
-                  <span class="estrela amarela ">&#9733;</span>
-                  <span class="estrela meia-estrela">&#9733;</span>
-              </div>
-            </div>
-          </article>
-         
-          <article class="image">
-            <img src="https://i.postimg.cc/652jSxh4/lendarios.jpg" alt="Imagem 2">
-            <div class="image-description">Bree Matthews tenta escapar de seu passado ao entrar em um programa acadêmico, mas sua vida muda ao descobrir os Lendários, uma ordem secreta dedicada à caça de demônios. Com a ajuda de Nick, um ex-membro da ordem, ela se envolve em um universo de magia e segredos.</p>
-              <a href="https://www.amazon.com.br/Lend%C3%A1rios-S%C3%A9rie-1-Tracy-Deonn/dp/6555602651" class="botao-amazon"> Amazon</a>
-              <div>
-                <span class="estrela amarela">&#9733;</span>
-                <span class="estrela amarela">&#9733;</span>
-                <span class="estrela amarela">&#9733;</span>
-                <span class="estrela amarela ">&#9733;</span>
-                <span class="estrela amarela">&#9733;</span>
-            </div>
-          </div>
-        </article>
-        <article class="image">
-          <img src="https://i.postimg.cc/mgccqpCD/Estilha-a-me.jpg" alt="Imagem 3">
-          <div class="image-description">Com apenas um toque, Juliette é capaz de fazer um homem adulto se ajoelhar de dor e implorar por misericórdia. Um único toque de Juliette pode matar. Ninguém sabe por que a garota tem um poder tão impressionante, o qual ela acredita ser uma maldição, um fardo que uma pessoa sozinha seria incapaz de carregar.</p>
-              <a href="https://www.amazon.com.br/Estilha%C3%A7a-Me-Tahereh-Mafi/dp/8550303011" class="botao-amazon"> Amazon</a>
-              <div>
-                  <span class="estrela amarela">&#9733;</span>
-                  <span class="estrela amarela">&#9733;</span>
-                  <span class="estrela amarela">&#9733;</span>
-                  <span class="estrela amarela ">&#9733;</span>
-                  <span class="estrela meia-estrela">&#9733;</span>
-              </div>
-          </div>
-      </article>
-        <article class="image">
-          <img src="https://i.postimg.cc/VkGqhbbz/Untitled-Project-10.jpg" alt="Imagem 3">
-          <div class="image-description">Sophie é amaldiçoada por uma bruxa e transformada em uma senhora de noventa anos, fugindo para o castelo do Mago Howl. Lá, ela trabalha com ele e um demônio do fogo, buscando quebrar sua maldição enquanto descobre um novo mundo mágico..</p>
-            <a href="https://www.amazon.com.br/castelo-animado-Diana-Wynne-Jones/dp/655587208X/ref=asc_df_655587208X/?tag=googleshopp00-20&linkCode=df0&hvadid=709857900372&hvpos=&hvnetw=g&hvrand=16072877443022792207&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9100078&hvtargid=pla-1255084911297&psc=1&mcid=828fd68f32c9393c84a7aa9ac5f8119e&gad_source=4" class="botao-amazon"> Amazon</a>
-            <div>
-              <span class="estrela amarela">&#9733;</span>
-              <span class="estrela amarela">&#9733;</span>
-              <span class="estrela amarela">&#9733;</span>
-              <span class="estrela amarela ">&#9733;</span>
-              <span class="estrela amarela">&#9733;</span>
-          </div>
-        </div>
-      </article>
-      <article class="image">
-          <img src="https://i.postimg.cc/2jMgsVhF/o-ceifador.jpg" alt="Imagem 2">
-          <div class="image-description">Em um mundo onde a morte foi superada, os ceifadores controlam a população. Citra e Rowan, adolescentes escolhidos como aprendizes, não querem se tornar ceifadores. Eles devem aprender a "arte" da coleta, enfrentando dilemas morais e os riscos de sua relação durante o treinamento.</p>
-            <a href="https://www.amazon.com.br/ceifador-Neal-Shusterman/dp/8555340357" class="botao-amazon"> Amazon</a>
-            <div>
-              <span class="estrela amarela">&#9733;</span>
-              <span class="estrela amarela">&#9733;</span>
-              <span class="estrela amarela">&#9733;</span>
-              <span class="estrela amarela ">&#9733;</span>
-              <span class="estrela amarela">&#9733;</span>
-          </div>
-        </div>
-      </article>
-      <article class="image">
-        <div class="image">
-            <img src="https://i.postimg.cc/jSbfk45V/A-rebelde-do-deserto.jpg" alt="Imagem 3">
-            <div class="image-description">Amani Al’Hiza, uma jovem habilidosa com armas, busca liberdade em um deserto mágico chamado Miraji, repleto de mistérios e criaturas míticas. Em um mundo dominado por mortais, os humanos, especialmente os mais pobres, enfrentam grandes dificuldades.</p>
-              <a href="https://www.amazon.com.br/rebelde-do-deserto-Alwyn-Hamilton/dp/8565765997" class="botao-amazon"> Amazon</a>
-            <div>
-              <div>
-              <span class="estrela amarela">&#9733;</span>
-              <span class="estrela amarela">&#9733;</span>
-              <span class="estrela amarela">&#9733;</span>
-              <span class="estrela amarela ">&#9733;</span>
-              <span class="estrela meia-estrela">&#9733;</span>
-            </div>
-        </div>
-      </article>
-      <article class="image">
-        <div class="image">
-          <img src="https://i.postimg.cc/fRqw0M1H/Untitled-Project-12.jpg" alt="Imagem 1">
-          <div class="image-description">Depois de sobreviver ao Caraval, Donatella Dragna se liberta da tirania do pai e salva sua irmã Scarlett de um casamento arranjado. Em um ato desesperado, ela faz um acordo secreto com um criminoso e agora deve revelar o verdadeiro nome do mestre que controla o Caraval.</p> 
-            <a href="https://www.amazon.com.br/Lend%C3%A1rio-Stephanie-Garber/dp/8581639062" class="botao-amazon"> Amazon</a>
-            <div>
-            <span class="estrela amarela">&#9733;</span>
-            <span class="estrela amarela">&#9733;</span>
-            <span class="estrela amarela">&#9733;</span>
-            <span class="estrela amarela ">&#9733;</span>
-            <span class="estrela meia-estrela">&#9733;</span>
-          </div>
-      </div>
-    </article>
-    <article class="image">
-      <div class="image">
-        <img src="https://i.postimg.cc/T3Dkn94Z/Untitled-Project-13.jpg" alt="Imagem 1">
-        <div class="image-description">Wu Zetian se torna piloto-concubina em Huaxia para vingar a morte da irmã. Após se transformar na temida Viúva de Ferro, capaz de matar homens nas crisálidas, ela se une ao piloto Li Shimin e decide lutar contra um sistema que despreza as mulheres.</p> 
-          <a href="https://www.amazon.com.br/Vi%C3%BAva-Ferro-Xiran-Jay-Zhao/dp/6555605316" class="botao-amazon"> Amazon</a>
-          <div>
-          <span class="estrela amarela">&#9733;</span>
-          <span class="estrela amarela">&#9733;</span>
-          <span class="estrela amarela">&#9733;</span>
-          <span class="estrela amarela ">&#9733;</span>
-          <span class="estrela meia-estrela">&#9733;</span>
-        </div>
-    </div>
-  </article>
-  <article class="image">
-    <img src="https://i.postimg.cc/RCWbM4TS/O-Cora-o-do-Guerreiro-do-sol-1.jpg" alt="Imagem 2">
-    <div class="image-description">Xingyin, após libertar sua mãe, enfrenta uma nova ameaça no Império Celestial ao descobrir uma estranha magia lunar. Forçada a fugir, ela explora o Reino Imortal, buscando alianças e enfrentando um grande mal que ameaça tudo o que ama.</p>
-      <a href="https://www.amazon.com.br/Cora%C3%A7%C3%A3o-Guerreiro-sol-Sue-Lynn/dp/8550821144" class="botao-amazon"> Amazon</a>
-      <div>
-        <span class="estrela amarela">&#9733;</span>
-        <span class="estrela amarela">&#9733;</span>
-        <span class="estrela amarela">&#9733;</span>
-        <span class="estrela amarela ">&#9733;</span>
-        <span class="estrela amarela">&#9733;</span>
-    </div>
-  </div>
-</article>
-<article class="image">
-  <img src="https://i.postimg.cc/qB6BDt6r/Um-tom-mais-escuro-de-magia.jpg" alt="Imagem 2">
-  <div class="image-description">Kell, um dos últimos Viajantes, a viaja entre universos paralelos e contrabandeia vislumbres de magia. Ao encontrar a ladra Delilah Bard na Londres Cinza, eles embarcam em uma aventura cheia de perigos e traições para salvar os mundos.</p>
-    <a href="https://www.amazon.com.br/mais-escuro-magia-Vol-tons/dp/8501106666" class="botao-amazon"> Amazon</a>
-    <div>
-      <span class="estrela amarela">&#9733;</span>
-      <span class="estrela amarela">&#9733;</span>
-      <span class="estrela amarela">&#9733;</span>
-      <span class="estrela amarela ">&#9733;</span>
-      <span class="estrela meia-estrela">&#9733;</span>
-  </div>
-</div>
-</article>
-<article class="image">
-  <img src="https://i.postimg.cc/N0ZSK0s8/Powerless.jpg" alt="Imagem 2">
-  <div class="image-description">Kai, um príncipe mortal, e Paedyn, uma garota comum que finge ter poderes, se encontram em uma competição mágica perigosa. Enquanto Paedyn esconde sua verdade, ambos lutam contra a atração proibida que surge entre eles.</p>
-    <a href="https://i.postimg.cc/N0ZSK0s8/Powerless.jpg" class="botao-amazon"> Amazon</a>
-    <div>
-      <span class="estrela amarela">&#9733;</span>
-      <span class="estrela amarela">&#9733;</span>
-      <span class="estrela amarela">&#9733;</span>
-      <span class="estrela amarela ">&#9733;</span>
-      <span class="estrela meia-estrela">&#9733;</span>
-  </div>
-</div>
-</article>
-<article class="image">
-  <img src="https://i.postimg.cc/MKVwpyYp/Untitled-Project-14.jpg" alt="Imagem 2">
-  <div class="image-description">Violet, uma vidente astuta, acidentalmente lança uma maldição ao criar uma profecia sobre o amor do príncipe Cyrus, seu inimigo. Entre intrigas e uma crescente apaixão, ela deve escolher entre controlar seu destino ou salvar o reino da destruição.</p>
-    <a href="https://www.amazon.com.br/Flores-feitas-espinhos-Gina-Chen/dp/6555322977" class="botao-amazon"> Amazon</a>
-    <div>
-      <span class="estrela amarela">&#9733;</span>
-      <span class="estrela amarela">&#9733;</span>
-      <span class="estrela amarela">&#9733;</span>
-      <span class="estrela amarela ">&#9733;</span>
-      <span class="estrela meia-estrela">&#9733;</span>
-  </div>
-</div>
-</article>
-
-<article class="image">
-  <div class="image">
-    <img src="https://i.postimg.cc/xjkBf1Ft/Trono-de-vidro.jpg" alt="Imagem 3">
-    <div class="image-description">Celaena, uma jovem assassina presa, é oferecida uma chance de liberdade ao competir em uma competição mortal. Enquanto enfrenta adversários perigosos, ela descobre intrigas e uma ameaça sombria no castelo.</p>
-      <a href="https://www.amazon.com.br/Trono-vidro-Vol-Sarah-Maas/dp/8501401382" class="botao-amazon"> Amazon</a>
-      <div>
-      <span class="estrela amarela">&#9733;</span>
-      <span class="estrela amarela">&#9733;</span>
-      <span class="estrela amarela">&#9733;</span>
-      <span class="estrela amarela ">&#9733;</span>
-      <span class="estrela amarela">&#9733;</span>
-    </div>
-</div>
-</article>
-<article class="image">
-  <div class="image">
-    <img src="https://i.postimg.cc/7ZN6rdHw/assistente-do-vil-o.jpg" alt="Imagem 3">
-    <div class="image-description">Evie Sage, uma jovem alegre e desesperada por um emprego, acaba aceitando uma oferta inesperada após um encontro acidental com o vilão mais famoso do reino de Rennedawn. Mesmo não sendo o trabalho dos seus sonhos, ela aceita a proposta por necessidade.</p>
-      <a href="https://www.amazon.com.br/Assistente-Sucesso-TikTok-Hannah-Maehrer/dp/6585348249" class="botao-amazon"> Amazon</a>
-      <div>
-      <span class="estrela amarela">&#9733;</span>
-      <span class="estrela amarela">&#9733;</span>
-      <span class="estrela amarela">&#9733;</span>
-      <span class="estrela amarela ">&#9733;</span>
-      <span class="estrela meia-estrela">&#9733;</span>
-    </div>
-</div>
-</article>
-              
-<article class="image">
-  <div class="image">
-    <img src="https://i.postimg.cc/9M20P7Jh/Winter.jpg" alt="Imagem 3">
-    <div class="image-description">Winter, uma releitura de Branca de Neve, é sobre uma princesa lidando com a loucura e a ameaça de sua madrasta invejosa. Jacin, seu leal guarda-costas, está disposto a arriscar a vida para protegê-la.<p>
-      <a href="https://www.amazon.com.br/Winter-Cr%C3%B4nicas-Lunares-Marissa-Meyer/dp/6555321474" class="botao-amazon"> Amazon</a>
-      <div>
-      <span class="estrela amarela">&#9733;</span>
-      <span class="estrela amarela">&#9733;</span>
-      <span class="estrela amarela">&#9733;</span>
-      <span class="estrela amarela ">&#9733;</span>
-      <span class="estrela meia-estrela">&#9733;</span>
-    </div>
-</div>
-</article>
-             
-<article class="image">
-  <img src="https://i.postimg.cc/RhyNHbYP/Cidade-da-Lua-Crescente.jpg" alt="Imagem 1">
-  <div class="image-description">Após a morte de amigos por um demônio, Bryce Quinlan se une ao anjo caído Hunt Athalar para investigar novos crimes que seguem o mesmo padrão. Juntos, eles descobrem segredos sombrios na Cidade da Lua Crescente e desenvolvem uma paixão que pode libertá-los.</p>
-      <a href="https://www.amazon.com.br/Cidade-Lua-Crescente-sangue-Revista/dp/6555871709" class="botao-amazon"> Amazon</a>
-      <div>
-          <span class="estrela amarela">&#9733;</span>
-          <span class="estrela amarela">&#9733;</span>
-          <span class="estrela amarela">&#9733;</span>
-          <span class="estrela amarela ">&#9733;</span>
-          <span class="estrela amarela">&#9733;</span>
-      </div>
-  </div>
-</article>
-               
-
-<article class="image">
-  <img src="https://i.postimg.cc/pXb1y3XN/sem-cora-o.jpg" alt="Imagem 1">
-  <div class="image-description">Catherine, uma das garotas mais cobiçadas do País das Maravilhas e está sendo pressionada, para se casar com o Rei de Copas. No entanto, ela se apaixona por  Jest, o bobo da corte, Em um mundo cheio de magia e loucura, ela luta para escolher seu próprio destino.</p>
-      <a href="https://www.amazon.com.br/Sem-cora%C3%A7%C3%A3o-SELO-Marissa-Meyer/dp/6555321172" class="botao-amazon"> Amazon</a>
-      <div>
-          <span class="estrela amarela">&#9733;</span>
-          <span class="estrela amarela">&#9733;</span>
-          <span class="estrela amarela">&#9733;</span>
-          <span class="estrela amarela ">&#9733;</span>
-          <span class="estrela meia-estrela">&#9733;</span>
-      </div>
-  </div>
-</article>
-                  
-<article class="image">
-  <img src="https://i.postimg.cc/8CwW5GRD/A-ca-adora-de-drag-es.jpg" alt="Imagem 1">
-  <div class="image-description">Envolvida pelos contos, a pequena Asha acabou despertando Kozu, o mais feroz de todos os dragões, que queimou a cidade e matou milhares de pessoas ― um peso que a garota ainda carrega nas costas. Agora, aos dezessete anos, ela se tornou uma caçadora de dragões temida por todos.</p>
-      <a href="https://www.amazon.com.br/ca%C3%A7adora-drag%C3%B5es-Kristen-Ciccarelli/dp/8555340527" class="botao-amazon"> Amazon</a>
-      <div>
-          <span class="estrela amarela">&#9733;</span>
-          <span class="estrela amarela">&#9733;</span>
-          <span class="estrela amarela">&#9733;</span>
-          <span class="estrela amarela ">&#9733;</span>
-          <span class="estrela meia-estrela">&#9733;</span>
-      </div>
-  </div>
-</article>
-                  
-          
-              
-           
-              
-                
-            </div>
-            
-      </div>
-    </main>
-        <script>
-            
-            
-              const carouselInner = document.querySelector('.carousel-inner');
-              const totalSlides = document.querySelectorAll('.carousel-item').length;
-              let index = 0;
-
-              function showSlide(n) {
-                  if (n >= totalSlides) {
-                      carouselInner.style.transition = 'none';
-                      index = 0;
-                      carouselInner.style.transform = `translateX(${-index * 100}%)`;
-                      setTimeout(() => {
-                          carouselInner.style.transition = 'transform 0.5s ease-in-out'; 
-                          showSlide(index + 1);
-                      }, 50);
-                      return;
-                  } else if (n < 0) {
-                      carouselInner.style.transition = 'none'; 
-                      index = totalSlides / 2 - 1; 
-                      carouselInner.style.transform = `translateX(${-index * 100}%)`; 
-                      setTimeout(() => {
-                          carouselInner.style.transition = 'transform 0.5s ease-in-out'; 
-                          showSlide(index + 1);
-                      }, 50);
-                      return;
-                  }
-                  index = n;
-                  carouselInner.style.transform = `translateX(${-index * 100}%)`;
-              }
-              setInterval(() => showSlide(index + 1), 5000);
-
+        </main>
+        <script>       
+          const carouselInner = document.querySelector('.carousel-inner');
+          const totalSlides = document.querySelectorAll('.carousel-item').length;
+          let index = 0;
+          function showSlide(n) {
+            if (n >= totalSlides) {
+                  carouselInner.style.transition = 'none';
+                index = 0;
+                carouselInner.style.transform = `translateX(${-index * 100}%)`;
+                setTimeout(() => {
+                    carouselInner.style.transition = 'transform 0.5s ease-in-out'; 
+                    showSlide(index + 1);
+                }, 50);
+                  return;
+            } else if (n < 0) {
+              carouselInner.style.transition = 'none'; 
+              index = totalSlides / 2 - 1; 
+              carouselInner.style.transform = `translateX(${-index * 100}%)`; 
+              setTimeout(() => {
+                  carouselInner.style.transition = 'transform 0.5s ease-in-out'; 
+                  showSlide(index + 1);
+              }, 50);
+              return;
+            }
+            index = n;
+            carouselInner.style.transform = `translateX(${-index * 100}%)`;
+            }
+            setInterval(() => showSlide(index + 1), 5000);
               function toggleMenu() {
-    const menu = document.getElementById('menu');
-    if (menu.classList.contains('show')) {
-        menu.classList.remove('show');
-        setTimeout(() => {
-            menu.style.display = 'none'; 
-        }, 300); 
-    } else {
-        menu.style.display = 'block'; 
-        setTimeout(() => {
-            menu.classList.add('show'); 
-            
-        }, 10); 
-        
-    }
-}
-      </script>
-   </body>
-</html>
+            const menu = document.getElementById('menu');
+            if (menu.classList.contains('show')) {
+                menu.classList.remove('show');
+                setTimeout(() => {
+                    menu.style.display = 'none'; 
+                }, 300); 
+            } else {
+                menu.style.display = 'block'; 
+                setTimeout(() => {
+                    menu.classList.add('show'); 
+                    
+                }, 10);              
+            }
+          }
+        </script>
+      </body>
+  </html>

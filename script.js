@@ -8,9 +8,7 @@ function toggleMenu() {
     } else {
         menu.style.display = 'block'; 
         setTimeout(() => {
-            menu.classList.add('show'); 
-            
-        }, 10); 
-        
+            menu.classList.add('show');     
+        }, 10);    
     }
 }

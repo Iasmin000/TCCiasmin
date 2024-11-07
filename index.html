@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Iasmin</title>
         <link rel="stylesheet" href="style.css">
-        <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/sxngj5hC/cora-o.jpg">
+        <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/vZdLyPqp/pink-book-icon-png-5694164.png">
     </head>
         <body>
             <main>                   
@@ -87,8 +87,8 @@
                 </div>
                 </div>
                     <div class="conteudo">
-                    <div id="grad"></div>
-                    <br>     
+                        <div id="grad"></div>
+                        <br>     
                          
                         <br>
                         <div class="image-grid">
@@ -307,35 +307,33 @@
                         </div><br>
                         <script src="script.js"></script>
                         <script>
-                      
-                        const carouselInner = document.querySelector('.carousel-inner');
-                        const totalSlides = document.querySelectorAll('.carousel-item').length;
-                        let index = 0;
-
-                        function showSlide(n) {
-                            if (n >= totalSlides) {
-                                carouselInner.style.transition = 'none'; 
-                                index = 0; 
+                            const carouselInner = document.querySelector('.carousel-inner');
+                            const totalSlides = document.querySelectorAll('.carousel-item').length;
+                            let index = 0;
+                            function showSlide(n) {
+                                if (n >= totalSlides) {
+                                    carouselInner.style.transition = 'none'; 
+                                    index = 0; 
+                                    carouselInner.style.transform = `translateX(${-index * 100}%)`;
+                                    setTimeout(() => {
+                                        carouselInner.style.transition = 'transform 0.5s ease-in-out'; 
+                                        showSlide(index + 1); 
+                                    }, 50); 
+                                    return;
+                                } else if (n < 0) {
+                                    carouselInner.style.transition = 'none'; 
+                                    index = totalSlides / 2 - 1;
+                                    carouselInner.style.transform = `translateX(${-index * 100}%)`; 
+                                    setTimeout(() => {
+                                        carouselInner.style.transition = 'transform 0.5s ease-in-out'; 
+                                        showSlide(index + 1); 
+                                    }, 50);
+                                    return;
+                                }
+                                index = n;
                                 carouselInner.style.transform = `translateX(${-index * 100}%)`;
-                                setTimeout(() => {
-                                    carouselInner.style.transition = 'transform 0.5s ease-in-out'; 
-                                    showSlide(index + 1); 
-                                }, 50); 
-                                return;
-                            } else if (n < 0) {
-                                carouselInner.style.transition = 'none'; 
-                                index = totalSlides / 2 - 1;
-                                carouselInner.style.transform = `translateX(${-index * 100}%)`; 
-                                setTimeout(() => {
-                                    carouselInner.style.transition = 'transform 0.5s ease-in-out'; 
-                                    showSlide(index + 1); 
-                                }, 50);
-                                return;
                             }
-                            index = n;
-                            carouselInner.style.transform = `translateX(${-index * 100}%)`;
-                        }
-                        setInterval(() => showSlide(index + 1), 5000);
+                            setInterval(() => showSlide(index + 1), 5000);
                         </script>                
                 </div> 
             </main>
